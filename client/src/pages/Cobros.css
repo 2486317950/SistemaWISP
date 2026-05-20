@@ -1,0 +1,196 @@
+.cobros-page {
+  padding: 0 24px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.cobros-page .page-header {
+  margin-bottom: 24px;
+}
+
+.cobros-page .page-header h1 {
+  margin: 0 0 8px 0;
+  color: #2c3e50;
+}
+
+.cobros-page .page-desc {
+  margin: 0;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.cobros-page .card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  margin-bottom: 24px;
+}
+
+.cobros-page .card h2 {
+  margin: 0 0 20px 0;
+  font-size: 1.25rem;
+  color: #2c3e50;
+}
+
+.cobros-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+}
+
+.cobros-form .form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cobros-form .form-row label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.cobros-form .form-row select,
+.cobros-form .form-row input[type="number"],
+.cobros-form .form-row input[type="text"] {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.cobros-form .error-msg {
+  color: #c0392b;
+  font-size: 0.9rem;
+}
+
+.cobros-form .btn-primary {
+  padding: 12px 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1rem;
+  align-self: flex-start;
+}
+
+.cobros-form .btn-primary:hover:not(:disabled) {
+  background: #229954;
+}
+
+.cobros-form .btn-primary:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.cobros-list-section .empty-message {
+  color: #666;
+  margin: 0;
+}
+
+.cobros-list-section .table-container {
+  overflow-x: auto;
+}
+
+.cobros-list-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cobros-list-section th,
+.cobros-list-section td {
+  padding: 10px 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.cobros-list-section th {
+  background: #f8f9fa;
+  font-weight: 600;
+  color: #333;
+}
+
+.cobros-list-section tbody tr:hover {
+  background: #f8f9fa;
+}
+
+.cobros-actions-col {
+  white-space: nowrap;
+  width: 1%;
+}
+
+.cobros-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cobros-inline-input {
+  width: 100px;
+  max-width: 100%;
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.cobros-inline-input.cobros-inline-wide {
+  min-width: 140px;
+  width: 100%;
+  max-width: 240px;
+}
+
+.btn-cobro-edit,
+.btn-cobro-save,
+.btn-cobro-cancel,
+.btn-cobro-delete {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  cursor: pointer;
+}
+
+.btn-cobro-edit {
+  background: #3498db;
+  color: #fff;
+}
+.btn-cobro-edit:hover:not(:disabled) {
+  background: #2980b9;
+}
+
+.btn-cobro-save {
+  background: #27ae60;
+  color: #fff;
+}
+.btn-cobro-save:hover:not(:disabled) {
+  background: #229954;
+}
+
+.btn-cobro-cancel {
+  background: #ecf0f1;
+  color: #2c3e50;
+}
+.btn-cobro-cancel:hover:not(:disabled) {
+  background: #bdc3c7;
+}
+
+.btn-cobro-delete {
+  background: #e74c3c;
+  color: #fff;
+}
+.btn-cobro-delete:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+.btn-cobro-edit:disabled,
+.btn-cobro-save:disabled,
+.btn-cobro-cancel:disabled,
+.btn-cobro-delete:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

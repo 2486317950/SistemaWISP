@@ -1,0 +1,259 @@
+.credit-requests-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.credit-requests-page .page-header h1 {
+  color: #2c3e50;
+  margin: 0 0 8px 0;
+}
+
+.credit-requests-page .page-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.filter-bar {
+  margin-bottom: 20px;
+}
+
+.filter-bar select {
+  padding: 8px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+.credit-requests-layout {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 24px;
+}
+
+.requests-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.requests-network-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.requests-network-header {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0f766e;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 0 4px;
+  border-bottom: 2px solid #0d9488;
+  margin-bottom: 4px;
+}
+
+.request-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.request-card:hover {
+  border-color: #e2e8f0;
+}
+
+.request-card.selected {
+  border-color: #0d9488;
+  background: #f0fdfa;
+}
+
+.request-card.status-pendiente {
+  border-left: 4px solid #f59e0b;
+}
+
+.request-card.status-aprobado {
+  border-left: 4px solid #22c55e;
+}
+
+.request-card.status-rechazado {
+  border-left: 4px solid #ef4444;
+}
+
+.request-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.client-name {
+  font-weight: 600;
+  color: #334155;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.status-pendiente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.status-aprobado {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.status-badge.status-rechazado {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.request-card-body {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.request-card-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 6px;
+}
+
+.request-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.request-detail h3 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.2rem;
+}
+
+.detail-info p {
+  margin: 8px 0;
+}
+
+.approval-options {
+  margin: 20px 0;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 8px;
+}
+
+.approval-options h4 {
+  margin: 0 0 12px 0;
+  font-size: 0.95rem;
+}
+
+.radio-option {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.radio-option input {
+  margin-right: 8px;
+}
+
+.amount-input {
+  margin-top: 12px;
+  margin-left: 24px;
+}
+
+.amount-input label {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+
+.amount-input input {
+  padding: 8px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  width: 150px;
+}
+
+.review-actions {
+  margin-top: 20px;
+}
+
+.review-actions textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  resize: vertical;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-approve {
+  padding: 10px 24px;
+  background: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-approve:hover:not(:disabled) {
+  background: #0f766e;
+}
+
+.btn-reject {
+  padding: 10px 24px;
+  background: #ef4444;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-reject:hover:not(:disabled) {
+  background: #dc2626;
+}
+
+.select-hint {
+  color: #94a3b8;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.result-approved {
+  color: #065f46;
+  background: #d1fae5;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.result-notes {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .credit-requests-layout {
+    grid-template-columns: 1fr;
+  }
+}

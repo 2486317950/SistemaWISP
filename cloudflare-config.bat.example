@@ -1,0 +1,45 @@
+@echo off
+REM Ejemplo de archivo de configuracion para Cloudflare Tunnel
+REM Copia este archivo como "cloudflare-config.bat" y configura tu túnel
+
+REM Nombre del túnel nombrado (creado con: cloudflared tunnel create nombre)
+REM Si lo dejas vacio, usara modo rapido con URL temporal
+REM Para usar dominio personalizado, DEBES configurar un túnel nombrado
+set TUNNEL_NAME=
+
+REM Ejemplo:
+REM set TUNNEL_NAME=mi-sistema-isp
+REM 
+REM Pasos para configurar:
+REM 1. Registrate gratis en Cloudflare: https://dash.cloudflare.com
+REM 2. Ejecuta: cloudflared tunnel login
+REM 3. Crea un túnel: cloudflared tunnel create mi-sistema-isp
+REM 4. Configura DNS: cloudflared tunnel route dns mi-sistema-isp app.tudominio.com
+REM 5. Configura TUNNEL_NAME arriba con el nombre de tu túnel
+REM
+REM Ver README_CLOUDFLARE_TUNNEL.md para instrucciones completas
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

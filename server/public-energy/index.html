@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDCom Energy | Energía inteligente para mantenerlo todo conectado</title>
+  <meta name="description" content="CDCom Energy: Soluciones energéticas modernas para hogares, negocios e infraestructura crítica." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/landing-assets/cdcom-motion.css" />
+<link rel="stylesheet" href="/landing-assets/cdcom-pro.css" />
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="cdcom-site bg-white dark:bg-[#0a0b0f] text-gray-900 dark:text-white antialiased transition-colors duration-300">
+
+  <!-- INTRO ANIMATION -->
+  <div id="intro-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center overflow-hidden bg-white dark:bg-black transition-colors">
+    <div class="absolute w-[600px] h-[600px] rounded-full blur-[120px] animate-pulse bg-amber-200/40 dark:bg-orange-500/20"></div>
+    <div class="absolute w-[400px] h-[400px] rounded-full blur-[100px] animate-pulse bg-blue-200/40 dark:bg-blue-500/20"></div>
+    <div id="flash-layer" class="absolute inset-0 bg-amber-400 dark:bg-white opacity-0 pointer-events-none" data-parallax="0.08"></div>
+    <div id="logo-reveal" class="relative flex items-center justify-center opacity-0 scale-75" style="filter:blur(12px)">
+      <canvas id="logo-canvas" class="w-[400px] max-w-[80vw]" style="filter:drop-shadow(0 0 40px rgba(245,158,11,0.4))"></canvas>
+    </div>
+  </div>
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-[#0a0b0f]/80 backdrop-blur-2xl border-b border-gray-200 dark:border-white/5 transition-colors">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <svg class="w-7 h-7 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span class="font-bold text-lg">CDCom <span class="text-amber-500">Energy</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm text-gray-600 dark:text-zinc-400">
+        <a href="#soluciones" class="hover:text-amber-600 dark:hover:text-amber-400 transition">Soluciones</a>
+        <a href="#infraestructura" class="hover:text-amber-600 dark:hover:text-amber-400 transition">Infraestructura</a>
+        <a href="#casos" class="hover:text-amber-600 dark:hover:text-amber-400 transition">Casos de uso</a>
+        <a href="#monitoreo" class="hover:text-amber-600 dark:hover:text-amber-400 transition">Monitoreo</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 transition" title="Cambiar tema">
+          <svg class="w-4 h-4 hidden dark:block text-amber-400" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="w-4 h-4 block dark:hidden text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20una%20solución%20energética" target="_blank" class="text-sm font-semibold px-5 py-2.5 rounded-lg bg-amber-500 text-white hover:bg-amber-600 transition shadow-lg shadow-amber-500/20">
+          Cotizar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative pt-28 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <div class="motion-orb w-[420px] h-[420px] top-[-80px] left-[8%] bg-amber-400/30 dark:bg-amber-500/20"></div>
+    <div class="motion-orb motion-orb--2 w-[340px] h-[340px] top-[18%] right-[4%] bg-orange-400/20 dark:bg-orange-500/10"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-b from-amber-100/50 dark:from-amber-500/5 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto px-5 relative z-10 grid md:grid-cols-2 gap-10 items-center">
+      <div class="motion-hero">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-amber-200 dark:border-amber-500/20 bg-amber-50 dark:bg-amber-500/5 text-xs font-medium text-amber-700 dark:text-amber-300 mb-8">
+          <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+          Infraestructura energética activa
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.1] mb-6">
+          Energía inteligente para<br/>
+          <span class="text-amber-500">mantenerlo todo conectado.</span>
+        </h1>
+
+        <p class="text-lg text-gray-600 dark:text-zinc-400 max-w-xl mb-8 leading-relaxed">
+          Respaldo, autonomía y continuidad operativa cuando la red eléctrica falla. Sistemas diseñados para tu consumo real.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="https://wa.me/523151259871?text=Hola%2C%20necesito%20cotizar%20una%20solución%20energética" target="_blank" class="px-7 py-3.5 rounded-xl bg-amber-500 text-white font-bold text-sm hover:bg-amber-600 transition shadow-lg shadow-amber-500/25">
+            Solicitar cotización →
+          </a>
+          <a href="#soluciones" class="px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-amber-500 hover:text-amber-600 dark:hover:text-amber-400 transition">
+            Ver soluciones
+          </a>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3">
+        <div class="cdcom-stat rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-2xl font-black text-amber-500">8h+</div>
+          <div class="text-xs text-gray-500 dark:text-zinc-500 mt-1">Autonomía mínima</div>
+        </div>
+        <div class="cdcom-stat rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-2xl font-black text-blue-500">24/7</div>
+          <div class="text-xs text-gray-500 dark:text-zinc-500 mt-1">Monitoreo remoto</div>
+        </div>
+        <div class="cdcom-stat rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-2xl font-black text-emerald-500">&lt;10ms</div>
+          <div class="text-xs text-gray-500 dark:text-zinc-500 mt-1">Switchover</div>
+        </div>
+        <div class="cdcom-stat rounded-2xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-2xl font-black text-orange-500">100%</div>
+          <div class="text-xs text-gray-500 dark:text-zinc-500 mt-1">Uptime operativo</div>
+        </div>
+      </div>
+      </div>
+      <div class="hidden md:block cdcom-hero-visual">
+        <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="Paneles solares" class="motion-float rounded-2xl shadow-2xl w-full h-[420px] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES -->
+  <section id="soluciones" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-amber-600 dark:text-amber-400 mb-3">Soluciones</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Energía diseñada para cada escenario</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">Cada solución se dimensiona según tu consumo real, prioridades operativas y condiciones del sitio.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-amber-300 dark:hover:border-amber-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">Respaldo para Internet</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Mantén tu conexión activa durante apagones. UPS dimensionado para routers, ONTs y APs.</p>
+        </div>
+
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-cyan-300 dark:hover:border-cyan-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-cyan-600 dark:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M6 7V5a2 2 0 012-2h8a2 2 0 012 2v2M10 11h4"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">UPS Inteligentes</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Protección contra picos, regulación de voltaje y switchover instantáneo con monitoreo en tiempo real.</p>
+        </div>
+
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-orange-300 dark:hover:border-orange-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">Sistemas solares híbridos</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Generación + almacenamiento + red. Paneles, inversores y baterías LiFePO4.</p>
+        </div>
+
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-blue-300 dark:hover:border-blue-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">Energía para cámaras</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Videovigilancia que no se apaga. Respaldo dedicado para DVR, cámaras IP y switches PoE.</p>
+        </div>
+
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-emerald-300 dark:hover:border-emerald-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">Sitios remotos</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Energía autónoma donde no hay red eléctrica. Torres, ranchos, pozos y estaciones.</p>
+        </div>
+
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-rose-300 dark:hover:border-rose-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-12 h-12 rounded-xl bg-rose-100 dark:bg-rose-500/10 flex items-center justify-center mb-5">
+            <svg class="w-5 h-5 text-rose-600 dark:text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="font-bold text-base mb-2">Continuidad operativa</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Respaldo empresarial: servidores, puntos de venta y sistemas críticos siempre encendidos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRAESTRUCTURA -->
+  <section id="infraestructura" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Infraestructura</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Ingeniería energética real</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">No vendemos paneles sueltos. Diseñamos sistemas completos con dimensionamiento profesional.</p>
+      </div>
+      <div class="mb-8 rounded-2xl overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1559302504-64aae6ca6b6d?w=1200&q=80" alt="Instalación solar profesional" class="w-full h-48 md:h-64 object-cover" />
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+        <div class="cdcom-panel rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+          <p class="text-xs font-semibold tracking-widest uppercase text-amber-600 dark:text-amber-400 mb-5">Arquitectura del sistema</p>
+          <div class="space-y-1">
+            <div class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/[0.03] transition border-b border-gray-100 dark:border-white/5">
+              <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-orange-400"></span><span class="text-sm font-medium">Generación solar</span></div>
+              <span class="text-xs text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded">Monocristalino</span>
+            </div>
+            <div class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/[0.03] transition border-b border-gray-100 dark:border-white/5">
+              <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-cyan-400"></span><span class="text-sm font-medium">Inversores híbridos</span></div>
+              <span class="text-xs text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded">MPPT + Grid-tie</span>
+            </div>
+            <div class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/[0.03] transition border-b border-gray-100 dark:border-white/5">
+              <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-amber-400"></span><span class="text-sm font-medium">Almacenamiento</span></div>
+              <span class="text-xs text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded">LiFePO4 48V</span>
+            </div>
+            <div class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/[0.03] transition border-b border-gray-100 dark:border-white/5">
+              <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-green-400"></span><span class="text-sm font-medium">Protección eléctrica</span></div>
+              <span class="text-xs text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded">Surge + Breakers</span>
+            </div>
+            <div class="flex items-center justify-between py-3 px-3 rounded-lg hover:bg-gray-100 dark:hover:bg-white/[0.03] transition">
+              <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-blue-400"></span><span class="text-sm font-medium">Monitoreo remoto</span></div>
+              <span class="text-xs text-gray-400 bg-gray-100 dark:bg-white/5 px-2 py-0.5 rounded">WiFi + Cloud</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+            <div class="text-2xl font-black text-amber-500 mb-1">LiFePO4</div>
+            <div class="text-xs text-gray-500 dark:text-zinc-400">Baterías de litio</div>
+            <div class="text-[10px] text-gray-400 mt-3">+6,000 ciclos de vida útil</div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+            <div class="text-2xl font-black text-cyan-500 mb-1">MPPT</div>
+            <div class="text-xs text-gray-500 dark:text-zinc-400">Tracking solar</div>
+            <div class="text-[10px] text-gray-400 mt-3">Máxima eficiencia</div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+            <div class="text-2xl font-black text-emerald-500 mb-1">&lt;10ms</div>
+            <div class="text-xs text-gray-500 dark:text-zinc-400">Switchover</div>
+            <div class="text-[10px] text-gray-400 mt-3">Transferencia imperceptible</div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+            <div class="text-2xl font-black text-blue-500 mb-1">IP65</div>
+            <div class="text-xs text-gray-500 dark:text-zinc-400">Protección</div>
+            <div class="text-[10px] text-gray-400 mt-3">Gabinetes para exterior</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DE USO -->
+  <section id="casos" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-emerald-600 dark:text-emerald-400 mb-3">Casos de uso</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Energía donde más importa</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">Cada instalación se diseña para las condiciones y necesidades específicas del sitio.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center flex-shrink-0 text-lg">🏠</div>
+          <div><h4 class="font-bold text-sm mb-1">Hogares</h4><p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Respaldo para internet, cámaras y equipos esenciales durante apagones.</p></div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-lg">🏪</div>
+          <div><h4 class="font-bold text-sm mb-1">Negocios</h4><p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Terminal de cobro, POS, internet y cámaras siempre activos.</p></div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center flex-shrink-0 text-lg">🌄</div>
+          <div><h4 class="font-bold text-sm mb-1">Ranchos y zonas rurales</h4><p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Energía 100% autónoma donde no llega la CFE.</p></div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center flex-shrink-0 text-lg">📡</div>
+          <div><h4 class="font-bold text-sm mb-1">Torres de telecomunicaciones</h4><p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Respaldo crítico para equipos de radio, switches y antenas.</p></div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-rose-100 dark:bg-rose-500/10 flex items-center justify-center flex-shrink-0 text-lg">📹</div>
+          <div><h4 class="font-bold text-sm mb-1">Videovigilancia</h4><p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">DVR, cámaras y grabación continua incluso sin electricidad.</p></div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center flex-shrink-0 text-lg">🖥️</div>
+          <div><h4 class="font-bold text-sm mb-1">Infraestructura IT</h4><p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Servidores, racks y networking protegidos con UPS empresarial.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MONITOREO -->
+  <section id="monitoreo" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Monitoreo</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-5">Control total de tu energía</h2>
+          <p class="text-gray-500 dark:text-zinc-400 mb-8 leading-relaxed">
+            Cada sistema incluye monitoreo en tiempo real. Consulta generación, consumo, baterías y autonomía desde cualquier dispositivo.
+          </p>
+          <div class="space-y-5">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-amber-100 dark:bg-amber-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-amber-600 dark:text-amber-400" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div><h4 class="font-bold text-sm mb-1">Generación en tiempo real</h4><p class="text-xs text-gray-500 dark:text-zinc-500">kWh generados, eficiencia y horas solares.</p></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-cyan-600 dark:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="2"/><path d="M10 11h4"/></svg>
+              </div>
+              <div><h4 class="font-bold text-sm mb-1">Estado de baterías</h4><p class="text-xs text-gray-500 dark:text-zinc-500">Carga, ciclos, temperatura y autonomía.</p></div>
+            </div>
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-xl bg-green-100 dark:bg-green-500/10 flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-green-600 dark:text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              </div>
+              <div><h4 class="font-bold text-sm mb-1">Consumo y alertas</h4><p class="text-xs text-gray-500 dark:text-zinc-500">Historial, alertas y notificaciones push.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Monitor mockup -->
+        <div class="rounded-2xl bg-gray-900 dark:bg-[#111215] border border-gray-800 dark:border-white/5 p-6 shadow-2xl">
+          <div class="flex items-center justify-between mb-5 pb-3 border-b border-gray-700">
+            <div class="flex items-center gap-2">
+              <div class="w-2.5 h-2.5 rounded-full bg-green-400 animate-pulse"></div>
+              <span class="text-xs text-gray-400">Sistema operativo</span>
+            </div>
+            <span class="text-[10px] text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded-full">HÍBRIDO</span>
+          </div>
+          <div class="space-y-4 font-mono text-xs">
+            <div>
+              <div class="flex justify-between text-gray-300 mb-2"><span>☀ Generación</span><span class="text-amber-400 font-bold">1.8 kW</span></div>
+              <div class="h-1 bg-gray-700 rounded-full overflow-hidden"><div class="h-full w-[72%] bg-gradient-to-r from-amber-500 to-orange-500 rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-gray-300 mb-2"><span>🔋 Batería</span><span class="text-cyan-400 font-bold">87%</span></div>
+              <div class="h-1 bg-gray-700 rounded-full overflow-hidden"><div class="h-full w-[87%] bg-gradient-to-r from-cyan-500 to-blue-500 rounded-full"></div></div>
+            </div>
+            <div>
+              <div class="flex justify-between text-gray-300 mb-2"><span>⚡ Consumo</span><span class="text-white font-bold">0.6 kW</span></div>
+              <div class="h-1 bg-gray-700 rounded-full overflow-hidden"><div class="h-full w-[24%] bg-gradient-to-r from-emerald-500 to-green-500 rounded-full"></div></div>
+            </div>
+            <div class="pt-3 border-t border-gray-700 grid grid-cols-3 gap-3 text-center">
+              <div><div class="text-lg font-black text-amber-400">14h</div><div class="text-[10px] text-gray-500">Autonomía</div></div>
+              <div><div class="text-lg font-black text-cyan-400">28°C</div><div class="text-[10px] text-gray-500">Temp</div></div>
+              <div><div class="text-lg font-black text-emerald-400">847</div><div class="text-[10px] text-gray-500">Ciclos</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-amber-600 dark:text-amber-400 mb-3">Testimonios</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight">Resultados reales</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="cdcom-panel rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+          <div class="flex gap-0.5 mb-4 text-amber-400">★★★★★</div>
+          <p class="text-sm text-gray-600 dark:text-zinc-300 mb-5 leading-relaxed">"Con el UPS de CDCom llevamos 6 meses sin un solo corte de servicio en el negocio."</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/5">
+            <div class="w-9 h-9 rounded-full bg-amber-500 flex items-center justify-center text-xs font-bold text-white">RM</div>
+            <div><div class="text-sm font-semibold">Roberto M.</div><div class="text-[11px] text-gray-400">Negocio con videovigilancia</div></div>
+          </div>
+        </div>
+        <div class="cdcom-panel rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+          <div class="flex gap-0.5 mb-4 text-amber-400">★★★★★</div>
+          <p class="text-sm text-gray-600 dark:text-zinc-300 mb-5 leading-relaxed">"Sistema solar completo en el rancho. Ahora tenemos internet, cámaras y bomba de agua todo el día."</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/5">
+            <div class="w-9 h-9 rounded-full bg-emerald-500 flex items-center justify-center text-xs font-bold text-white">JH</div>
+            <div><div class="text-sm font-semibold">Juan H.</div><div class="text-[11px] text-gray-400">Rancho en zona rural</div></div>
+          </div>
+        </div>
+        <div class="cdcom-panel rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+          <div class="flex gap-0.5 mb-4 text-amber-400">★★★★★</div>
+          <p class="text-sm text-gray-600 dark:text-zinc-300 mb-5 leading-relaxed">"Nuestra torre da servicio a 80 clientes. 12 horas de autonomía en caso de falla eléctrica."</p>
+          <div class="flex items-center gap-3 pt-4 border-t border-gray-100 dark:border-white/5">
+            <div class="w-9 h-9 rounded-full bg-blue-500 flex items-center justify-center text-xs font-bold text-white">CD</div>
+            <div><div class="text-sm font-semibold">CDCom Internet</div><div class="text-[11px] text-gray-400">Torre de telecomunicaciones</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <div class="cdcom-cta-box rounded-3xl bg-gradient-to-br from-amber-50 to-orange-50 dark:from-amber-500/5 dark:to-orange-500/5 border border-amber-200 dark:border-amber-500/10 p-12 md:p-16">
+        <svg class="w-10 h-10 text-amber-500 mx-auto mb-5" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Tu conectividad no debería depender de la red eléctrica.</h2>
+        <p class="text-gray-500 dark:text-zinc-400 mb-8 max-w-md mx-auto">Diseñamos una solución a la medida de tu consumo, espacio y presupuesto.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/523151259871?text=Hola%2C%20quiero%20cotizar%20una%20soluci%C3%B3n%20energ%C3%A9tica" target="_blank" class="px-7 py-3.5 rounded-xl bg-amber-500 text-white font-bold text-sm hover:bg-amber-600 transition shadow-lg shadow-amber-500/20">
+            Hablar con CDCom Energy
+          </a>
+          <a href="tel:3151259871" class="px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-amber-500 transition">
+            📞 315 125 9871
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 dark:border-white/5 py-10">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <svg class="w-5 h-5 text-amber-500" fill="currentColor" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        <span class="font-bold text-sm">CDCom Energy</span>
+        <span class="text-sm text-gray-400">· <a href="/" class="hover:text-amber-500 transition">Grupo CDCom</a></span>
+      </div>
+      <div class="flex gap-6 text-xs text-gray-400">
+        <a href="/internet" class="hover:text-amber-500 transition">Internet</a>
+        <a href="/systems" class="hover:text-amber-500 transition">Systems</a>
+        <a href="/creative" class="hover:text-amber-500 transition">Creative</a>
+      </div>
+      <div class="text-xs text-gray-400">© <span id="yr"></span> La Huerta, Jalisco</div>
+    </div>
+  </footer>  <script src="/landing-assets/cdcom-motion.js"></script>
+
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+
+    // Scroll animations
+// Intro animation
+    (function() {
+      const overlay = document.getElementById('intro-overlay');
+      const logo = document.getElementById('logo-reveal');
+      const flash = document.getElementById('flash-layer');
+      const canvas = document.getElementById('logo-canvas');
+      const ctx = canvas.getContext('2d');
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = function() {
+        canvas.width = img.width;
+        canvas.height = img.height;
+        ctx.drawImage(img, 0, 0);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i], g = data[i+1], b = data[i+2];
+          if (r < 30 && g < 30 && b < 30) data[i+3] = 0;
+          else if (r < 60 && g < 60 && b < 60) data[i+3] = Math.max(r, g, b) * 4;
+        }
+        ctx.putImageData(imageData, 0, 0);
+        setTimeout(() => { flash.style.transition='opacity 0.08s'; flash.style.opacity='0.6'; }, 300);
+        setTimeout(() => { flash.style.opacity='0'; }, 400);
+        setTimeout(() => { logo.style.transition='all 1s cubic-bezier(0.22,1,0.36,1)'; logo.style.opacity='1'; logo.style.transform='scale(1)'; logo.style.filter='blur(0)'; }, 500);
+        setTimeout(() => { logo.style.transition='all 0.7s ease-in'; logo.style.opacity='0'; logo.style.transform='scale(1.08)'; logo.style.filter='blur(8px)'; }, 2600);
+        setTimeout(() => { overlay.style.transition='opacity 0.5s'; overlay.style.opacity='0'; setTimeout(()=>overlay.remove(),500); }, 3100);
+      };
+      img.src = 'logo-energy.png';
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+/* Contenedor del spinner */
+.loading-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+}
+
+/* Spinner de pantalla completa */
+.loading-spinner-fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+}
+
+.loading-spinner-fullscreen .loading-spinner-container {
+  padding: 0;
+}
+
+/* Spinner principal */
+.loading-spinner {
+  position: relative;
+  display: inline-block;
+}
+
+/* Anillos del spinner */
+.spinner-ring {
+  position: absolute;
+  border: 4px solid transparent;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+}
+
+.spinner-ring:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.spinner-ring:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.spinner-ring:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+.spinner-ring:nth-child(4) {
+  animation-delay: 0s;
+}
+
+/* Tamaños del spinner */
+.spinner-small .spinner-ring {
+  width: 30px;
+  height: 30px;
+  border-width: 3px;
+}
+
+.spinner-medium .spinner-ring {
+  width: 50px;
+  height: 50px;
+  border-width: 4px;
+}
+
+.spinner-large .spinner-ring {
+  width: 80px;
+  height: 80px;
+  border-width: 6px;
+}
+
+/* Ajustar posiciones según el tamaño */
+.spinner-small .spinner-ring:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.spinner-small .spinner-ring:nth-child(2) {
+  top: 3px;
+  left: 3px;
+}
+
+.spinner-small .spinner-ring:nth-child(3) {
+  top: 6px;
+  left: 6px;
+}
+
+.spinner-small .spinner-ring:nth-child(4) {
+  top: 9px;
+  left: 9px;
+}
+
+.spinner-medium .spinner-ring:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.spinner-medium .spinner-ring:nth-child(2) {
+  top: 5px;
+  left: 5px;
+}
+
+.spinner-medium .spinner-ring:nth-child(3) {
+  top: 10px;
+  left: 10px;
+}
+
+.spinner-medium .spinner-ring:nth-child(4) {
+  top: 15px;
+  left: 15px;
+}
+
+.spinner-large .spinner-ring:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.spinner-large .spinner-ring:nth-child(2) {
+  top: 8px;
+  left: 8px;
+}
+
+.spinner-large .spinner-ring:nth-child(3) {
+  top: 16px;
+  left: 16px;
+}
+
+.spinner-large .spinner-ring:nth-child(4) {
+  top: 24px;
+  left: 24px;
+}
+
+/* Animación de rotación */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mensaje de carga */
+.loading-message {
+  margin: 0;
+  color: #667eea;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Animación de pulso para el mensaje */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+/* Variante alternativa con puntos animados */
+.loading-spinner-container.with-dots .loading-message::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% {
+    content: '.';
+  }
+  40% {
+    content: '..';
+  }
+  60%, 100% {
+    content: '...';
+  }
+}
+
+/* Variante minimalista (solo spinner sin mensaje) */
+.loading-spinner-minimal {
+  padding: 20px;
+}
+
+/* Spinner inline (para usar dentro de botones o elementos pequeños) */
+.loading-spinner-inline {
+  display: inline-block;
+  padding: 0;
+  margin: 0 8px;
+  vertical-align: middle;
+}
+
+.loading-spinner-inline .spinner-ring {
+  width: 16px;
+  height: 16px;
+  border-width: 2px;
+}
+
+.loading-spinner-inline .spinner-ring:nth-child(1) {
+  top: 0;
+  left: 0;
+}
+
+.loading-spinner-inline .spinner-ring:nth-child(2) {
+  top: 2px;
+  left: 2px;
+}
+
+.loading-spinner-inline .spinner-ring:nth-child(3) {
+  top: 4px;
+  left: 4px;
+}
+
+.loading-spinner-inline .spinner-ring:nth-child(4) {
+  top: 6px;
+  left: 6px;
+}
+
+.loading-spinner-inline .loading-message {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .loading-message {
+    font-size: 14px;
+  }
+  
+  .spinner-large .spinner-ring {
+    width: 60px;
+    height: 60px;
+    border-width: 5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

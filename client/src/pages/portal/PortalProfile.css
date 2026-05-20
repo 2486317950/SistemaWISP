@@ -1,0 +1,89 @@
+.portal-profile h2 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.profile-card h3 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.1rem;
+}
+
+.profile-hint {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: -8px 0 16px 0;
+}
+
+.profile-card .portal-form-group {
+  margin-bottom: 16px;
+}
+
+.profile-card input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.profile-card input:disabled {
+  background: #f8fafc;
+  color: #64748b;
+}
+
+.profile-msg {
+  margin: 12px 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.profile-msg.success {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.profile-msg.error {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.installation-info .info-row {
+  margin-bottom: 10px;
+}
+
+.installation-info .label {
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.portal-submit-btn.secondary {
+  background: #e2e8f0;
+  color: #334155;
+}
+
+.portal-submit-btn.secondary:hover {
+  background: #cbd5e1;
+}
+
+@media (max-width: 640px) {
+  .portal-profile h2 { font-size: 1.25rem; }
+  .profile-card { padding: 16px; }
+  .form-actions { flex-direction: column; }
+}

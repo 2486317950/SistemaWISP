@@ -1,0 +1,331 @@
+/**
+ * CDCom — capa visual corporativa (todas las landings)
+ */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
+
+:root {
+  --cdcom-radius: 14px;
+  --cdcom-radius-lg: 20px;
+  --cdcom-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 4px 16px rgba(15, 23, 42, 0.06);
+  --cdcom-shadow-md: 0 4px 6px rgba(15, 23, 42, 0.04), 0 12px 40px rgba(15, 23, 42, 0.08);
+  --cdcom-shadow-lg: 0 20px 50px rgba(15, 23, 42, 0.12);
+  --cdcom-border: rgba(15, 23, 42, 0.08);
+  --cdcom-surface: #ffffff;
+  --cdcom-muted: #64748b;
+}
+
+.dark {
+  --cdcom-border: rgba(255, 255, 255, 0.08);
+  --cdcom-surface: rgba(255, 255, 255, 0.03);
+  --cdcom-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --cdcom-shadow-md: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --cdcom-shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.cdcom-site {
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Fondo sutil tipo “mesh” */
+.cdcom-site::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.07), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 100% 50%, rgba(6, 182, 212, 0.04), transparent 50%),
+    linear-gradient(180deg, #f8fafc 0%, #ffffff 40%, #f8fafc 100%);
+}
+.dark.cdcom-site::before {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(59, 130, 246, 0.12), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 0% 80%, rgba(6, 182, 212, 0.06), transparent 50%),
+    linear-gradient(180deg, #070b14 0%, #0a0e1a 50%, #070b14 100%);
+}
+
+/* Nav corporativo */
+.cdcom-site nav {
+  border-bottom-color: var(--cdcom-border) !important;
+  transition: box-shadow 0.35s ease, background 0.35s ease, border-color 0.35s ease !important;
+}
+.cdcom-site nav.cdcom-nav-scrolled,
+.cdcom-site .cdcom-nav-scrolled {
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(20px) saturate(1.2);
+}
+.dark.cdcom-site nav.cdcom-nav-scrolled,
+.dark.cdcom-site .cdcom-nav-scrolled {
+  background: rgba(10, 14, 26, 0.92) !important;
+}
+.cdcom-site nav a:not([class*='bg-']):not([class*='gradient']) {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  position: relative;
+}
+.cdcom-site nav .hidden.md\:flex a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+  transition: width 0.25s ease;
+  opacity: 0.7;
+}
+.cdcom-site nav .hidden.md\:flex a:hover::after {
+  width: 100%;
+}
+
+/* Encabezados de sección */
+.cdcom-section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.cdcom-section-label::before {
+  content: '';
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  opacity: 0.85;
+}
+.cdcom-section-title {
+  font-weight: 800 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.15 !important;
+}
+.cdcom-section-desc {
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+  color: var(--cdcom-muted) !important;
+  max-width: 36rem;
+}
+
+/* Hero */
+.cdcom-site h1 {
+  letter-spacing: -0.035em !important;
+  line-height: 1.08 !important;
+}
+.cdcom-hero-badge {
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  box-shadow: var(--cdcom-shadow-sm);
+}
+.cdcom-hero-visual {
+  position: relative;
+}
+.cdcom-hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--cdcom-radius-lg) + 2px);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.35), rgba(6, 182, 212, 0.15), transparent 60%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+.cdcom-hero-visual img.rounded-2xl,
+.cdcom-hero-visual > img {
+  border-radius: var(--cdcom-radius-lg) !important;
+  box-shadow: var(--cdcom-shadow-lg) !important;
+}
+
+/* Botones CTA */
+.cdcom-site a[class*='bg-blue-600'],
+.cdcom-site a[class*='bg-cyan-600'],
+.cdcom-site a[class*='bg-amber-500'],
+.cdcom-site a[class*='bg-gradient-to-r from-purple'] {
+  font-weight: 600 !important;
+  letter-spacing: 0.02em !important;
+  border-radius: 12px !important;
+  transition: transform 0.2s ease, box-shadow 0.25s ease, filter 0.2s ease !important;
+}
+.cdcom-site a[class*='bg-blue-600']:hover,
+.cdcom-site a[class*='bg-cyan-600']:hover,
+.cdcom-site a[class*='bg-amber-500']:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+.cdcom-site a[class*='border-gray-300'],
+.cdcom-site a[class*='border-white/10'] {
+  border-radius: 12px !important;
+  font-weight: 600 !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Tarjetas */
+.cdcom-site .motion-card-shine,
+.cdcom-site a.motion-card-shine {
+  border-radius: var(--cdcom-radius-lg) !important;
+  box-shadow: var(--cdcom-shadow-sm);
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.25s ease !important;
+}
+.cdcom-site .motion-card-shine:hover,
+.cdcom-site a.motion-card-shine:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: var(--cdcom-shadow-md) !important;
+}
+.cdcom-site .motion-card-shine img {
+  transition: transform 0.5s ease;
+}
+.cdcom-site .motion-card-shine:hover img {
+  transform: scale(1.03);
+}
+
+/* Bloques de contenido / stats */
+.cdcom-site .rounded-2xl.bg-gray-50,
+.cdcom-site .rounded-xl.bg-gray-50 {
+  box-shadow: var(--cdcom-shadow-sm);
+}
+.cdcom-stat {
+  border-radius: var(--cdcom-radius) !important;
+  background: var(--cdcom-surface) !important;
+  border: 1px solid var(--cdcom-border) !important;
+  box-shadow: var(--cdcom-shadow-sm) !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.cdcom-stat:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--cdcom-shadow-md);
+}
+.cdcom-stat [class*='font-black'],
+.cdcom-stat [class*='font-bold'] {
+  letter-spacing: -0.02em;
+}
+
+/* Paneles (tools, trust) */
+.cdcom-panel {
+  border-radius: var(--cdcom-radius-lg) !important;
+  box-shadow: var(--cdcom-shadow-sm) !important;
+  border: 1px solid var(--cdcom-border) !important;
+}
+
+/* Footer */
+.cdcom-site footer {
+  background: linear-gradient(180deg, transparent, rgba(15, 23, 42, 0.02));
+  border-top: 1px solid var(--cdcom-border) !important;
+}
+.dark.cdcom-site footer {
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2));
+}
+.cdcom-site footer a {
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+/* Orbes más discretos */
+.cdcom-site .motion-orb {
+  opacity: 0.35 !important;
+  filter: blur(100px) !important;
+}
+
+/* Animaciones más sobrias (override motion) */
+.cdcom-site .motion-gradient-text {
+  animation: none !important;
+  background-size: 100% auto !important;
+}
+.cdcom-site .motion-badge-pulse {
+  animation: none !important;
+}
+.cdcom-site .motion-float {
+  animation: cdcomFloatSubtle 8s ease-in-out infinite !important;
+}
+@keyframes cdcomFloatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.cdcom-site .motion-wa-float {
+  animation: cdcomWaSubtle 4s ease-in-out infinite !important;
+}
+@keyframes cdcomWaSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+/* CTA final */
+.cdcom-cta-box {
+  border-radius: var(--cdcom-radius-lg) !important;
+  box-shadow: var(--cdcom-shadow-md) !important;
+}
+
+/* Plan cards internet */
+.cdcom-site .plan-card {
+  border-radius: var(--cdcom-radius-lg) !important;
+  box-shadow: var(--cdcom-shadow-sm) !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+.cdcom-site .plan-card:hover {
+  transform: translateY(-6px) !important;
+  box-shadow: var(--cdcom-shadow-md) !important;
+}
+
+/* Separadores de sección */
+.cdcom-site section.border-t {
+  border-color: var(--cdcom-border) !important;
+}
+
+/* Paquetes Creative — evitar recorte */
+#paquetes {
+  overflow: visible;
+}
+.cdcom-pack-grid {
+  overflow: visible;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  align-items: stretch;
+}
+.cdcom-pack-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  padding-top: 1.75rem !important;
+}
+.cdcom-pack-card .cdcom-pack-list {
+  flex: 1 1 auto;
+  margin-bottom: 1.25rem;
+}
+.cdcom-pack-card .cdcom-pack-cta {
+  margin-top: auto;
+  flex-shrink: 0;
+}
+.cdcom-pack-badge {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #9333ea, #ea580c);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .cdcom-site h1 {
+    font-size: clamp(1.85rem, 5vw, 2.5rem) !important;
+  }
+  .cdcom-hero-visual::before {
+    display: none;
+  }
+}

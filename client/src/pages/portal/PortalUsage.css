@@ -1,0 +1,88 @@
+.portal-usage h2 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.usage-summary {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.usage-total {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.usage-label {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.usage-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #0f766e;
+}
+
+.usage-note {
+  margin: 16px 0 0 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.usage-list h3 {
+  margin: 0 0 16px 0;
+  color: #334155;
+  font-size: 1.1rem;
+}
+
+.usage-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 16px;
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+}
+
+.usage-status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.usage-status.status-conectado {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.usage-status.status-desconectado {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.usage-date {
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.usage-gb {
+  font-weight: 600;
+  color: #0f766e;
+}
+
+@media (max-width: 640px) {
+  .portal-usage h2 { font-size: 1.25rem; }
+  .usage-summary { padding: 16px; }
+  .usage-value { font-size: 1.5rem; }
+  .usage-item { flex-direction: column; align-items: flex-start; }
+}

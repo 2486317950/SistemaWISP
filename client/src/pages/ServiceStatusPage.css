@@ -1,0 +1,83 @@
+.service-status-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+}
+
+.service-status-card {
+  max-width: 420px;
+  width: 100%;
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.service-status-card.service-status-normal {
+  border-top: 4px solid #27ae60;
+}
+
+.service-status-card.service-status-mantenimiento {
+  border-top: 4px solid #f39c12;
+}
+
+.service-status-card.service-status-problemas {
+  border-top: 4px solid #e74c3c;
+}
+
+.service-status-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.service-status-card h1 {
+  margin: 0 0 8px 0;
+  font-size: 1.5rem;
+  color: #2c3e50;
+}
+
+.service-status-label {
+  margin: 0 0 16px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.service-status-normal .service-status-label { color: #27ae60; }
+.service-status-mantenimiento .service-status-label { color: #f39c12; }
+.service-status-problemas .service-status-label { color: #e74c3c; }
+
+.service-status-message {
+  margin: 0 0 16px 0;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  color: #495057;
+  font-size: 0.95rem;
+  white-space: pre-wrap;
+  text-align: left;
+}
+
+.service-status-updated {
+  margin: 0 0 20px 0;
+  font-size: 0.8rem;
+  color: #7f8c8d;
+}
+
+.service-status-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.service-status-link:hover {
+  background: #5568d3;
+}

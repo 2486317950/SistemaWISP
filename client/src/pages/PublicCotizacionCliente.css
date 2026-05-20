@@ -1,0 +1,194 @@
+.public-cot-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 40%, #fff 100%);
+  padding-top: max(20px, env(safe-area-inset-top, 0px));
+  padding-right: max(14px, env(safe-area-inset-right, 0px));
+  padding-bottom: max(40px, env(safe-area-inset-bottom, 0px));
+  padding-left: max(14px, env(safe-area-inset-left, 0px));
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.public-cot-header {
+  max-width: min(720px, 100%);
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.public-cot-header h1 {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: #0f172a;
+}
+
+.public-cot-ref {
+  margin: 0;
+  font-family: ui-monospace, monospace;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.public-cot-status {
+  margin: 8px 0 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.public-cot-card {
+  max-width: 480px;
+  margin: 40px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.public-cot-error {
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+}
+
+.public-cot-banner {
+  max-width: min(720px, 100%);
+  margin: 0 auto 16px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.public-cot-banner.is-ok {
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #86efac;
+}
+
+.public-cot-banner.is-no {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1px solid #fecaca;
+}
+
+.public-cot-banner.is-warn {
+  background: #fef9c3;
+  color: #854d0e;
+  border: 1px solid #fde047;
+}
+
+.public-cot-sheet-wrap {
+  max-width: min(900px, 100%);
+  margin: 0 auto;
+  background: #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.public-cot-actions {
+  max-width: min(520px, 100%);
+  margin: 28px auto 0;
+  padding: 22px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 23, 42, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.public-cot-actions-title {
+  margin: 0 0 16px;
+  text-align: center;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.public-cot-buttons {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.public-cot-btn {
+  flex: 1;
+  min-width: 140px;
+  max-width: 220px;
+  padding: 14px 22px;
+  font-size: 1rem;
+  font-weight: 800;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.public-cot-btn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.public-cot-btn-accept {
+  background: linear-gradient(135deg, #059669, #047857);
+  color: #fff;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.35);
+}
+
+.public-cot-btn-accept:hover:not(:disabled) {
+  transform: translateY(-1px);
+}
+
+.public-cot-btn-reject {
+  background: #fff;
+  color: #b91c1c;
+  border: 2px solid #fecaca;
+}
+
+.public-cot-btn-reject:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+.public-cot-closed {
+  text-align: center;
+  color: #64748b;
+  margin-top: 20px;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 540px) {
+  .public-cot-header {
+    margin-bottom: 14px;
+  }
+
+  .public-cot-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .public-cot-sheet-wrap {
+    padding: 6px;
+    border-radius: 10px;
+  }
+
+  .public-cot-actions {
+    padding: 16px 12px;
+    margin-top: 20px;
+    border-radius: 12px;
+  }
+
+  .public-cot-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .public-cot-btn {
+    max-width: none;
+    width: 100%;
+    min-width: 0;
+    min-height: 48px;
+  }
+
+  .public-cot-banner {
+    padding: 12px 14px;
+    font-size: 0.92rem;
+  }
+}

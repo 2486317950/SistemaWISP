@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDCom Creative | Ideas que conectan, marcas que trascienden</title>
+  <meta name="description" content="CDCom Creative: branding, redes sociales, video, web y campañas digitales en La Huerta y zona sur de Jalisco. Paquetes desde identidad visual hasta lanzamiento integral." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="/landing-assets/cdcom-motion.css" />
+  <link rel="stylesheet" href="/landing-assets/cdcom-pro.css" />
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="cdcom-site bg-white dark:bg-[#0a0e1a] text-gray-900 dark:text-white antialiased transition-colors duration-300">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-[#0a0e1a]/85 backdrop-blur-2xl border-b border-gray-200 dark:border-white/5 transition-colors">
+    <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2">
+        <span class="font-bold text-lg">CDCom <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500">Creative</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm text-gray-500 dark:text-zinc-400">
+        <a href="#servicios" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Servicios</a>
+        <a href="#proceso" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Proceso</a>
+        <a href="#paquetes" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Paquetes</a>
+        <a href="#portafolio" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Portafolio</a>
+        <a href="#contacto" class="hover:text-purple-600 dark:hover:text-purple-400 transition">Contacto</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 transition" title="Cambiar tema">
+          <svg class="w-4 h-4 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="w-4 h-4 block dark:hidden text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20un%20proyecto%20creativo" target="_blank" class="text-sm font-semibold px-5 py-2.5 rounded-lg bg-gradient-to-r from-purple-600 to-orange-500 text-white hover:opacity-90 transition shadow-lg shadow-purple-600/20">
+          Cotizar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="relative pt-28 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+    <div class="motion-orb w-[420px] h-[420px] top-[-80px] left-[8%] bg-purple-400/25 dark:bg-purple-500/15"></div>
+    <div class="motion-orb motion-orb--2 w-[340px] h-[340px] top-[18%] right-[4%] bg-orange-400/20 dark:bg-orange-500/10"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-purple-100/50 dark:from-purple-500/5 to-transparent rounded-full blur-3xl pointer-events-none" data-parallax="0.08"></div>
+    <div class="max-w-6xl mx-auto px-5 relative z-10 grid md:grid-cols-2 gap-10 items-center">
+      <div class="motion-hero">
+        <p class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-purple-200 dark:border-purple-500/25 bg-purple-50 dark:bg-purple-500/10 text-xs font-semibold text-purple-700 dark:text-purple-300 mb-5 cdcom-hero-badge">
+          <span class="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+          División creativa · Grupo CDCom · La Huerta, Jal.
+        </p>
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.08] mb-5">
+          Marcas que <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500">dejan huella</span>
+        </h1>
+        <p class="text-lg text-gray-500 dark:text-zinc-400 max-w-xl mb-8 leading-relaxed">
+          Estrategia, diseño y producción en un solo equipo. Ayudamos a negocios locales y regionales a verse profesionales, comunicar con claridad y crecer en digital.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20un%20servicio%20de%20branding" target="_blank" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 text-white font-bold text-sm hover:opacity-90 transition shadow-lg shadow-purple-600/20">Iniciar proyecto</a>
+          <a href="#paquetes" class="px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-purple-500 hover:text-purple-600 dark:hover:text-purple-400 transition">Ver paquetes</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-purple-600 dark:text-purple-400">80+</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Proyectos</div></div>
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-orange-500">6</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Servicios</div></div>
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-purple-600 dark:text-purple-400">48h</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Propuesta</div></div>
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-orange-500">100%</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Editables</div></div>
+        </div>
+      </div>
+      <div class="hidden md:block cdcom-hero-visual">
+        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&q=80" alt="Diseño creativo" class="motion-float rounded-2xl shadow-2xl w-full h-[380px] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Servicios creativos</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight mb-4">Todo lo que tu marca necesita</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto">Desde el concepto hasta la publicación: identidad, contenido, web y campañas con la misma línea visual.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 motion-stagger">
+        <div class="motion-card-shine rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-purple-300 dark:hover:border-purple-500/20 transition-all">
+    <div class="text-3xl mb-4">🎨</div>
+    <h3 class="font-bold mb-2">Branding & identidad</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-4">Logo, paleta, tipografías, papelería y manual de marca para uso interno y externo.</p>
+    <ul class="space-y-1"><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Naming y claim</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Logo + variantes</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Manual PDF</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Archivos editables</li></ul>
+  </div>
+        <div class="motion-card-shine rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-purple-300 dark:hover:border-purple-500/20 transition-all">
+    <div class="text-3xl mb-4">📸</div>
+    <h3 class="font-bold mb-2">Producción audiovisual</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-4">Contenido que vende: producto, instalaciones, equipo y testimonios.</p>
+    <ul class="space-y-1"><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Foto profesional</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Video corporativo</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Reels verticales</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Edición y color</li></ul>
+  </div>
+        <div class="motion-card-shine rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-purple-300 dark:hover:border-purple-500/20 transition-all">
+    <div class="text-3xl mb-4">📱</div>
+    <h3 class="font-bold mb-2">Social media</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-4">Presencia constante y coherente en redes sin perder tiempo en diseño diario.</p>
+    <ul class="space-y-1"><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Calendario mensual</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Plantillas reutilizables</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Copys sugeridos</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Reporte básico</li></ul>
+  </div>
+        <div class="motion-card-shine rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-purple-300 dark:hover:border-purple-500/20 transition-all">
+    <div class="text-3xl mb-4">🎯</div>
+    <h3 class="font-bold mb-2">Campañas digitales</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-4">Anuncios en Meta y Google orientados a leads, mensajes o visitas a tu negocio.</p>
+    <ul class="space-y-1"><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Configuración de píxeles</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Creativos A/B</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Segmentación local</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Optimización</li></ul>
+  </div>
+        <div class="motion-card-shine rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-purple-300 dark:hover:border-purple-500/20 transition-all">
+    <div class="text-3xl mb-4">🌐</div>
+    <h3 class="font-bold mb-2">Diseño web</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-4">Sitios rápidos, responsivos y alineados a tu marca; integración con WhatsApp y formularios.</p>
+    <ul class="space-y-1"><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Landing de conversión</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Sitio corporativo</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Catálogo o menú</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>SEO básico on-page</li></ul>
+  </div>
+        <div class="motion-card-shine rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-purple-300 dark:hover:border-purple-500/20 transition-all">
+    <div class="text-3xl mb-4">✏️</div>
+    <h3 class="font-bold mb-2">Copywriting</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-4">Mensajes claros para web, anuncios, fichas de producto y correos.</p>
+    <ul class="space-y-1"><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Tono de voz</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Textos de venta</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Guiones de video</li><li class="flex gap-2 text-xs text-gray-500 dark:text-zinc-400"><span class="text-purple-500">•</span>Emails</li></ul>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Cómo trabajamos</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">Proceso creativo en 4 etapas</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg text-[15px]">Metodología clara, entregables definidos y comunicación directa por WhatsApp en cada fase.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-4 motion-stagger">
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+    <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500 mb-3">01</div>
+    <h3 class="font-semibold text-[15px] mb-2">Brief y estrategia</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Entendemos tu negocio, competencia y objetivos. Definimos público, mensaje y prioridades.</p>
+  </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+    <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500 mb-3">02</div>
+    <h3 class="font-semibold text-[15px] mb-2">Concepto y diseño</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Moodboards, propuestas visuales y hasta 2 rondas de ajustes incluidas.</p>
+  </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+    <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500 mb-3">03</div>
+    <h3 class="font-semibold text-[15px] mb-2">Producción</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Ejecutamos piezas finales: impresos, digital, foto, video o desarrollo web.</p>
+  </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+    <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500 mb-3">04</div>
+    <h3 class="font-semibold text-[15px] mb-2">Entrega y soporte</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Archivos organizados, guía de uso y acompañamiento post-lanzamiento.</p>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARA QUIÉN -->
+  <section id="clientes" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.02]">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Sectores</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight mb-4">Trabajamos con marcas de la región</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto">Experiencia con comercios, servicios y empresas que necesitan verse grandes aunque operen localmente.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 motion-stagger">
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+    <div class="text-2xl mb-2">🏪</div>
+    <h3 class="font-semibold text-sm mb-1">Comercio y retail</h3>
+    <p class="text-xs text-gray-500 dark:text-zinc-400">Tiendas, ferreterías, abarrotes y franquicias locales.</p>
+  </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+    <div class="text-2xl mb-2">🍽️</div>
+    <h3 class="font-semibold text-sm mb-1">Restaurantes y cafés</h3>
+    <p class="text-xs text-gray-500 dark:text-zinc-400">Menús, redes, promociones y fotografía de platillos.</p>
+  </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+    <div class="text-2xl mb-2">📡</div>
+    <h3 class="font-semibold text-sm mb-1">Tecnología y telecom</h3>
+    <p class="text-xs text-gray-500 dark:text-zinc-400">ISPs, integradores y marcas tech del ecosistema CDCom.</p>
+  </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+    <div class="text-2xl mb-2">🏗️</div>
+    <h3 class="font-semibold text-sm mb-1">Servicios profesionales</h3>
+    <p class="text-xs text-gray-500 dark:text-zinc-400">Clínicas, talleres, inmobiliarias y oficinas.</p>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAQUETES -->
+  <section id="paquetes" class="py-20 md:py-28 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14 motion-reveal">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Paquetes</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight mb-4">Opciones para arrancar</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto">Precios orientativos; el cotizador final depende de alcance y plazos. Todos incluyen asesoría inicial sin costo.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 cdcom-pack-grid motion-stagger">
+        <article class="motion-card-shine cdcom-pack-card relative rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+          <h3 class="font-bold text-lg mb-1">Esencial</h3>
+          <p class="text-xs text-gray-500 dark:text-zinc-400 mb-4">Ideal para negocios que inician su imagen</p>
+          <ul class="cdcom-pack-list space-y-2">
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Logo + variantes</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Paleta y tipografías</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Tarjeta y redes básicas</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>1 ronda de cambios</li>
+          </ul>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20el%20paquete%20Esencial%20de%20CDCom%20Creative" target="_blank" rel="noopener" class="cdcom-pack-cta block text-center py-2.5 rounded-lg text-sm font-semibold border border-gray-300 dark:border-white/10 hover:border-purple-500 transition">Solicitar cotización</a>
+        </article>
+        <article class="motion-card-shine cdcom-pack-card relative rounded-2xl bg-gray-50 dark:bg-white/[0.03] border-2 border-purple-300 dark:border-purple-500/40 p-7 shadow-md shadow-purple-500/10">
+          <span class="cdcom-pack-badge">Recomendado</span>
+          <h3 class="font-bold text-lg mb-1">Profesional</h3>
+          <p class="text-xs text-gray-500 dark:text-zinc-400 mb-4">Marca completa + presencia digital</p>
+          <ul class="cdcom-pack-list space-y-2">
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Manual de marca PDF</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>12 piezas para redes</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Landing de 1 página</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Sesión foto (½ día)</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>2 rondas de cambios</li>
+          </ul>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20el%20paquete%20Profesional%20de%20CDCom%20Creative" target="_blank" rel="noopener" class="cdcom-pack-cta block text-center py-2.5 rounded-lg text-sm font-semibold bg-gradient-to-r from-purple-600 to-orange-500 text-white transition">Solicitar cotización</a>
+        </article>
+        <article class="motion-card-shine cdcom-pack-card relative rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+          <h3 class="font-bold text-lg mb-1">Premium</h3>
+          <p class="text-xs text-gray-500 dark:text-zinc-400 mb-4">Lanzamiento integral</p>
+          <ul class="cdcom-pack-list space-y-2">
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Todo lo Profesional</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Video reel + corporativo</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Campaña Meta 1 mes*</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Sitio multi-sección</li>
+            <li class="flex gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-purple-500 shrink-0">✓</span>Soporte 30 días</li>
+          </ul>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20el%20paquete%20Premium%20de%20CDCom%20Creative" target="_blank" rel="noopener" class="cdcom-pack-cta block text-center py-2.5 rounded-lg text-sm font-semibold border border-gray-300 dark:border-white/10 hover:border-purple-500 transition">Solicitar cotización</a>
+        </article>
+      </div>
+      <p class="text-center text-xs text-gray-400 mt-8 max-w-xl mx-auto leading-relaxed">* Presupuesto de pauta publicitaria no incluido. Cotización personalizada en 48 h hábiles.</p>
+    </div>
+  </section>
+  <!-- POR QUÉ CDCom -->
+  <section id="porque" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Ventajas</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-4">Por qué CDCom Creative</h2>
+        <ul class="space-y-4 text-[15px] text-gray-600 dark:text-zinc-300">
+          <li class="flex gap-3"><span class="text-purple-500 font-bold">✓</span><span><strong>Respaldo del Grupo CDCom:</strong> conectamos tu marca con internet, software y energía si lo necesitas.</span></li>
+          <li class="flex gap-3"><span class="text-purple-500 font-bold">✓</span><span><strong>Enfoque regional:</strong> entendemos el mercado de La Huerta y zona costa sur de Jalisco.</span></li>
+          <li class="flex gap-3"><span class="text-purple-500 font-bold">✓</span><span><strong>Entregables reales:</strong> archivos editables, no solo imágenes exportadas.</span></li>
+          <li class="flex gap-3"><span class="text-purple-500 font-bold">✓</span><span><strong>Comunicación ágil:</strong> seguimiento por WhatsApp y reuniones puntuales.</span></li>
+        </ul>
+      </div>
+      <div class="cdcom-panel rounded-2xl bg-gradient-to-br from-purple-50 to-orange-50 dark:from-purple-500/10 dark:to-orange-500/5 border border-purple-100 dark:border-purple-500/20 p-8">
+        <h3 class="font-bold text-lg mb-4">Ecosistema CDCom</h3>
+        <p class="text-sm text-gray-500 dark:text-zinc-400 mb-5">Un solo grupo para tu operación y tu imagen:</p>
+        <div class="space-y-2 text-sm">
+          <a href="/internet" class="flex justify-between py-2 border-b border-purple-100 dark:border-white/10 hover:text-purple-600 transition">CDCom Internet <span>→</span></a>
+          <a href="/systems" class="flex justify-between py-2 border-b border-purple-100 dark:border-white/10 hover:text-purple-600 transition">CDCom Systems <span>→</span></a>
+          <a href="/energy" class="flex justify-between py-2 border-b border-purple-100 dark:border-white/10 hover:text-purple-600 transition">CDCom Energy <span>→</span></a>
+          <a href="/" class="flex justify-between py-2 hover:text-purple-600 transition">Grupo CDCom <span>→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO -->
+  <section id="portafolio" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Portafolio</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight mb-4">Tipos de entregables</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">Referencias visuales del estilo y calidad que manejamos en cada disciplina.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4 motion-stagger">
+        <div class="group">
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 group-hover:scale-[1.02] transition-transform">
+      <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=500&q=80" alt="Identidad visual" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <p class="mt-2 text-sm font-semibold">Identidad visual</p>
+    <p class="text-xs text-gray-500">Logo, papelería y redes</p>
+  </div>
+        <div class="group">
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 group-hover:scale-[1.02] transition-transform">
+      <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80" alt="Social media" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <p class="mt-2 text-sm font-semibold">Social media</p>
+    <p class="text-xs text-gray-500">Feed y stories</p>
+  </div>
+        <div class="group">
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 group-hover:scale-[1.02] transition-transform">
+      <img src="https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=500&q=80" alt="Video" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <p class="mt-2 text-sm font-semibold">Video</p>
+    <p class="text-xs text-gray-500">Corporativo y reels</p>
+  </div>
+        <div class="group">
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 group-hover:scale-[1.02] transition-transform">
+      <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=500&q=80" alt="Impresos" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <p class="mt-2 text-sm font-semibold">Impresos</p>
+    <p class="text-xs text-gray-500">Lonas, tarjetas, menús</p>
+  </div>
+        <div class="group">
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 group-hover:scale-[1.02] transition-transform">
+      <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?w=500&q=80" alt="Web" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <p class="mt-2 text-sm font-semibold">Web</p>
+    <p class="text-xs text-gray-500">Landings y sitios</p>
+  </div>
+        <div class="group">
+    <div class="aspect-[4/3] rounded-2xl overflow-hidden border border-gray-100 dark:border-white/5 group-hover:scale-[1.02] transition-transform">
+      <img src="https://images.unsplash.com/photo-1600132806370-bf17e65e942f?w=500&q=80" alt="Foto" class="w-full h-full object-cover" loading="lazy" />
+    </div>
+    <p class="mt-2 text-sm font-semibold">Foto</p>
+    <p class="text-xs text-gray-500">Producto y locación</p>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-center mb-12">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-purple-600 dark:text-purple-400 mb-3">Preguntas frecuentes</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight">Antes de contratar</h2>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.02] p-5">
+    <h3 class="font-semibold text-[15px] mb-2">¿Cuánto tarda un proyecto de branding?</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Un logo con papelería básica suele tomar 2–3 semanas. Un manual completo y aplicaciones puede llevar 4–6 semanas según revisiones.</p>
+  </div>
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.02] p-5">
+    <h3 class="font-semibold text-[15px] mb-2">¿Los precios incluyen impresión?</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Cotizamos diseño y archivos listos para imprenta. La producción física se cotiza aparte o con proveedores locales.</p>
+  </div>
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.02] p-5">
+    <h3 class="font-semibold text-[15px] mb-2">¿Puedo contratar solo redes sociales?</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Sí. Ofrecemos paquetes mensuales de diseño y calendario sin branding previo, aunque recomendamos tener identidad definida.</p>
+  </div>
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-gray-50/80 dark:bg-white/[0.02] p-5">
+    <h3 class="font-semibold text-[15px] mb-2">¿Trabajan fuera de La Huerta?</h3>
+    <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Sí, atendemos todo México de forma remota; sesiones presenciales de foto/video se acuerdan en zona sur de Jalisco.</p>
+  </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contacto" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <div class="cdcom-cta-box rounded-3xl bg-gradient-to-br from-purple-50 to-orange-50 dark:from-purple-500/5 dark:to-orange-500/5 border border-purple-200 dark:border-purple-500/10 p-12 md:p-16">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Cuéntanos tu proyecto</h2>
+        <p class="text-gray-500 dark:text-zinc-400 mb-8 max-w-md mx-auto">Agenda una llamada o envíanos un mensaje. Te respondemos con propuesta y tiempos en menos de 48 horas hábiles.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/523151259871?text=Hola%2C%20quiero%20cotizar%20un%20proyecto%20creativo" target="_blank" class="inline-flex justify-center px-7 py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-orange-500 text-white font-bold text-sm hover:opacity-90 transition shadow-lg shadow-purple-600/20">WhatsApp</a>
+          <a href="mailto:cdcomcomunicaciones@gmail.com?subject=Cotización%20CDCom%20Creative" class="inline-flex justify-center px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-semibold hover:border-purple-500 transition">cdcomcomunicaciones@gmail.com</a>
+        </div>
+        <p class="text-xs text-gray-400 mt-6">La Huerta, Jalisco · Parte del Grupo CDCom</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 dark:border-white/5 py-10">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <span class="font-bold text-sm">CDCom <span class="text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-orange-500">Creative</span></span>
+      <div class="flex gap-6 text-xs text-gray-400">
+        <a href="/" class="hover:text-purple-600 transition">Grupo CDCom</a>
+        <a href="/internet" class="hover:text-purple-600 transition">Internet</a>
+        <a href="/systems" class="hover:text-purple-600 transition">Systems</a>
+        <a href="/energy" class="hover:text-purple-600 transition">Energy</a>
+      </div>
+      <div class="text-xs text-gray-400">© <span id="yr"></span> La Huerta, Jalisco</div>
+    </div>
+  </footer>
+
+  <script src="/landing-assets/cdcom-motion.js"></script>
+
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

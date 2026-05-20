@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDCom Internet | Internet que sí responde cuando más lo necesitas</title>
+  <meta name="description" content="CDCom Internet: Conectividad WISP de alta capacidad en La Huerta, Jalisco. Internet estable, monitoreo 24/7 y soporte real." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="/landing-assets/cdcom-motion.css" />
+<link rel="stylesheet" href="/landing-assets/cdcom-pro.css" />
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="cdcom-site bg-white dark:bg-[#050810] text-gray-900 dark:text-white antialiased transition-colors duration-300">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-[#050810]/80 backdrop-blur-2xl border-b border-gray-200 dark:border-white/5 transition-colors">
+    <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" class="w-4 h-4"><path d="M12 20h.01M5 12.86a10 10 0 0114 0M8.5 16.9a5 5 0 017 0" stroke-linecap="round"/></svg>
+        </div>
+        <span class="font-bold text-lg">CDCom <span class="text-blue-600 dark:text-blue-400">Internet</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-sm text-gray-500 dark:text-zinc-400">
+        <a href="#cobertura" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cobertura</a>
+        <a href="#planes" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Planes</a>
+        <a href="#camaras" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Cámaras</a>
+        <a href="#nosotros" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Nosotros</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 transition" title="Cambiar tema">
+          <svg class="w-4 h-4 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="w-4 h-4 block dark:hidden text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="/portal/login" class="hidden sm:block text-sm text-gray-500 hover:text-blue-600 transition px-3 py-2 rounded-lg border border-gray-200 dark:border-white/10">Mi cuenta</a>
+        <a href="https://wa.me/523151259871" target="_blank" class="text-sm font-semibold px-5 py-2.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Contratar</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative pt-28 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+    <div class="motion-orb w-[420px] h-[420px] top-[-80px] left-[8%] bg-blue-400/30 dark:bg-blue-500/20"></div>
+    <div class="motion-orb motion-orb--2 w-[340px] h-[340px] top-[18%] right-[4%] bg-cyan-400/20 dark:bg-cyan-500/10"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-blue-100/50 dark:from-blue-500/5 to-transparent rounded-full blur-3xl pointer-events-none" data-parallax="0.08"></div>
+    <div class="max-w-6xl mx-auto px-5 relative z-10 grid md:grid-cols-2 gap-10 items-center">
+      <div class="motion-hero">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-green-200 dark:border-green-500/20 bg-green-50 dark:bg-green-500/5 text-xs text-green-700 dark:text-green-300 mb-6">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Red operativa · 99.9% uptime · La Huerta, Jalisco
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.05] mb-6">
+          Internet que <span class="text-blue-600 dark:text-blue-400">sí responde</span> cuando más lo necesitas.
+        </h1>
+
+        <p class="text-lg text-gray-500 dark:text-zinc-400 max-w-xl mb-8 leading-relaxed">
+          Infraestructura WISP de alta capacidad con monitoreo en tiempo real, soporte técnico local y la estabilidad que tu hogar o negocio necesita.
+        </p>
+
+        <div class="flex flex-wrap gap-4 mb-10">
+          <a href="#planes" class="px-6 py-3.5 rounded-xl bg-blue-600 text-white font-semibold text-sm hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Ver planes</a>
+          <a href="#cobertura" class="px-6 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition">Ver cobertura →</a>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3">
+          <div class="rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-3 text-center">
+            <div class="text-lg font-black text-blue-600 dark:text-blue-400">99.9%</div>
+            <div class="text-[10px] text-gray-500">Uptime</div>
+          </div>
+          <div class="rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-3 text-center">
+            <div class="text-lg font-black text-cyan-600 dark:text-cyan-400">24/7</div>
+            <div class="text-[10px] text-gray-500">Soporte</div>
+          </div>
+          <div class="rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-3 text-center">
+            <div class="text-lg font-black text-emerald-600 dark:text-emerald-400">500+</div>
+            <div class="text-[10px] text-gray-500">Clientes</div>
+          </div>
+          <div class="rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-3 text-center">
+            <div class="text-lg font-black text-purple-600 dark:text-purple-400">48h</div>
+            <div class="text-[10px] text-gray-500">Instalación</div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden md:block relative cdcom-hero-visual">
+        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&q=80" alt="Red WISP" class="motion-float rounded-2xl shadow-2xl w-full h-[400px] object-cover" />
+        <div class="absolute -bottom-4 -left-4 rounded-xl overflow-hidden shadow-lg border-4 border-white dark:border-[#050810] w-28 h-28">
+          <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200&q=80" alt="Data center" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COBERTURA -->
+  <section id="cobertura" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Infraestructura</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Cobertura real, infraestructura real</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">Red distribuida con nodos estratégicos en la región costera de Jalisco.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-500/5 dark:to-cyan-500/5 border border-blue-100 dark:border-blue-500/10 p-7">
+          <h3 class="font-bold text-lg mb-4">Zona de cobertura activa</h3>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse"></span><span class="text-sm">La Huerta centro y colonias</span></div>
+            <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse"></span><span class="text-sm">Emiliano Zapata</span></div>
+            <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse"></span><span class="text-sm">La Concepción</span></div>
+            <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-cyan-500 animate-pulse"></span><span class="text-sm">Comunidades aledañas</span></div>
+            <div class="flex items-center gap-3"><span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span><span class="text-sm text-gray-500 dark:text-zinc-400">Zonas en expansión 2026</span></div>
+          </div>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20quiero%20verificar%20cobertura%20en%20mi%20zona" target="_blank" class="text-sm text-blue-600 dark:text-blue-400 font-semibold hover:underline">Verificar mi dirección →</a>
+        </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+            <div class="text-2xl mb-2">📡</div>
+            <div class="text-2xl font-black text-blue-600 dark:text-blue-400">5+</div>
+            <div class="text-sm text-gray-500">Torres activas</div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+            <div class="text-2xl mb-2">🔗</div>
+            <div class="text-2xl font-black text-cyan-600 dark:text-cyan-400">Fibra</div>
+            <div class="text-sm text-gray-500">Troncal óptica</div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+            <div class="text-2xl mb-2">⚡</div>
+            <div class="text-2xl font-black text-amber-600 dark:text-amber-400">1 Gbps</div>
+            <div class="text-sm text-gray-500">Backbone</div>
+          </div>
+          <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+            <div class="text-2xl mb-2">🛡️</div>
+            <div class="text-2xl font-black text-emerald-600 dark:text-emerald-400">UPS</div>
+            <div class="text-sm text-gray-500">Respaldo</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANES -->
+  <section id="planes" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Planes</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Velocidad real, sin letras chiquitas</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">Todos incluyen instalación, monitoreo 24/7, portal del cliente y soporte técnico.</p>
+      </div>
+      <div id="planes-container" class="grid md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 text-center">
+          <div class="text-gray-400 text-sm">Cargando planes...</div>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-400 mt-8">Incluye: Instalación + Router + Monitoreo 24/7 + Portal + Soporte WhatsApp</p>
+    </div>
+  </section>
+
+  <!-- CÁMARAS -->
+  <section id="camaras" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Seguridad</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Cámaras de seguridad profesionales</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg mx-auto">Videovigilancia HD con monitoreo desde tu celular y grabación 24/7.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-5 max-w-4xl mx-auto">
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7 hover:border-cyan-300 dark:hover:border-cyan-500/20 transition-all">
+          <div class="text-3xl mb-3">📹</div>
+          <h3 class="text-xl font-bold mb-2">Kit 4 Cámaras</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 mb-4">Ideal para hogares y negocios pequeños</p>
+          <ul class="space-y-2 mb-6 text-sm text-gray-600 dark:text-zinc-300">
+            <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span>4 cámaras HD 1080p</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span>DVR con disco duro</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span>Visión nocturna</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span>App para celular</li>
+            <li class="flex items-center gap-2"><span class="text-cyan-500">✓</span>Instalación incluida</li>
+          </ul>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20el%20kit%20de%204%20cámaras" target="_blank" class="inline-flex px-5 py-2.5 rounded-lg bg-cyan-600 text-white text-sm font-semibold hover:bg-cyan-700 transition">Cotizar</a>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-blue-200 dark:border-blue-500/20 p-7 relative hover:border-blue-400 dark:hover:border-blue-500/30 transition-all">
+          <span class="absolute top-4 right-4 px-2 py-1 rounded-md bg-blue-100 dark:bg-blue-500/10 text-[10px] font-bold text-blue-600 dark:text-blue-400 uppercase">Popular</span>
+          <div class="text-3xl mb-3">🎥</div>
+          <h3 class="text-xl font-bold mb-2">Kit 8 Cámaras</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 mb-4">Negocios, bodegas y propiedades grandes</p>
+          <ul class="space-y-2 mb-6 text-sm text-gray-600 dark:text-zinc-300">
+            <li class="flex items-center gap-2"><span class="text-blue-500">✓</span>8 cámaras HD / 2K</li>
+            <li class="flex items-center gap-2"><span class="text-blue-500">✓</span>DVR con disco 2TB</li>
+            <li class="flex items-center gap-2"><span class="text-blue-500">✓</span>Visión nocturna avanzada</li>
+            <li class="flex items-center gap-2"><span class="text-blue-500">✓</span>Detección de movimiento</li>
+            <li class="flex items-center gap-2"><span class="text-blue-500">✓</span>App + acceso remoto</li>
+            <li class="flex items-center gap-2"><span class="text-blue-500">✓</span>Instalación profesional</li>
+          </ul>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20el%20kit%20de%208%20cámaras" target="_blank" class="inline-flex px-5 py-2.5 rounded-lg bg-blue-600 text-white text-sm font-semibold hover:bg-blue-700 transition">Cotizar</a>
+        </div>
+      </div>
+      <p class="text-center text-xs text-gray-400 mt-6">Clientes CDCom: <span class="text-cyan-600 dark:text-cyan-400 font-medium">10% de descuento</span> en cualquier kit</p>
+    </div>
+  </section>
+
+  <!-- PORTAL -->
+  <section class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Portal del cliente</p>
+        <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-5">Tu cuenta, siempre en tu bolsillo</h2>
+        <p class="text-gray-500 dark:text-zinc-400 mb-8 leading-relaxed">Consulta saldo, descarga recibos, sube comprobantes y abre tickets desde cualquier dispositivo.</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-sm">💳</div>
+            <div><h4 class="font-semibold text-sm">Pagos y recibos</h4><p class="text-xs text-gray-500 dark:text-zinc-500">Consulta saldo y descarga recibos PDF</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-sm">🎫</div>
+            <div><h4 class="font-semibold text-sm">Tickets de soporte</h4><p class="text-xs text-gray-500 dark:text-zinc-500">Sin llamar por teléfono</p></div>
+          </div>
+          <div class="flex items-start gap-3">
+            <div class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-sm">📊</div>
+            <div><h4 class="font-semibold text-sm">Historial completo</h4><p class="text-xs text-gray-500 dark:text-zinc-500">Pagos, contrato e historial</p></div>
+          </div>
+        </div>
+        <a href="/portal/login" class="inline-flex mt-8 px-5 py-3 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-semibold hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition">
+          Ingresar al portal →
+        </a>
+      </div>
+      <!-- Portal mockup -->
+      <div class="rounded-2xl bg-gray-900 dark:bg-[#0a0b10] border border-gray-800 dark:border-white/5 p-5 shadow-2xl">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-3 h-3 rounded-full bg-red-400/60"></div><div class="w-3 h-3 rounded-full bg-yellow-400/60"></div><div class="w-3 h-3 rounded-full bg-green-400/60"></div>
+          <span class="text-[10px] text-gray-500 ml-2 font-mono">portal.sistemacdcom.com</span>
+        </div>
+        <div class="space-y-3 text-xs">
+          <div class="h-8 rounded-lg bg-white/5 border border-white/5 flex items-center px-3"><span class="text-gray-400">Saldo: </span><span class="text-green-400 font-mono ml-1">$0.00 - Al corriente</span></div>
+          <div class="h-8 rounded-lg bg-white/5 border border-white/5 flex items-center px-3"><span class="text-gray-400">Plan: </span><span class="text-blue-400 font-mono ml-1">50 Mbps Hogar Plus</span></div>
+          <div class="h-8 rounded-lg bg-white/5 border border-white/5 flex items-center px-3"><span class="text-gray-400">Próximo pago: </span><span class="text-gray-300 font-mono ml-1">15 Jun 2026</span></div>
+          <div class="grid grid-cols-2 gap-2 mt-2">
+            <div class="h-14 rounded-lg bg-blue-500/5 border border-blue-500/10 flex flex-col items-center justify-center"><span class="text-lg">📄</span><span class="text-[10px] text-gray-400">Recibos</span></div>
+            <div class="h-14 rounded-lg bg-blue-500/5 border border-blue-500/10 flex flex-col items-center justify-center"><span class="text-lg">🎫</span><span class="text-[10px] text-gray-400">Soporte</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Testimonios</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight">Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-yellow-400 mb-3">★★★★★</div>
+          <p class="text-sm text-gray-600 dark:text-zinc-300 mb-4 leading-relaxed">"Con CDCom el servicio es estable todo el día, incluso en horas pico. Mis hijos toman clases sin problemas."</p>
+          <div class="flex items-center gap-3 pt-3 border-t border-gray-100 dark:border-white/5">
+            <div class="w-8 h-8 rounded-full bg-blue-500 flex items-center justify-center text-xs font-bold text-white">MG</div>
+            <div><div class="text-sm font-semibold">María G.</div><div class="text-[11px] text-gray-400">Cliente residencial</div></div>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-yellow-400 mb-3">★★★★★</div>
+          <p class="text-sm text-gray-600 dark:text-zinc-300 mb-4 leading-relaxed">"Dependemos del Internet para cobrar. Desde que nos cambiamos a CDCom no hemos tenido un solo día sin servicio."</p>
+          <div class="flex items-center gap-3 pt-3 border-t border-gray-100 dark:border-white/5">
+            <div class="w-8 h-8 rounded-full bg-cyan-500 flex items-center justify-center text-xs font-bold text-white">RC</div>
+            <div><div class="text-sm font-semibold">Comercio local</div><div class="text-[11px] text-gray-400">Terminal bancaria</div></div>
+          </div>
+        </div>
+        <div class="rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-yellow-400 mb-3">★★★★★</div>
+          <p class="text-sm text-gray-600 dark:text-zinc-300 mb-4 leading-relaxed">"El portal es genial: veo mis recibos, subo mi comprobante y listo. Por WhatsApp me resuelven rápido."</p>
+          <div class="flex items-center gap-3 pt-3 border-t border-gray-100 dark:border-white/5">
+            <div class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-xs font-bold text-white">JL</div>
+            <div><div class="text-sm font-semibold">José L.</div><div class="text-[11px] text-gray-400">Cliente portal</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=600&q=80" alt="Torre de telecomunicaciones" class="rounded-2xl shadow-xl w-full h-[320px] object-cover" />
+        </div>
+        <div>
+          <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Sobre nosotros</p>
+          <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4">Infraestructura real, equipo local</h2>
+          <p class="text-gray-500 dark:text-zinc-400 mb-6">Operamos nuestra propia infraestructura: torres, fibra y equipo técnico propio en la región.</p>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+              <div class="text-xl mb-1">🏗️</div><h4 class="font-bold text-xs">Infra. propia</h4>
+            </div>
+            <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+              <div class="text-xl mb-1">👷</div><h4 class="font-bold text-xs">Equipo local</h4>
+            </div>
+            <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+              <div class="text-xl mb-1">📈</div><h4 class="font-bold text-xs">Crecimiento</h4>
+            </div>
+            <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+              <div class="text-xl mb-1">🤝</div><h4 class="font-bold text-xs">Soporte humano</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <div class="rounded-3xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-500/5 dark:to-cyan-500/5 border border-blue-200 dark:border-blue-500/10 p-10 md:p-14">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">¿Listo para conectarte?</h2>
+        <p class="text-gray-500 dark:text-zinc-400 mb-8 max-w-md mx-auto">Verificamos cobertura, recomendamos el mejor plan e instalamos en menos de 48 horas.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/523151259871?text=Hola%2C%20quiero%20contratar%20Internet%20CDCom" target="_blank" class="px-7 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Contratar por WhatsApp</a>
+          <a href="tel:3151259871" class="px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-medium transition hover:border-blue-500">📞 315 125 9871</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 dark:border-white/5 py-10">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 mb-3">
+            <div class="w-6 h-6 rounded-md bg-gradient-to-br from-blue-500 to-cyan-400 flex items-center justify-center">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" class="w-3 h-3"><path d="M12 20h.01M8.5 16.9a5 5 0 017 0" stroke-linecap="round"/></svg>
+            </div>
+            <span class="font-bold text-sm">CDCom Internet</span>
+          </div>
+          <p class="text-xs text-gray-400 leading-relaxed">Conectividad WISP en La Huerta, Jalisco.</p>
+          <p class="text-xs text-gray-400 mt-2">Parte de <a href="/" class="text-blue-600 dark:text-blue-400 hover:underline">Grupo CDCom</a></p>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-3">Servicio</h4>
+          <div class="space-y-2 text-sm text-gray-500"><a href="#planes" class="block hover:text-blue-600 transition">Planes</a><a href="#cobertura" class="block hover:text-blue-600 transition">Cobertura</a><a href="#camaras" class="block hover:text-blue-600 transition">Cámaras</a><a href="/portal/login" class="block hover:text-blue-600 transition">Portal</a></div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-3">Contacto</h4>
+          <div class="space-y-2 text-sm text-gray-500"><p>📞 315 125 9871</p><p>💬 <a href="https://wa.me/523151259871" class="text-green-500 hover:underline">WhatsApp</a></p><p>✉️ cdcomcomunicaciones@gmail.com</p></div>
+        </div>
+        <div>
+          <h4 class="font-semibold text-sm mb-3">Horario</h4>
+          <div class="space-y-1 text-sm text-gray-500"><p>L-V: 9:00 – 19:00</p><p>Sáb: 9:00 – 14:00</p><p class="text-xs mt-2">Emergencias 24/7 vía WhatsApp</p></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-100 dark:border-white/5 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
+        <p class="text-xs text-gray-400">© <span id="yr"></span> CDCom Internet · La Huerta, Jalisco</p>
+        <div class="flex gap-4 text-xs text-gray-400"><a href="/privacidad" class="hover:text-blue-600 transition">Privacidad</a><a href="/" class="hover:text-blue-600 transition">Grupo CDCom</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/523151259871" target="_blank" class="motion-wa-float fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 hover:scale-110 transition" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>  <script src="/landing-assets/cdcom-motion.js"></script>
+
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+// Load plans
+    (function() {
+      const container = document.getElementById('planes-container');
+      fetch('/api/public-packages')
+        .then(r => { if (!r.ok) throw new Error(); return r.json(); })
+        .then(data => {
+          if (!Array.isArray(data) || !data.length) { container.innerHTML = '<p class="text-gray-400 text-sm text-center col-span-3">Próximamente publicaremos paquetes.</p>'; return; }
+          const fmt = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' });
+          container.innerHTML = data.map((pkg, i) => {
+            const pop = i === 1;
+            return `<div class="plan-card rounded-2xl ${pop ? 'bg-blue-50 dark:bg-blue-500/5 border-2 border-blue-300 dark:border-blue-500/30' : 'bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5'} p-7 relative">
+              ${pop ? '<div class="absolute -top-3 left-1/2 -translate-x-1/2 px-3 py-1 rounded-full bg-blue-600 text-white text-[10px] font-bold uppercase">Popular</div>' : ''}
+              <h3 class="font-bold text-lg mb-1">${pkg.name || 'Paquete'}</h3>
+              ${pkg.speed ? `<p class="text-sm text-blue-600 dark:text-blue-400 font-mono font-medium mb-4">${pkg.speed}</p>` : '<p class="mb-4">&nbsp;</p>'}
+              <div class="mb-5"><span class="text-3xl font-black">${fmt.format(parseFloat(pkg.price||0))}</span><span class="text-sm text-gray-500"> /mes</span></div>
+              <ul class="space-y-2 mb-6">
+                ${pkg.description ? `<li class="flex items-center gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-blue-500">✓</span>${pkg.description}</li>` : ''}
+                <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-blue-500">✓</span>Instalación incluida</li>
+                <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-blue-500">✓</span>Monitoreo 24/7</li>
+                <li class="flex items-center gap-2 text-sm text-gray-600 dark:text-zinc-300"><span class="text-blue-500">✓</span>Portal del cliente</li>
+              </ul>
+              <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20el%20plan%20${encodeURIComponent(pkg.name||'')}" target="_blank" class="block w-full text-center px-5 py-3 rounded-xl ${pop ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'border border-gray-300 dark:border-white/10 hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400'} font-semibold text-sm transition-all hover:-translate-y-0.5">Contratar</a>
+            </div>`;
+          }).join('');
+        })
+        .catch(() => { container.innerHTML = '<p class="text-gray-400 text-sm text-center col-span-3">No se pudieron cargar los planes.</p>'; });
+    })();
+  </script>
+</body>
+</html>

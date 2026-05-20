@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "TU_PROJECT_NUMBER",
+    "project_id": "tu-proyecto-firebase",
+    "storage_bucket": "tu-proyecto.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123456789:android:abc123",
+        "android_client_info": {
+          "package_name": "com.sistemawisp.clientportal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "TU_API_KEY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

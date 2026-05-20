@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CDCom Systems | Software y automatización para empresas modernas</title>
+  <meta name="description" content="CDCom Systems: Plataformas, sistemas administrativos y herramientas de automatización para empresas." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'], mono: ['JetBrains Mono', 'monospace'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="/landing-assets/cdcom-motion.css" />
+<link rel="stylesheet" href="/landing-assets/cdcom-pro.css" />
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="cdcom-site bg-white dark:bg-[#09090b] text-gray-900 dark:text-white antialiased transition-colors duration-300">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-[#09090b]/80 backdrop-blur-2xl border-b border-gray-200 dark:border-white/5 transition-colors">
+    <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-md bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" class="w-3.5 h-3.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <span class="font-semibold text-[15px] tracking-tight">CDCom Systems</span>
+      </a>
+      <div class="hidden md:flex items-center gap-7 text-[13px] text-gray-500 dark:text-zinc-400">
+        <a href="#soluciones" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Soluciones</a>
+        <a href="#plataforma" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Plataforma</a>
+        <a href="#infraestructura" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Infraestructura</a>
+        <a href="#casos" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Casos de uso</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 transition" title="Cambiar tema">
+          <svg class="w-4 h-4 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="w-4 h-4 block dark:hidden text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="https://wa.me/523151259871?text=Hola%2C%20me%20interesa%20un%20proyecto%20de%20software" target="_blank" class="text-[13px] font-semibold px-5 py-2.5 rounded-lg bg-cyan-600 text-white hover:bg-cyan-700 transition shadow-lg shadow-cyan-600/20">
+          Contactar
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative pt-28 pb-20 md:pt-36 md:pb-28 overflow-hidden">
+    <div class="motion-orb w-[420px] h-[420px] top-[-80px] left-[8%] bg-cyan-400/30 dark:bg-cyan-500/15"></div>
+    <div class="motion-orb motion-orb--2 w-[340px] h-[340px] top-[18%] right-[4%] bg-blue-400/20 dark:bg-blue-500/10"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-gradient-to-b from-cyan-100/50 dark:from-cyan-500/5 to-transparent rounded-full blur-3xl pointer-events-none" data-parallax="0.08"></div>
+    <div class="max-w-6xl mx-auto px-5 relative z-10 grid md:grid-cols-2 gap-10 items-center">
+      <div class="motion-hero">
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-cyan-200 dark:border-cyan-500/20 bg-cyan-50 dark:bg-cyan-500/5 text-xs text-cyan-700 dark:text-cyan-300 mb-8">
+          <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 animate-pulse"></span>
+          Sistemas en producción · La Huerta, Jalisco
+        </div>
+
+        <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.1] mb-5">
+          Software y automatización<br/><span class="text-cyan-600 dark:text-cyan-400">para empresas modernas.</span>
+        </h1>
+
+        <p class="text-lg text-gray-500 dark:text-zinc-400 max-w-xl mb-8 leading-relaxed">
+          Creamos plataformas, sistemas administrativos y herramientas que eliminan procesos manuales y escalan con tu operación.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="#soluciones" class="px-6 py-3 rounded-lg bg-cyan-600 text-white font-semibold text-sm hover:bg-cyan-700 transition shadow-lg shadow-cyan-600/20">
+            Ver soluciones
+          </a>
+          <a href="https://wa.me/523151259871?text=Hola%2C%20quiero%20solicitar%20una%20demo" target="_blank" class="px-6 py-3 rounded-lg border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-cyan-500 hover:text-cyan-600 dark:hover:text-cyan-400 transition">
+            Solicitar demo →
+          </a>
+        </div>
+
+        <div class="grid grid-cols-4 gap-3">
+        <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center">
+          <div class="text-xl font-bold text-cyan-600 dark:text-cyan-400">99.9%</div>
+          <div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Uptime</div>
+        </div>
+        <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center">
+          <div class="text-xl font-bold text-blue-600 dark:text-blue-400">12+</div>
+          <div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Sistemas activos</div>
+        </div>
+        <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center">
+          <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">50k+</div>
+          <div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Automatizaciones/mes</div>
+        </div>
+        <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center">
+          <div class="text-xl font-bold text-purple-600 dark:text-purple-400">15+</div>
+          <div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Clientes</div>
+        </div>
+      </div>
+      </div>
+      <div class="hidden md:block cdcom-hero-visual">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Dashboard de software" class="motion-float rounded-2xl shadow-2xl w-full h-[420px] object-cover" />
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES -->
+  <section id="soluciones" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Soluciones</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">Lo que construimos</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg text-[15px]">Cada sistema resuelve un problema específico de operación, administración o atención al cliente.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 motion-stagger">
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 hover:border-cyan-300 dark:hover:border-cyan-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-9 h-9 rounded-lg bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-cyan-600 dark:text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <h3 class="font-semibold text-[15px] mb-2">Sistemas administrativos</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Gestión de clientes, pagos, cobros, inventarios y operación diaria en un solo panel.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 hover:border-blue-300 dark:hover:border-blue-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-9 h-9 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-blue-600 dark:text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3 class="font-semibold text-[15px] mb-2">Portales de clientes</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Tus clientes consultan saldo, pagan, descargan recibos y abren tickets sin intervención manual.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 hover:border-purple-300 dark:hover:border-purple-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-9 h-9 rounded-lg bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-purple-600 dark:text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3 class="font-semibold text-[15px] mb-2">Automatización</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Recordatorios, cortes automáticos, notificaciones push y flujos sin intervención humana.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 hover:border-emerald-300 dark:hover:border-emerald-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-9 h-9 rounded-lg bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-emerald-600 dark:text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M12 20V10M18 20V4M6 20v-4"/></svg>
+          </div>
+          <h3 class="font-semibold text-[15px] mb-2">Dashboards & Analytics</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Métricas en tiempo real, gráficas de ingresos, cartera vencida y KPIs operativos.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 hover:border-orange-300 dark:hover:border-orange-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-9 h-9 rounded-lg bg-orange-100 dark:bg-orange-500/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+          </div>
+          <h3 class="font-semibold text-[15px] mb-2">APIs & Integraciones</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">WhatsApp, Stripe, Firebase, MikroTik, pasarelas de pago y servicios externos.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 hover:border-rose-300 dark:hover:border-rose-500/20 hover:-translate-y-1 transition-all">
+          <div class="w-9 h-9 rounded-lg bg-rose-100 dark:bg-rose-500/10 flex items-center justify-center mb-4">
+            <svg class="w-4 h-4 text-rose-600 dark:text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-semibold text-[15px] mb-2">IA para negocios</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Asistentes inteligentes, clasificación de tickets y generación de reportes con IA.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATAFORMA -->
+  <section id="plataforma" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Plataforma</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">Construido para operar</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg text-[15px]">Sistemas que tu equipo usa todos los días. Interfaces limpias, rápidas y funcionales.</p>
+      </div>
+
+      <!-- Dashboard mockup -->
+      <div class="rounded-xl bg-gray-900 dark:bg-[#0a0a0c] border border-gray-800 dark:border-white/8 p-5 md:p-6 overflow-hidden">
+        <div class="flex items-center gap-2 mb-4">
+          <div class="w-3 h-3 rounded-full bg-red-400/60"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-400/60"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400/60"></div>
+          <span class="text-[11px] text-gray-500 ml-3 font-mono">sistema-admin — dashboard</span>
+        </div>
+        <div class="grid md:grid-cols-3 gap-4 motion-stagger">
+          <div class="rounded-lg bg-gray-800/50 border border-white/5 p-4">
+            <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-2">Ingresos del mes</div>
+            <div class="text-2xl font-bold text-white">$148,520</div>
+            <div class="text-xs text-green-400 mt-1">↑ 12.3% vs mes anterior</div>
+          </div>
+          <div class="rounded-lg bg-gray-800/50 border border-white/5 p-4">
+            <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-2">Clientes activos</div>
+            <div class="text-2xl font-bold text-white">523</div>
+            <div class="text-xs text-gray-400 mt-1">18 nuevos este mes</div>
+          </div>
+          <div class="rounded-lg bg-gray-800/50 border border-white/5 p-4">
+            <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-2">Automatizaciones hoy</div>
+            <div class="text-2xl font-bold text-white">1,247</div>
+            <div class="text-xs text-gray-400 mt-1">Procesos ejecutados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+          <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-3 font-semibold">Módulos del sistema</div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-white/5">
+              <span class="text-sm">Gestión de clientes</span>
+              <span class="text-[10px] font-mono text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-400/10 px-2 py-0.5 rounded">activo</span>
+            </div>
+            <div class="flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-white/5">
+              <span class="text-sm">Facturación y cobros</span>
+              <span class="text-[10px] font-mono text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-400/10 px-2 py-0.5 rounded">activo</span>
+            </div>
+            <div class="flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-white/5">
+              <span class="text-sm">Portal del cliente</span>
+              <span class="text-[10px] font-mono text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-400/10 px-2 py-0.5 rounded">activo</span>
+            </div>
+            <div class="flex items-center justify-between py-1.5 border-b border-gray-100 dark:border-white/5">
+              <span class="text-sm">Tickets & soporte</span>
+              <span class="text-[10px] font-mono text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-400/10 px-2 py-0.5 rounded">activo</span>
+            </div>
+            <div class="flex items-center justify-between py-1.5">
+              <span class="text-sm">Mapa de red & monitoreo</span>
+              <span class="text-[10px] font-mono text-green-600 dark:text-green-400 bg-green-100 dark:bg-green-400/10 px-2 py-0.5 rounded">activo</span>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5">
+          <div class="text-[10px] text-gray-400 uppercase tracking-wider mb-3 font-semibold">Stack tecnológico</div>
+          <div class="space-y-2 font-mono text-sm">
+            <div class="flex items-center gap-3 text-gray-600 dark:text-zinc-400"><span class="text-cyan-600 dark:text-cyan-400">→</span> React + Vite <span class="text-gray-400 text-xs ml-auto">Frontend</span></div>
+            <div class="flex items-center gap-3 text-gray-600 dark:text-zinc-400"><span class="text-cyan-600 dark:text-cyan-400">→</span> Node.js + Express <span class="text-gray-400 text-xs ml-auto">Backend</span></div>
+            <div class="flex items-center gap-3 text-gray-600 dark:text-zinc-400"><span class="text-cyan-600 dark:text-cyan-400">→</span> PostgreSQL / SQLite <span class="text-gray-400 text-xs ml-auto">Database</span></div>
+            <div class="flex items-center gap-3 text-gray-600 dark:text-zinc-400"><span class="text-cyan-600 dark:text-cyan-400">→</span> AWS EC2 + PM2 <span class="text-gray-400 text-xs ml-auto">Deploy</span></div>
+            <div class="flex items-center gap-3 text-gray-600 dark:text-zinc-400"><span class="text-cyan-600 dark:text-cyan-400">→</span> Socket.IO <span class="text-gray-400 text-xs ml-auto">Real-time</span></div>
+            <div class="flex items-center gap-3 text-gray-600 dark:text-zinc-400"><span class="text-cyan-600 dark:text-cyan-400">→</span> Stripe + Firebase <span class="text-gray-400 text-xs ml-auto">Services</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DE USO -->
+  <section id="casos" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Casos de uso</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">Para quién construimos</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg text-[15px]">Sistemas adaptados a la operación real de cada tipo de negocio.</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-cyan-100 dark:bg-cyan-500/10 flex items-center justify-center flex-shrink-0 text-lg">📡</div>
+          <div>
+            <h3 class="font-semibold text-[15px] mb-1">Proveedores de Internet (ISP/WISP)</h3>
+            <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Gestión de clientes, pagos, cortes automáticos, mapa de red, portal del cliente y tickets.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center flex-shrink-0 text-lg">🏪</div>
+          <div>
+            <h3 class="font-semibold text-[15px] mb-1">Negocios y comercios</h3>
+            <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Punto de venta, inventarios, reportes de ventas, facturación y gestión de sucursales.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center flex-shrink-0 text-lg">🏢</div>
+          <div>
+            <h3 class="font-semibold text-[15px] mb-1">Empresas de servicios</h3>
+            <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">CRM, agendamiento, cotizaciones automáticas y contratos digitales.</p>
+          </div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6 flex gap-4 hover:-translate-y-1 transition-all">
+          <div class="w-10 h-10 rounded-lg bg-emerald-100 dark:bg-emerald-500/10 flex items-center justify-center flex-shrink-0 text-lg">🔧</div>
+          <div>
+            <h3 class="font-semibold text-[15px] mb-1">Servicios técnicos</h3>
+            <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Órdenes de servicio, asignación de técnicos, checklists y firmas digitales.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRAESTRUCTURA -->
+  <section id="infraestructura" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Infraestructura</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">Tu sistema corre en infraestructura real</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-lg text-[15px]">Servidores dedicados con monitoreo y respaldo automático.</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3">
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-xl font-bold text-cyan-600 dark:text-cyan-400 mb-1">AWS</div>
+          <div class="text-[11px] text-gray-500">Cloud Computing</div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-xl font-bold text-emerald-600 dark:text-emerald-400 mb-1">99.9%</div>
+          <div class="text-[11px] text-gray-500">Uptime</div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-1">SSL</div>
+          <div class="text-[11px] text-gray-500">Cifrado</div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5 text-center">
+          <div class="text-xl font-bold text-purple-600 dark:text-purple-400 mb-1">Daily</div>
+          <div class="text-[11px] text-gray-500">Backups</div>
+        </div>
+        <div class="rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-5 text-center col-span-2 md:col-span-1">
+          <div class="text-xl font-bold text-amber-600 dark:text-amber-400 mb-1">24/7</div>
+          <div class="text-[11px] text-gray-500">Monitoreo</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-cyan-600 dark:text-cyan-400 mb-3">Proceso</p>
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight">De la idea a producción</h2>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6">
+        <div>
+          <div class="text-xs font-mono text-cyan-600 dark:text-cyan-400 mb-2 font-bold">01</div>
+          <h4 class="font-semibold text-sm mb-2">Diagnóstico</h4>
+          <p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Entendemos tu operación, identificamos cuellos de botella y definimos el alcance.</p>
+        </div>
+        <div>
+          <div class="text-xs font-mono text-cyan-600 dark:text-cyan-400 mb-2 font-bold">02</div>
+          <h4 class="font-semibold text-sm mb-2">Diseño & Arquitectura</h4>
+          <p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Diseñamos la solución técnica, interfaces y flujos antes de escribir código.</p>
+        </div>
+        <div>
+          <div class="text-xs font-mono text-cyan-600 dark:text-cyan-400 mb-2 font-bold">03</div>
+          <h4 class="font-semibold text-sm mb-2">Desarrollo</h4>
+          <p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Sprints con entregas parciales para que valides avance cada semana.</p>
+        </div>
+        <div>
+          <div class="text-xs font-mono text-cyan-600 dark:text-cyan-400 mb-2 font-bold">04</div>
+          <h4 class="font-semibold text-sm mb-2">Deploy & Soporte</h4>
+          <p class="text-xs text-gray-500 dark:text-zinc-500 leading-relaxed">Lanzamos a producción, capacitamos y damos soporte continuo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <div class="cdcom-cta-box rounded-2xl bg-gradient-to-br from-cyan-50 to-blue-50 dark:from-cyan-500/5 dark:to-blue-500/5 border border p-10 md:p-14">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Tu negocio necesita menos procesos manuales.</h2>
+        <p class="text-gray-500 dark:text-zinc-400 mb-8 max-w-md mx-auto text-[15px]">Cuéntanos qué problema quieres resolver. Proponemos una solución sin compromiso.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/523151259871?text=Hola%2C%20necesito%20un%20sistema%20para%20mi%20negocio" target="_blank" class="px-7 py-3.5 rounded-lg bg-cyan-600 text-white font-semibold text-sm hover:bg-cyan-700 transition shadow-lg shadow-cyan-600/20">
+            Hablar con CDCom Systems
+          </a>
+          <a href="mailto:cdcomcomunicaciones@gmail.com" class="px-7 py-3.5 rounded-lg border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-cyan-500 transition">
+            cdcomcomunicaciones@gmail.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 dark:border-white/5 py-10">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <div class="w-5 h-5 rounded bg-gradient-to-br from-cyan-400 to-blue-500 flex items-center justify-center">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" class="w-2.5 h-2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <span class="text-sm text-gray-500">CDCom Systems · <a href="/" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition">Grupo CDCom</a></span>
+      </div>
+      <div class="flex gap-6 text-xs text-gray-400">
+        <a href="/internet" class="hover:text-cyan-600 transition">Internet</a>
+        <a href="/creative" class="hover:text-cyan-600 transition">Creative</a>
+        <a href="/energy" class="hover:text-cyan-600 transition">Energy</a>
+      </div>
+      <div class="text-xs text-gray-400">© <span id="yr"></span> La Huerta, Jalisco</div>
+    </div>
+  </footer>  <script src="/landing-assets/cdcom-motion.js"></script>
+
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+@echo off
+REM Ejemplo de archivo de configuracion para ngrok
+REM Copia este archivo como "ngrok-config.bat" y configura tu dominio
+
+REM Dominio fijo de ngrok (ejemplo: mi-app.ngrok-free.app o mi-app.ngrok.io)
+REM Dejar vacio para usar dominio aleatorio
+set NGROK_DOMAIN=
+
+REM Token de autenticacion de ngrok (opcional si ya esta configurado)
+REM Obtener desde: https://dashboard.ngrok.com/get-started/your-authtoken
+set NGROK_AUTHTOKEN=
+
+REM Puerto del servidor local (por defecto 5000)
+set NGROK_PORT=5000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

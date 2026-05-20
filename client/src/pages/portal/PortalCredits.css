@@ -1,0 +1,248 @@
+.portal-credits h2 {
+  margin: 0 0 8px 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.portal-credits-desc {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+
+.link-request-credit {
+  display: inline-block;
+  color: #0d9488;
+  font-weight: 500;
+  margin-bottom: 24px;
+  text-decoration: none;
+}
+
+.link-request-credit:hover {
+  text-decoration: underline;
+}
+
+.credits-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 24px;
+}
+
+.credits-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.credit-card {
+  background: white;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.credit-card:hover {
+  border-color: #e2e8f0;
+}
+
+.credit-card.selected {
+  border-color: #0d9488;
+  background: #f0fdfa;
+}
+
+.credit-card.status-liquidado {
+  opacity: 0.85;
+}
+
+.credit-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.credit-type {
+  font-weight: 600;
+  color: #334155;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.status-pendiente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status-badge.status-parcial {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-badge.status-liquidado {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.credit-card-amounts {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.credit-card-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 8px;
+}
+
+.credit-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.credit-detail h3 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.2rem;
+}
+
+.detail-summary {
+  margin-bottom: 24px;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.summary-row.highlight {
+  padding-top: 12px;
+  border-top: 1px solid #e2e8f0;
+  font-size: 1.1rem;
+}
+
+.payment-form {
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #f8fafc;
+  border-radius: 10px;
+}
+
+.payment-form h4 {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+}
+
+.payment-form .form-hint {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: -8px 0 16px 0;
+}
+
+.proof-item .proof-status {
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.proof-item .proof-status.status-pendiente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.proof-item .proof-status.status-aprobado {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.proof-item .proof-status.status-rechazado {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.parcelas-hint {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: -4px 0 12px 0;
+}
+
+.parcela-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  align-items: center;
+}
+
+.parcela-num {
+  font-weight: 600;
+  color: #0d9488;
+}
+
+.payment-form .portal-form-group {
+  margin-bottom: 14px;
+}
+
+.payment-form input,
+.payment-form select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.credit-liquidated {
+  color: #065f46;
+  background: #d1fae5;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.payments-history {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.payments-history h4 {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+}
+
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  background: #f8fafc;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.select-hint {
+  color: #94a3b8;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+@media (max-width: 768px) {
+  .credits-layout {
+    grid-template-columns: 1fr;
+  }
+}

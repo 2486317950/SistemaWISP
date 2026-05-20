@@ -1,0 +1,680 @@
+.portal-layout {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+/* Banner para activar notificaciones (solo en web) */
+.portal-notif-prompt {
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  color: white;
+  padding: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 101;
+}
+
+.portal-notif-prompt-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portal-notif-prompt-text {
+  flex: 1;
+  min-width: 200px;
+  font-size: 0.95rem;
+}
+
+.portal-notif-prompt-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.portal-notif-prompt-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-notif-prompt-btn.primary {
+  background: white;
+  color: #134e4a;
+}
+
+.portal-notif-prompt-btn.primary:hover:not(:disabled) {
+  background: #f0fdfa;
+}
+
+.portal-notif-prompt-btn.secondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+.portal-notif-prompt-btn.secondary:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.portal-notif-prompt-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.portal-notif-prompt-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-notif-prompt-close:hover {
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .portal-notif-prompt-inner {
+    padding-right: 32px;
+  }
+  .portal-notif-prompt-actions {
+    width: 100%;
+  }
+  .portal-notif-prompt-btn {
+    flex: 1;
+  }
+}
+
+.portal-header {
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  color: white;
+  padding: 12px 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.portal-header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.portal-menu-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-menu-btn span {
+  display: block;
+  width: 100%;
+  height: 2px;
+  background: white;
+  border-radius: 1px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.portal-menu-btn span:nth-child(1).open {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.portal-menu-btn span:nth-child(2).open {
+  opacity: 0;
+}
+
+.portal-menu-btn span:nth-child(3).open {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.portal-header h1 {
+  font-size: 1.25rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.portal-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.portal-notif-wrap {
+  position: relative;
+}
+
+.portal-notif-btn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-notif-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.portal-notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 4px;
+}
+
+.portal-notif-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 16px;
+  pointer-events: none;
+}
+
+.portal-notif-modal > * {
+  pointer-events: auto;
+}
+
+.portal-notif-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.portal-notif-dropdown {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 360px;
+  max-height: calc(100vh - 80px);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.portal-notif-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #1e293b;
+  flex-shrink: 0;
+}
+
+.portal-notif-close {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #64748b;
+  padding: 4px 8px;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-notif-close:hover {
+  color: #1e293b;
+}
+
+.portal-notif-actions {
+  padding: 8px 20px 12px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.portal-notif-read-all {
+  font-size: 0.85rem;
+  color: #0d9488;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 4px 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-notif-read-all:hover {
+  text-decoration: underline;
+}
+
+.portal-notif-list {
+  flex: 1;
+  min-height: 120px;
+  max-height: 400px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.portal-notif-empty {
+  padding: 24px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
+
+.portal-notif-item {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.portal-notif-item:hover {
+  background: #f8fafc;
+}
+
+.portal-notif-item.unread {
+  background: #f0fdfa;
+}
+
+.portal-notif-item-title {
+  font-weight: 600;
+  color: #1e293b;
+  font-size: 0.9rem;
+}
+
+.portal-notif-item-msg {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.portal-notif-item-date {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.portal-user span {
+  font-size: 0.9rem;
+  opacity: 0.95;
+}
+
+.portal-logout-btn {
+  padding: 8px 16px;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.portal-logout-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.portal-nav {
+  background: white;
+  padding: 0 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.portal-nav-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  align-items: flex-start;
+}
+
+.portal-nav-section {
+  display: flex;
+  flex-direction: column;
+  padding: 4px 12px 4px 0;
+  margin-right: 8px;
+  border-right: 1px solid #e2e8f0;
+  min-width: 140px;
+}
+
+.portal-nav-section:last-child {
+  margin-right: 0;
+  padding-right: 0;
+  border-right: none;
+}
+
+.portal-nav-section-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #94a3b8;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  text-align: left;
+}
+
+.portal-nav-section-title:hover {
+  background: #f1f5f9;
+  color: #64748b;
+}
+
+.portal-nav-section-chevron {
+  font-size: 0.7rem;
+  opacity: 0.8;
+}
+
+.portal-nav-section-items {
+  display: none;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 8px 0 0 12px;
+  border-left: 2px solid #e2e8f0;
+  margin-left: 8px;
+}
+
+.portal-nav-section.expanded .portal-nav-section-items {
+  display: flex;
+}
+
+.portal-nav-overlay {
+  display: none;
+}
+
+.portal-nav-item {
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #64748b;
+  font-weight: 500;
+  font-size: 0.9rem;
+  border-bottom: 3px solid transparent;
+  transition: color 0.2s, border-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+}
+
+.portal-nav-item:hover {
+  color: #0d9488;
+}
+
+.portal-nav-item.active {
+  color: #0d9488;
+  border-bottom-color: #0d9488;
+}
+
+.portal-nav-icon {
+  margin-right: 6px;
+  font-size: 1rem;
+}
+
+.portal-nav-label {
+  white-space: nowrap;
+}
+
+.portal-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .portal-header h1 {
+    font-size: 1.15rem;
+  }
+  .portal-main {
+    padding: 20px 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .portal-header {
+    padding: 12px 16px;
+  }
+
+  .portal-menu-btn {
+    display: flex;
+  }
+
+  .portal-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .portal-user-name {
+    max-width: 140px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .portal-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 70px 16px 24px;
+    max-width: none;
+    margin: 0;
+    z-index: 99;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .portal-nav.open {
+    transform: translateX(0);
+  }
+
+  .portal-nav-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .portal-nav-section {
+    margin-right: 0;
+    padding-right: 0;
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 12px;
+    min-width: auto;
+  }
+
+  .portal-nav-section:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .portal-nav-section-title {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    padding: 12px 16px;
+    color: #64748b;
+  }
+
+  .portal-nav-section-items {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 12px 0 0 16px;
+    margin-left: 0;
+    border-left: none;
+  }
+
+  .portal-nav-section.expanded .portal-nav-section-items {
+    display: grid;
+  }
+
+  .portal-nav-item {
+    padding: 12px 14px;
+    border-radius: 8px;
+    border-bottom: none;
+    border-left: none;
+    font-size: 0.85rem;
+    background: #f8fafc;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .portal-nav-item .portal-nav-icon {
+    margin-right: 0;
+    font-size: 1.25rem;
+  }
+
+  .portal-nav-item .portal-nav-label {
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .portal-nav-item.active {
+    background: #f0fdfa;
+    border: 2px solid #0d9488;
+  }
+
+  .portal-nav-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 98;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .portal-main {
+    padding: 16px 12px;
+  }
+
+  /* Notificaciones: modal full-screen en móvil/app */
+  .portal-notif-modal {
+    align-items: stretch;
+    justify-content: stretch;
+    padding: 0;
+  }
+
+  .portal-notif-dropdown {
+    max-width: none;
+    max-height: none;
+    width: 100%;
+    flex: 1;
+    border-radius: 0;
+    margin: 0;
+  }
+
+  .portal-notif-list {
+    max-height: none;
+    flex: 1;
+  }
+
+  .portal-notif-item {
+    padding: 16px 20px;
+    font-size: 1rem;
+  }
+
+  .portal-notif-item-title {
+    font-size: 1rem;
+  }
+
+  .portal-notif-item-msg {
+    font-size: 0.95rem;
+  }
+}
+
+/* Botones flotantes de contacto */
+.portal-contact-fab {
+  position: fixed;
+  bottom: calc(24px + env(safe-area-inset-bottom, 0));
+  right: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 90;
+}
+
+.portal-fab-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.portal-fab-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.portal-fab-btn.whatsapp {
+  background: #25d366;
+  color: white;
+}
+
+.portal-fab-btn.call {
+  background: #0d9488;
+  color: white;
+}

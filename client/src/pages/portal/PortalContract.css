@@ -1,0 +1,83 @@
+.portal-contract h2 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.contract-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contract-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.contract-header h3 {
+  margin: 0;
+  color: #334155;
+  font-size: 1.2rem;
+}
+
+.download-contract-btn {
+  padding: 10px 20px;
+  background: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.download-contract-btn:hover {
+  background: #0f766e;
+}
+
+.contract-details {
+  margin-bottom: 20px;
+}
+
+.contract-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.contract-row .label {
+  color: #64748b;
+  min-width: 140px;
+}
+
+.contract-terms {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.contract-terms h4 {
+  margin: 0 0 12px 0;
+  color: #334155;
+  font-size: 1rem;
+}
+
+.terms-content {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 640px) {
+  .portal-contract h2 { font-size: 1.25rem; }
+  .contract-header { flex-direction: column; align-items: flex-start; }
+  .contract-row { flex-direction: column; gap: 4px; }
+}

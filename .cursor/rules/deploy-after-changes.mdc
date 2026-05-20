@@ -1,0 +1,27 @@
+---
+description: Subir cambios al servidor al terminar (build + upload + pm2 si aplica)
+alwaysApply: true
+---
+
+# Despliegue automático al terminar
+
+Cuando hagas cambios en el proyecto SistemaWISP, **siempre sube los cambios al servidor al finalizar**, sin que el usuario tenga que pedirlo.
+
+## Servidor (AWS)
+- **Host:** ubuntu@52.14.80.92
+- **Clave SSH:** D:\Escritorio\Wisp_AWS.pem
+- **Ruta app:** SistemaWISP (client en SistemaWISP/client/dist, server en SistemaWISP/server)
+- Si hay timeout al conectar, revisar en AWS: Security Group (puerto 22), que la instancia esté en ejecución y que la IP sea la correcta.
+
+## Pasos al terminar cambios
+
+1. **Si modificaste el frontend (client/**):**
+   - Ejecutar `npm run build` en `client/`.
+   - Subir: `scp -i "D:\Escritorio\Wisp_AWS.pem" -r client/dist/* ubuntu@52.14.80.92:SistemaWISP/client/dist/`
+
+2. **Si modificaste el backend (server/**):**
+   - Subir los archivos cambiados (p. ej. `server/routes/revenues.js`, `server/database.js`) a la misma ruta en el servidor.
+   - En PowerShell no uses `&&`; usa `;` entre comandos.
+   - Reiniciar backend: `ssh -i "D:\Escritorio\Wisp_AWS.pem" ubuntu@52.14.80.92 "cd ~/SistemaWISP/server && pm2 restart sistemawisp"`
+
+3. **Resumen:** Indica al usuario que los cambios fueron subidos y, si aplica, que recargue la página o que PM2 fue reiniciado.

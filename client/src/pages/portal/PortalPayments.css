@@ -1,0 +1,166 @@
+.portal-payments h2 {
+  margin: 0 0 20px 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.portal-payment-methods {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.portal-payment-methods h3 {
+  margin: 0 0 16px 0;
+  color: #334155;
+  font-size: 1.1rem;
+}
+
+.payment-method-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.payment-method-item:last-of-type {
+  border-bottom: none;
+}
+
+.payment-method-item .method-icon {
+  font-size: 1.2rem;
+}
+
+.payment-method-item .method-detail {
+  font-family: monospace;
+  font-size: 0.95rem;
+  color: #0f766e;
+  margin-left: 28px;
+}
+
+.payment-warning {
+  margin: 16px 0 0 0;
+  padding: 12px;
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.portal-empty {
+  background: white;
+  padding: 40px;
+  text-align: center;
+  color: #64748b;
+  border-radius: 12px;
+}
+
+.portal-table-wrap {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.portal-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.portal-table th,
+.portal-table td {
+  padding: 14px 18px;
+  text-align: left;
+}
+
+.portal-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.portal-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.portal-table tr:hover {
+  background: #f1f5f9;
+}
+
+/* Mobile: convertir tabla en tarjetas */
+@media (max-width: 640px) {
+  .portal-payments h2 {
+    font-size: 1.25rem;
+  }
+
+  .portal-payment-methods {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .payment-method-item .method-detail {
+    margin-left: 0;
+    margin-top: 4px;
+    font-size: 0.85rem;
+    word-break: break-all;
+  }
+
+  .portal-table-wrap {
+    overflow: visible;
+    border-radius: 12px;
+  }
+
+  .portal-table thead {
+    display: none;
+  }
+
+  .portal-table,
+  .portal-table tbody,
+  .portal-table tr,
+  .portal-table td {
+    display: block;
+  }
+
+  .portal-table tbody {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .portal-table tr {
+    padding: 16px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+  .portal-table td {
+    padding: 6px 0;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .portal-table td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #64748b;
+    font-size: 0.85rem;
+  }
+
+  .portal-table td:first-child {
+    font-weight: 600;
+    color: #334155;
+  }
+
+  .portal-empty {
+    padding: 24px 16px;
+  }
+}

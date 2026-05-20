@@ -1,0 +1,1232 @@
+========================================
+DOCUMENTACION COMPLETA DEL PROYECTO
+Sistema de Gestion de Clientes ISP
+========================================
+
+INDICE
+------
+
+1. DESCRIPCION DEL PROYECTO
+2. CARACTERISTICAS PRINCIPALES
+3. FUNCIONALIDADES AUTOMATICAS (NUEVO)
+4. ESTRUCTURA DEL PROYECTO
+5. REQUISITOS DEL SISTEMA
+6. INSTALACION Y CONFIGURACION
+7. ESTRUCTURA DE BASE DE DATOS
+8. ROLES Y PERMISOS
+9. GUIA DE USO
+10. API ENDPOINTS
+11. ARCHIVOS Y CARPETAS
+12. SCRIPTS DISPONIBLES
+13. SOLUCION DE PROBLEMAS
+14. MANTENIMIENTO
+15. SEGURIDAD
+
+
+========================================
+1. DESCRIPCION DEL PROYECTO
+========================================
+
+Este es un sistema web completo para la gestion de clientes de un proveedor
+de servicios de internet (ISP). Permite administrar clientes, paquetes de
+internet, pagos, instalaciones y folios de reparacion.
+
+El sistema esta desarrollado con:
+- Backend: Node.js + Express + SQLite
+- Frontend: React + Vite
+- Autenticacion: JWT (JSON Web Tokens)
+- Base de datos: SQLite
+
+CARACTERISTICAS DESTACADAS:
+- Inicio automatico inteligente (detiene servidores anteriores)
+- Navegador automatico (abre cuando la aplicacion esta lista)
+- Instalacion automatica de dependencias
+- Gestion de servidores automatica
+
+
+========================================
+2. CARACTERISTICAS PRINCIPALES
+========================================
+
+2.1 GESTION DE CLIENTES
+-----------------------
+- Agregar, editar, ver y eliminar clientes
+- Campos disponibles:
+  * Numero de cliente (unico, opcional)
+  * Nombre (requerido)
+  * Domicilio (requerido)
+  * Telefono (opcional)
+  * Email (opcional)
+  * Tipo de red: Red Satelital o Red ONT (opcional)
+  * Paquete de internet contratado
+  * Anotaciones
+- Busqueda de clientes por nombre, domicilio o numero de cliente
+- Vista detallada del cliente con historial completo
+- Exportacion a PDF con toda la informacion del cliente
+
+2.2 GESTION DE PAQUETES
+-----------------------
+- Crear, editar y eliminar paquetes de internet
+- Campos: nombre, velocidad, precio, descripcion
+- Asignacion de paquetes a clientes
+
+2.3 GESTION DE PAGOS
+--------------------
+- Registrar pagos personalizados por cliente
+- Campos: cliente, monto, fecha de pago, numero de recibo, notas
+- Historial completo de pagos por cliente
+- Vista de todos los pagos con informacion del cliente
+- Visualizacion de ingresos por mes
+- Filtrado por fecha y cliente
+- Exportacion a PDF de pagos mensuales
+
+2.4 PROGRAMACION DE INSTALACIONES (ACTUALIZADO)
+------------------------------------------------
+- Agendar fechas de instalacion
+- Tipos de instalacion:
+  * Instalacion Nueva
+  * Reinstalacion
+  * Actualizacion
+  * Migracion
+  * Mantenimiento
+- Estados: Pendiente, En Proceso, Completado, Cancelado
+- Notas adicionales por instalacion
+- NUEVO: Costo de instalacion (campo opcional)
+- NUEVO: Estado de pago (pagado/no pagado)
+- NUEVO: Solo las instalaciones pagadas se suman a los ingresos totales
+- NUEVO: Visualizacion de costo de instalacion en la lista
+- NUEVO: Indicador visual del estado de pago
+
+2.5 GESTION DE INGRESOS (NUEVO)
+--------------------------------
+- Vista consolidada de todos los ingresos de la empresa
+- Incluye:
+  * Pagos regulares de clientes
+  * Pagos por instalacion (solo los pagados)
+- Resumen de ingresos:
+  * Ingresos totales
+  * Ingresos netos (descontando meses gratuitos)
+  * Cantidad de instalaciones pagadas
+  * Total de ingresos por instalaciones
+- Filtrado por fecha
+- Exportacion a PDF
+
+2.6 SISTEMA DE FOLIOS
+---------------------
+- Crear folios para visitas de reparacion
+- Generacion automatica de numeros de folio unicos
+- Campos: cliente, fecha de visita, descripcion del problema,
+  estado, notas del tecnico
+- Seguimiento de reparaciones
+
+2.7 SISTEMA DE USUARIOS Y ROLES
+--------------------------------
+- Autenticacion segura con login y contraseña
+- Tres tipos de roles:
+  * Administrador: acceso completo (crear, leer, actualizar, eliminar)
+  * Editor: puede crear, leer y actualizar (no puede eliminar)
+  * Visualizador: solo puede crear y leer (no puede actualizar ni eliminar)
+- Gestion de usuarios (solo administradores)
+- Cambio de contraseña y nombre de usuario
+
+2.8 EXPORTACION A PDF
+---------------------
+- Descarga de informacion completa del cliente en PDF
+- Incluye: datos personales, historial de pagos, instalaciones y folios
+- Exportacion de pagos mensuales a PDF
+- Incluye resumen de ingresos por instalaciones
+
+
+========================================
+3. FUNCIONALIDADES AUTOMATICAS (NUEVO)
+========================================
+
+3.1 INICIO AUTOMATICO INTELIGENTE
+----------------------------------
+El sistema ahora detiene automaticamente cualquier servidor anterior
+antes de iniciar nuevos servidores, evitando conflictos de puertos.
+
+Caracteristicas:
+- Deteccion automatica de procesos en puertos 3000 y 5000
+- Detencion automatica de procesos anteriores
+- Espera de 2 segundos para liberar puertos
+- Inicio limpio sin intervencion manual
+- Compatible con Windows, Linux y macOS
+
+Como funciona:
+1. Al ejecutar npm run dev o el script BAT, el sistema verifica si hay
+   servidores corriendo en los puertos 3000 y 5000
+2. Si encuentra procesos, los detiene automaticamente
+3. Espera 2 segundos para que los puertos se liberen
+4. Inicia los nuevos servidores
+5. No es necesario detener servidores manualmente antes de iniciar
+
+3.2 NAVEGADOR AUTOMATICO
+------------------------
+El sistema abre automaticamente el navegador cuando la aplicacion
+esta lista para usar.
+
+Caracteristicas:
+- Espera a que ambos servidores (backend y frontend) esten listos
+- Verifica que los puertos respondan correctamente
+- Abre el navegador en http://localhost:3000
+- Compatible con Windows, Linux y macOS
+- Muestra mensajes informativos durante la espera
+
+Como funciona:
+1. El script open-browser.js se ejecuta en paralelo con los servidores
+2. Verifica cada 5 segundos si los servidores estan listos
+3. Cuando ambos servidores responden, abre el navegador
+4. Muestra mensajes de progreso en la consola
+
+3.3 INSTALACION AUTOMATICA DE DEPENDENCIAS
+-------------------------------------------
+El sistema instala automaticamente las dependencias si faltan.
+
+Caracteristicas:
+- Verifica si node_modules existe y tiene contenido
+- Verifica dependencias criticas (express, multer, react, etc.)
+- Instala automaticamente si faltan dependencias
+- Muestra mensajes informativos durante la instalacion
+- Compatible con Windows, Linux y macOS
+
+Como funciona:
+1. Al ejecutar npm run dev, se ejecuta ensure-dependencies.js
+2. Verifica dependencias en raiz, server y client
+3. Instala automaticamente si faltan
+4. Continua con el inicio de la aplicacion
+
+3.4 GESTION DE SERVIDORES
+--------------------------
+Scripts para gestionar servidores de forma automatica.
+
+Scripts disponibles:
+- npm run stop:servers - Detiene servidores en puertos 3000 y 5000
+- bat-scripts\DETENER_SERVIDORES.bat - Script BAT para Windows
+- Scripts ejecutan automaticamente antes de iniciar la aplicacion
+
+Modo silencioso:
+- Los scripts se pueden ejecutar en modo silencioso (--silent)
+- No muestra mensajes cuando se ejecuta automaticamente
+- Muestra mensajes detallados cuando se ejecuta manualmente
+
+
+========================================
+4. ESTRUCTURA DEL PROYECTO
+========================================
+
+Proyecto/
+├── server/                    # Backend (Node.js + Express)
+│   ├── routes/               # Rutas de la API
+│   │   ├── auth.js          # Autenticacion
+│   │   ├── users.js         # Gestion de usuarios
+│   │   ├── clients.js       # Gestion de clientes
+│   │   ├── packages.js      # Gestion de paquetes
+│   │   ├── payments.js      # Gestion de pagos
+│   │   ├── installations.js # Gestion de instalaciones
+│   │   ├── folios.js        # Gestion de folios
+│   │   ├── revenues.js      # Gestion de ingresos (NUEVO)
+│   │   ├── backup.js        # Respaldo de base de datos
+│   │   ├── providerPayments.js # Pagos a proveedores
+│   │   ├── supplyInvoices.js   # Facturas de suministro
+│   │   ├── quotations.js       # Cotizaciones
+│   │   └── ipCredentials.js    # Credenciales IP
+│   ├── middleware/          # Middleware
+│   │   ├── auth.js          # Autenticacion JWT
+│   │   └── permissions.js   # Verificacion de permisos
+│   ├── scripts/             # Scripts utilitarios
+│   │   └── fix-admin-role.js
+│   ├── database.js          # Configuracion de base de datos
+│   ├── index.js             # Punto de entrada del servidor
+│   ├── database.sqlite      # Base de datos SQLite (se crea automaticamente)
+│   ├── uploads/             # Archivos subidos
+│   │   └── supply-invoices/ # Facturas de suministro
+│   └── package.json         # Dependencias del servidor
+│
+├── client/                   # Frontend (React + Vite)
+│   ├── src/
+│   │   ├── pages/           # Paginas principales
+│   │   │   ├── Login.jsx
+│   │   │   ├── Dashboard.jsx
+│   │   │   ├── Clients.jsx
+│   │   │   ├── ClientDetail.jsx
+│   │   │   ├── Packages.jsx
+│   │   │   ├── Payments.jsx
+│   │   │   ├── Installations.jsx
+│   │   │   ├── Folios.jsx
+│   │   │   ├── Settings.jsx
+│   │   │   ├── Users.jsx
+│   │   │   └── ... (otras paginas)
+│   │   ├── components/      # Componentes reutilizables
+│   │   │   ├── Layout.jsx
+│   │   │   ├── ClientForm.jsx
+│   │   │   ├── PackageForm.jsx
+│   │   │   ├── PaymentForm.jsx
+│   │   │   ├── InstallationForm.jsx
+│   │   │   ├── FolioForm.jsx
+│   │   │   └── UserForm.jsx
+│   │   ├── context/        # Contextos de React
+│   │   │   └── AuthContext.jsx
+│   │   ├── services/        # Servicios API
+│   │   │   └── api.js
+│   │   ├── utils/          # Utilidades
+│   │   │   └── pdfGenerator.js
+│   │   ├── App.jsx         # Componente principal
+│   │   └── main.jsx        # Punto de entrada
+│   ├── index.html
+│   ├── vite.config.js      # Configuracion de Vite
+│   └── package.json        # Dependencias del cliente
+│
+├── scripts/                  # Scripts del proyecto raiz (NUEVO)
+│   ├── stop-servers.js     # Detener servidores (NUEVO)
+│   ├── ensure-dependencies.js # Instalar dependencias (NUEVO)
+│   ├── open-browser.js     # Abrir navegador (NUEVO)
+│   ├── create-shortcut.js  # Crear acceso directo (NUEVO)
+│   ├── create-shortcut.vbs # Script VBScript para acceso directo (NUEVO)
+│   └── check-dependencies.js # Verificar dependencias (NUEVO)
+│
+├── bat-scripts/             # Scripts BAT para Windows (NUEVO)
+│   ├── INICIAR_APP_SIMPLE.bat  # Iniciar aplicacion (NUEVO)
+│   ├── DETENER_SERVIDORES.bat  # Detener servidores (NUEVO)
+│   ├── DIAGNOSTICO.bat         # Diagnostico del sistema (NUEVO)
+│   ├── INSTALAR_PROGRAMA.bat   # Instalacion inicial (NUEVO)
+│   ├── INICIAR_APP.bat         # Script alternativo (NUEVO)
+│   └── TEST_INICIAR.bat        # Script de prueba (NUEVO)
+│
+├── DOCUMENTACION.txt        # Esta documentacion
+├── README.md                # Documentacion basica
+├── Sistema ISP CDCom.lnk    # Acceso directo (se crea automaticamente)
+└── package.json             # Configuracion del proyecto raiz
+
+
+========================================
+5. REQUISITOS DEL SISTEMA
+========================================
+
+5.1 REQUISITOS MINIMOS
+----------------------
+- Sistema Operativo: Windows 10/11, Linux, macOS
+- Node.js: Version 14 o superior
+- npm: Version 6 o superior (incluido con Node.js)
+- Navegador web moderno: Chrome, Firefox, Edge, Safari
+
+5.2 ESPACIO EN DISCO
+--------------------
+- Aproximadamente 200 MB para dependencias
+- Base de datos: crece segun los datos almacenados
+
+5.3 PUERTOS NECESARIOS
+----------------------
+- Puerto 5000: Servidor backend (configurable)
+- Puerto 3000: Cliente frontend (configurable)
+
+NOTA: Los puertos se liberan automaticamente al iniciar la aplicacion.
+El sistema detiene servidores anteriores antes de iniciar nuevos.
+
+
+========================================
+6. INSTALACION Y CONFIGURACION
+========================================
+
+6.1 INSTALACION DE NODE.JS
+--------------------------
+1. Descargar Node.js desde: https://nodejs.org/
+2. Instalar la version LTS (recomendada)
+3. Durante la instalacion, marcar "Add to PATH"
+4. Reiniciar la terminal/PowerShell
+
+6.2 INSTALACION DEL PROYECTO (METODO AUTOMATICO - RECOMENDADO)
+---------------------------------------------------------------
+METODO 1: Instalacion automatica (Windows)
+1. Doble clic en: bat-scripts\INSTALAR_PROGRAMA.bat
+2. El script instalara todas las dependencias automaticamente
+3. Creara un acceso directo en la carpeta del proyecto
+4. Listo para usar
+
+METODO 2: Instalacion automatica (Linea de comandos)
+1. Abrir terminal en la carpeta del proyecto
+2. Ejecutar: npm run dev
+3. Las dependencias se instalaran automaticamente si faltan
+4. La aplicacion iniciara automaticamente
+5. El navegador se abrira automaticamente cuando este lista
+
+6.3 INSTALACION MANUAL (OPCIONAL)
+----------------------------------
+Si prefieres instalar manualmente:
+
+1. Instalar dependencias del proyecto raiz:
+   npm install
+
+2. Instalar dependencias del servidor:
+   cd server
+   npm install
+   cd ..
+
+3. Instalar dependencias del cliente:
+   cd client
+   npm install
+   cd ..
+
+O usar el comando que instala todo:
+   npm run install-all
+
+6.4 CONFIGURACION
+-----------------
+La aplicacion funciona con configuracion por defecto. Si necesitas cambiar
+puertos, edita:
+- server/index.js: Puerto del servidor backend (default: 5000)
+- client/vite.config.js: Puerto del cliente frontend (default: 3000)
+
+6.5 CREAR ACCESO DIRECTO
+------------------------
+Para crear un acceso directo dentro de la carpeta del proyecto:
+
+METODO 1: Comando NPM (Recomendado)
+npm run create-shortcut
+
+METODO 2: Script VBScript
+cscript scripts/create-shortcut.vbs
+
+Se creara un acceso directo llamado "Sistema ISP CDCom.lnk" en la carpeta
+del proyecto. El acceso directo iniciara la aplicacion automaticamente.
+
+
+========================================
+7. ESTRUCTURA DE BASE DE DATOS
+========================================
+
+7.1 TABLA: users
+-----------------
+- id: INTEGER PRIMARY KEY
+- username: TEXT UNIQUE NOT NULL
+- password: TEXT NOT NULL (hash bcrypt)
+- role: TEXT DEFAULT 'viewer' (admin, editor, viewer)
+- created_at: DATETIME
+
+7.2 TABLA: packages
+-------------------
+- id: INTEGER PRIMARY KEY
+- name: TEXT NOT NULL
+- speed: TEXT NOT NULL
+- price: REAL NOT NULL
+- description: TEXT
+- created_at: DATETIME
+
+7.3 TABLA: clients
+------------------
+- id: INTEGER PRIMARY KEY
+- client_number: TEXT UNIQUE (opcional)
+- name: TEXT NOT NULL
+- address: TEXT NOT NULL
+- phone: TEXT (opcional)
+- email: TEXT (opcional)
+- network_type: TEXT (opcional: "Red Satelital" o "Red ONT")
+- package_id: INTEGER (FK a packages)
+- notes: TEXT (opcional)
+- created_at: DATETIME
+
+7.4 TABLA: payments
+--------------------
+- id: INTEGER PRIMARY KEY
+- client_id: INTEGER NOT NULL (FK a clients)
+- amount: REAL NOT NULL
+- payment_date: DATE NOT NULL
+- receipt_number: TEXT (opcional)
+- notes: TEXT (opcional)
+- is_free_month: INTEGER DEFAULT 0 (NUEVO: mes gratuito)
+- created_at: DATETIME
+
+7.5 TABLA: installations (ACTUALIZADO)
+---------------------------------------
+- id: INTEGER PRIMARY KEY
+- client_id: INTEGER (FK a clients, puede ser NULL para instalaciones sin cliente)
+- custom_name: TEXT (NUEVO: nombre personalizado si no hay cliente)
+- address: TEXT (NUEVO: direccion si no hay cliente)
+- installation_date: DATE NOT NULL
+- installation_type: TEXT NOT NULL
+- status: TEXT DEFAULT 'pendiente'
+- notes: TEXT (opcional)
+- installation_fee: REAL DEFAULT 0 (NUEVO: costo de instalacion)
+- is_paid: INTEGER DEFAULT 0 (NUEVO: estado de pago: 0=no pagado, 1=pagado)
+- created_at: DATETIME
+
+NOTA: Solo las instalaciones con is_paid=1 se suman a los ingresos totales.
+
+7.6 TABLA: folios
+-----------------
+- id: INTEGER PRIMARY KEY
+- client_id: INTEGER NOT NULL (FK a clients)
+- folio_number: TEXT UNIQUE NOT NULL
+- visit_date: DATE NOT NULL
+- problem_description: TEXT (opcional)
+- status: TEXT DEFAULT 'pendiente'
+- technician_notes: TEXT (opcional)
+- created_at: DATETIME
+
+
+========================================
+8. ROLES Y PERMISOS
+========================================
+
+8.1 ROL: ADMINISTRADOR (admin)
+------------------------------
+Permisos completos:
+- Crear: SI
+- Leer: SI
+- Actualizar: SI
+- Eliminar: SI
+- Gestion de usuarios: SI
+- Cambio de configuracion: SI
+
+8.2 ROL: EDITOR (editor)
+------------------------
+Permisos limitados:
+- Crear: SI
+- Leer: SI
+- Actualizar: SI
+- Eliminar: NO
+- Gestion de usuarios: NO
+- Cambio de configuracion: SI (solo propia)
+
+8.3 ROL: VISUALIZADOR (viewer)
+-------------------------------
+Permisos basicos:
+- Crear: SI
+- Leer: SI
+- Actualizar: NO
+- Eliminar: NO
+- Gestion de usuarios: NO
+- Cambio de configuracion: SI (solo propia)
+
+8.4 USUARIO POR DEFECTO
+------------------------
+- Usuario: admin
+- Contrasena: admin123
+- Rol: admin
+
+IMPORTANTE: Cambiar estas credenciales en produccion.
+
+
+========================================
+9. GUIA DE USO
+========================================
+
+9.1 INICIAR LA APLICACION
+--------------------------
+METODO 1: Acceso directo (Recomendado)
+1. Doble clic en "Sistema ISP CDCom.lnk"
+2. El sistema:
+   - Detiene servidores anteriores automaticamente
+   - Instala dependencias si faltan
+   - Inicia los servidores
+   - Abre el navegador automaticamente
+
+METODO 2: Script BAT
+1. Doble clic en: bat-scripts\INICIAR_APP_SIMPLE.bat
+2. El sistema hara lo mismo que el metodo 1
+
+METODO 3: Linea de comandos
+1. Abrir terminal en la carpeta del proyecto
+2. Ejecutar: npm run dev
+3. El sistema hara lo mismo que los metodos anteriores
+
+9.2 INICIAR SESION
+------------------
+1. Abrir navegador en: http://localhost:3000
+   (Se abre automaticamente si usas los metodos 1 o 2)
+2. Ingresar credenciales:
+   - Usuario: admin
+   - Contrasena: admin123
+3. Click en "Iniciar Sesion"
+
+9.3 GESTION DE CLIENTES
+-----------------------
+AGREGAR CLIENTE:
+1. Ir a "Clientes" en el menu lateral
+2. Click en "+ Agregar Cliente"
+3. Llenar el formulario:
+   - Numero de Cliente (opcional)
+   - Nombre (requerido)
+   - Domicilio (requerido)
+   - Telefono (opcional)
+   - Email (opcional)
+   - Tipo de Red: seleccionar "Red Satelital" o "Red ONT" (opcional)
+   - Paquete: seleccionar de la lista (opcional)
+   - Anotaciones (opcional)
+4. Click en "Guardar"
+
+EDITAR/ELIMINAR CLIENTE:
+Similar a la gestion de clientes anterior
+
+VER DETALLES DEL CLIENTE:
+1. En la lista de clientes, click en "Ver Detalles"
+2. Se muestra informacion completa
+3. Click en "Descargar PDF" para exportar
+
+9.4 GESTION DE PAQUETES
+-----------------------
+Similar a la gestion de clientes
+
+9.5 GESTION DE PAGOS
+--------------------
+REGISTRAR PAGO:
+1. Ir a "Pagos" en el menu lateral
+2. Click en "+ Registrar Pago"
+3. Llenar el formulario:
+   - Cliente (requerido)
+   - Monto (requerido)
+   - Fecha de Pago (requerido)
+   - Numero de Recibo (opcional)
+   - Notas (opcional)
+   - Mes Gratuito (checkbox opcional)
+4. Click en "Guardar"
+
+VISUALIZACION:
+- Vista de todos los pagos con informacion del cliente
+- Filtrado por fecha y cliente
+- Resumen mensual de ingresos
+- Exportacion a PDF
+- NUEVO: Visualizacion de pagos por instalacion
+
+9.6 PROGRAMACION DE INSTALACIONES (ACTUALIZADO)
+------------------------------------------------
+PROGRAMAR INSTALACION:
+1. Ir a "Instalaciones" en el menu lateral
+2. Click en "+ Programar Instalacion"
+3. Llenar el formulario:
+   - Cliente (opcional, puede dejar vacio)
+   - Nombre personalizado (si no hay cliente)
+   - Domicilio (si no hay cliente)
+   - Fecha de Instalacion (requerido)
+   - Tipo de Instalacion (requerido)
+   - Estado (default: Pendiente)
+   - NUEVO: Costo de Instalacion (opcional, numero)
+   - NUEVO: Estado de Pago (checkbox, solo si hay costo)
+   - Notas (opcional)
+4. Click en "Guardar"
+
+VISUALIZACION:
+- Lista de todas las instalaciones
+- NUEVO: Columna "Costo Instalacion"
+- NUEVO: Columna "Estado Pago" con indicador visual
+- Filtrado por fecha y estado
+- Solo las instalaciones pagadas se suman a los ingresos
+
+9.7 GESTION DE INGRESOS (NUEVO)
+--------------------------------
+VER INGRESOS:
+1. Ir a "Pagos" en el menu lateral
+2. Se muestra una vista consolidada de ingresos:
+   - Pagos regulares
+   - Pagos por instalacion (solo los pagados)
+3. Resumen de ingresos:
+   - Ingresos totales
+   - Ingresos netos (descontando meses gratuitos)
+   - Cantidad de instalaciones pagadas
+   - Total de ingresos por instalaciones
+4. Filtrado por fecha
+5. Exportacion a PDF
+
+EN EL DASHBOARD:
+- Tarjeta de "Ingresos por Instalaciones" (si hay ingresos)
+- Resumen de ingresos totales
+- Estadisticas generales
+
+9.8 GESTION DE FOLIOS
+---------------------
+Similar a la gestion anterior
+
+9.9 CONFIGURACION
+-----------------
+Similar a la gestion anterior
+
+9.10 GESTION DE USUARIOS (Solo Administradores)
+------------------------------------------------
+Similar a la gestion anterior
+
+
+========================================
+10. API ENDPOINTS
+========================================
+
+10.1 AUTENTICACION
+------------------
+POST /api/auth/login
+  - Body: { username, password }
+  - Response: { token, user }
+
+POST /api/auth/change-password
+  - Headers: Authorization: Bearer {token}
+  - Body: { oldPassword, newPassword }
+  - Response: { message }
+
+PUT /api/auth/change-username
+  - Headers: Authorization: Bearer {token}
+  - Body: { newUsername }
+  - Response: { message, username }
+
+GET /api/auth/me
+  - Headers: Authorization: Bearer {token}
+  - Response: { id, username, role, created_at }
+
+10.2 USUARIOS (Solo Administradores)
+------------------------------------
+GET /api/users
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, username, role, created_at }]
+
+POST /api/users
+  - Headers: Authorization: Bearer {token}
+  - Body: { username, password, role }
+  - Response: { id, message, username, role }
+
+PUT /api/users/:id
+  - Headers: Authorization: Bearer {token}
+  - Body: { username?, password?, role? }
+  - Response: { message }
+
+DELETE /api/users/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { message }
+
+10.3 CLIENTES
+-------------
+GET /api/clients
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, client_number, name, address, ... }]
+
+GET /api/clients/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { id, client_number, name, ..., payments, installations, folios }
+
+POST /api/clients
+  - Headers: Authorization: Bearer {token}
+  - Body: { client_number?, name, address, phone?, email?, network_type?, package_id?, notes? }
+  - Response: { id, message }
+
+PUT /api/clients/:id
+  - Headers: Authorization: Bearer {token}
+  - Body: { client_number?, name, address, phone?, email?, network_type?, package_id?, notes? }
+  - Response: { message }
+
+DELETE /api/clients/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { message }
+
+10.4 PAQUETES
+-------------
+GET /api/packages
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, name, speed, price, description }]
+
+POST /api/packages
+  - Headers: Authorization: Bearer {token}
+  - Body: { name, speed, price, description? }
+  - Response: { id, message }
+
+PUT /api/packages/:id
+  - Headers: Authorization: Bearer {token}
+  - Body: { name, speed, price, description? }
+  - Response: { message }
+
+DELETE /api/packages/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { message }
+
+10.5 PAGOS
+----------
+GET /api/payments
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, client_id, amount, payment_date, ... }]
+
+POST /api/payments
+  - Headers: Authorization: Bearer {token}
+  - Body: { client_id, amount, payment_date, receipt_number?, notes?, is_free_month? }
+  - Response: { id, message }
+
+PUT /api/payments/:id
+  - Headers: Authorization: Bearer {token}
+  - Body: { amount, payment_date, receipt_number?, notes?, is_free_month? }
+  - Response: { message }
+
+DELETE /api/payments/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { message }
+
+10.6 INSTALACIONES (ACTUALIZADO)
+---------------------------------
+GET /api/installations
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, client_id, installation_date, installation_type, status, installation_fee, is_paid, ... }]
+
+POST /api/installations
+  - Headers: Authorization: Bearer {token}
+  - Body: { client_id?, custom_name?, address?, installation_date, installation_type, status?, notes?, installation_fee?, is_paid? }
+  - Response: { id, message }
+
+PUT /api/installations/:id
+  - Headers: Authorization: Bearer {token}
+  - Body: { client_id?, custom_name?, address?, installation_date, installation_type, status?, notes?, installation_fee?, is_paid? }
+  - Response: { message }
+
+DELETE /api/installations/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { message }
+
+10.7 INGRESOS (NUEVO)
+---------------------
+GET /api/revenues
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, date, amount, revenue_type, revenue_type_label, client_name, ... }]
+  - Incluye pagos regulares y pagos por instalacion (solo los pagados)
+
+GET /api/revenues/summary
+  - Headers: Authorization: Bearer {token}
+  - Response: { total_revenue, net_revenue, free_months_count, total_installations, installation_count }
+  - Resumen de ingresos totales
+
+10.8 FOLIOS
+-----------
+GET /api/folios
+  - Headers: Authorization: Bearer {token}
+  - Response: [{ id, client_id, folio_number, visit_date, ... }]
+
+POST /api/folios
+  - Headers: Authorization: Bearer {token}
+  - Body: { client_id, visit_date, problem_description?, status? }
+  - Response: { id, folio_number, message }
+
+PUT /api/folios/:id
+  - Headers: Authorization: Bearer {token}
+  - Body: { visit_date, problem_description?, status?, technician_notes? }
+  - Response: { message }
+
+DELETE /api/folios/:id
+  - Headers: Authorization: Bearer {token}
+  - Response: { message }
+
+
+========================================
+11. ARCHIVOS Y CARPETAS
+========================================
+
+11.1 ARCHIVOS IMPORTANTES
+--------------------------
+- server/database.sqlite: Base de datos SQLite (se crea automaticamente)
+- server/index.js: Punto de entrada del servidor
+- client/src/App.jsx: Componente principal de React
+- package.json: Configuracion y scripts del proyecto
+- bat-scripts/INICIAR_APP_SIMPLE.bat: Script principal para iniciar (NUEVO)
+- scripts/stop-servers.js: Script para detener servidores (NUEVO)
+- scripts/ensure-dependencies.js: Script para instalar dependencias (NUEVO)
+- scripts/open-browser.js: Script para abrir navegador (NUEVO)
+
+11.2 CARPETAS IMPORTANTES
+--------------------------
+- server/routes/: Contiene todas las rutas de la API
+- server/middleware/: Middleware de autenticacion y permisos
+- client/src/pages/: Paginas principales de la aplicacion
+- client/src/components/: Componentes reutilizables
+- client/src/utils/: Utilidades (generador de PDF)
+- scripts/: Scripts de utilidad del proyecto (NUEVO)
+- bat-scripts/: Scripts BAT para Windows (NUEVO)
+
+
+========================================
+12. SCRIPTS DISPONIBLES
+========================================
+
+12.1 SCRIPTS DE NPM (ACTUALIZADO)
+----------------------------------
+npm run dev
+  - Detiene servidores anteriores automaticamente
+  - Instala dependencias si faltan
+  - Inicia servidor y cliente simultaneamente
+  - Abre el navegador automaticamente cuando esta lista
+
+npm run dev:force
+  - Inicia servidor y cliente sin verificar dependencias
+  - NO detiene servidores anteriores (usar con precaucion)
+  - Abre el navegador automaticamente
+
+npm run dev:no-browser
+  - Inicia servidor y cliente sin abrir navegador
+  - NO detiene servidores anteriores (usar con precaucion)
+
+npm run server
+  - Inicia solo el servidor backend
+
+npm run client
+  - Inicia solo el cliente frontend
+
+npm run install-all
+  - Instala todas las dependencias del proyecto
+
+npm run stop
+  - Detiene todos los servidores (puertos 3000 y 5000)
+
+npm run stop:servers
+  - Detiene todos los servidores (alias de stop)
+
+npm run check-deps
+  - Verifica si las dependencias estan instaladas (sin instalar)
+
+npm run ensure-deps
+  - Verifica e instala dependencias si faltan (sin iniciar servidores)
+
+npm run open-browser
+  - Abre el navegador en http://localhost:3000 (despues de iniciar servidores)
+
+npm run create-shortcut
+  - Crea un acceso directo en la carpeta del proyecto
+
+npm run restart
+  - Reinicia los servidores (detiene y vuelve a iniciar)
+
+12.2 SCRIPTS DE WINDOWS (NUEVO)
+--------------------------------
+bat-scripts\INICIAR_APP_SIMPLE.bat
+  Script principal para iniciar la aplicacion:
+  - Verifica Node.js y npm
+  - Detiene servidores anteriores automaticamente
+  - Instala dependencias si faltan
+  - Inicia la aplicacion
+  - Abre el navegador automaticamente
+
+bat-scripts\DETENER_SERVIDORES.bat
+  Script para detener servidores:
+  - Busca procesos en puertos 3000 y 5000
+  - Detiene los procesos encontrados
+  - Muestra mensajes informativos
+
+bat-scripts\DIAGNOSTICO.bat
+  Script de diagnostico del sistema:
+  - Verifica Node.js y npm
+  - Verifica estructura del proyecto
+  - Verifica dependencias instaladas
+  - Verifica puertos disponibles
+  - Verifica acceso directo
+  - Muestra resumen de problemas
+
+bat-scripts\INSTALAR_PROGRAMA.bat
+  Script de instalacion inicial:
+  - Verifica Node.js y npm
+  - Crea directorios necesarios
+  - Instala dependencias
+  - Crea acceso directo
+  - Muestra instrucciones finales
+
+12.3 SCRIPTS DE NODE.JS (NUEVO)
+--------------------------------
+scripts/stop-servers.js
+  - Detiene procesos en puertos 3000 y 5000
+  - Compatible con Windows, Linux y macOS
+  - Modo silencioso disponible (--silent)
+  - Muestra mensajes informativos
+
+scripts/ensure-dependencies.js
+  - Verifica dependencias en raiz, server y client
+  - Instala automaticamente si faltan
+  - Verifica dependencias criticas
+  - Muestra mensajes informativos
+
+scripts/open-browser.js
+  - Espera a que los servidores esten listos
+  - Verifica puertos 3000 y 5000
+  - Abre el navegador automaticamente
+  - Compatible con Windows, Linux y macOS
+  - Muestra mensajes de progreso
+
+scripts/create-shortcut.js
+  - Crea un acceso directo en Windows
+  - Usa VBScript o PowerShell
+  - Configura el acceso directo para ejecutar npm run dev
+  - Muestra mensajes informativos
+
+scripts/check-dependencies.js
+  - Verifica si node_modules existe
+  - Verifica dependencias criticas
+  - Muestra instrucciones si faltan
+  - No instala, solo verifica
+
+
+========================================
+13. SOLUCION DE PROBLEMAS
+========================================
+
+13.1 ERROR: "npm no se reconoce"
+--------------------------------
+SOLUCION:
+1. Verificar que Node.js este instalado: node --version
+2. Si no esta instalado, descargar desde https://nodejs.org/
+3. Durante la instalacion, marcar "Add to PATH"
+4. Reiniciar la terminal
+
+13.2 ERROR: "Puerto 5000 en uso" (ACTUALIZADO)
+-----------------------------------------------
+SOLUCION AUTOMATICA:
+- El sistema detiene automaticamente servidores anteriores
+- Si el error persiste, ejecutar: npm run stop:servers
+- O ejecutar: bat-scripts\DETENER_SERVIDORES.bat
+
+SOLUCION MANUAL:
+1. Cerrar otras aplicaciones que usen el puerto 5000
+2. O cambiar el puerto en server/index.js:
+   const PORT = process.env.PORT || 5001; // Cambiar a otro puerto
+
+13.3 ERROR: "Puerto 3000 en uso" (ACTUALIZADO)
+-----------------------------------------------
+SOLUCION AUTOMATICA:
+- El sistema detiene automaticamente servidores anteriores
+- Si el error persiste, ejecutar: npm run stop:servers
+- O ejecutar: bat-scripts\DETENER_SERVIDORES.bat
+
+SOLUCION MANUAL:
+1. Cerrar otras aplicaciones que usen el puerto 3000
+2. O cambiar el puerto en client/vite.config.js:
+   server: { port: 3001 } // Cambiar a otro puerto
+
+13.4 ERROR: "EADDRINUSE: address already in use :::5000" (NUEVO)
+-----------------------------------------------------------------
+SOLUCION:
+1. El sistema detiene automaticamente servidores anteriores
+2. Si el error persiste:
+   - Ejecutar: npm run stop:servers
+   - O ejecutar: bat-scripts\DETENER_SERVIDORES.bat
+   - Esperar 2 segundos
+   - Ejecutar: npm run dev
+3. Verificar que no haya otros procesos usando los puertos
+4. Usar el script de diagnostico: bat-scripts\DIAGNOSTICO.bat
+
+13.5 ERROR: "Cannot find module 'multer'" (ACTUALIZADO)
+-------------------------------------------------------
+SOLUCION AUTOMATICA:
+- Ejecutar: npm run dev
+- Las dependencias se instalaran automaticamente
+
+SOLUCION MANUAL:
+1. Ejecutar: npm run install-all
+2. O ejecutar manualmente:
+   cd server
+   npm install
+   cd ..
+
+13.6 ERROR: "Token invalido o expirado"
+----------------------------------------
+SOLUCION:
+1. Cerrar sesion y volver a iniciar sesion
+2. El token expira despues de 24 horas
+
+13.7 ERROR: "No tienes permisos"
+---------------------------------
+SOLUCION:
+1. Verificar que tu usuario tenga el rol adecuado
+2. Si eres admin, verificar en la seccion de Usuarios
+3. Si no eres admin, contactar a un administrador
+
+13.8 LA APLICACION NO CARGA (ACTUALIZADO)
+------------------------------------------
+SOLUCION:
+1. Verificar que ambos servidores esten corriendo
+2. Revisar las terminales para ver errores
+3. Abrir la consola del navegador (F12) para ver errores
+4. Ejecutar el script de diagnostico: bat-scripts\DIAGNOSTICO.bat
+5. Verificar que los puertos 3000 y 5000 esten disponibles
+6. Detener servidores anteriores: npm run stop:servers
+7. Reiniciar la aplicacion: npm run dev
+
+13.9 ERROR AL CREAR CLIENTE: "Numero de cliente ya en uso"
+-----------------------------------------------------------
+SOLUCION:
+1. El numero de cliente debe ser unico
+2. Usar un numero diferente o dejar el campo vacio
+
+13.10 BASE DE DATOS CORRUPTA
+-----------------------------
+SOLUCION:
+1. Hacer backup de server/database.sqlite
+2. Eliminar server/database.sqlite
+3. Reiniciar el servidor (se creara una nueva base de datos)
+4. El usuario admin se creara automaticamente
+
+13.11 EL NAVEGADOR NO SE ABRE AUTOMATICAMENTE (NUEVO)
+------------------------------------------------------
+SOLUCION:
+1. Verificar que los servidores esten corriendo
+2. Esperar unos segundos (el script espera hasta 5 minutos)
+3. Abrir manualmente: http://localhost:3000
+4. Verificar que los puertos 3000 y 5000 esten respondiendo
+5. Revisar la consola para ver mensajes del script open-browser.js
+
+13.12 PROBLEMAS AL DETENER SERVIDORES (NUEVO)
+----------------------------------------------
+SOLUCION:
+1. Ejecutar: npm run stop:servers
+2. O ejecutar: bat-scripts\DETENER_SERVIDORES.bat
+3. Si no funciona, cerrar manualmente las ventanas de Node.js
+4. Verificar que los puertos esten libres: netstat -ano | findstr ":5000"
+5. Si hay procesos, detenerlos manualmente con Task Manager
+
+13.13 DIAGNOSTICO DEL SISTEMA (NUEVO)
+--------------------------------------
+Para diagnosticar problemas del sistema:
+1. Ejecutar: bat-scripts\DIAGNOSTICO.bat
+2. El script verificara:
+   - Node.js y npm instalados
+   - Estructura del proyecto
+   - Dependencias instaladas
+   - Puertos disponibles
+   - Acceso directo creado
+3. Seguir las instrucciones que aparezcan
+
+
+========================================
+14. MANTENIMIENTO
+========================================
+
+14.1 RESPALDOS
+--------------
+- Hacer respaldo regular de server/database.sqlite
+- Recomendado: respaldo diario o semanal
+- Guardar respaldos en ubicacion segura
+
+14.2 LIMPIEZA DE DATOS
+----------------------
+- Eliminar registros antiguos si es necesario
+- La base de datos crece segun los datos almacenados
+- SQLite maneja eficientemente hasta varios GB de datos
+
+14.3 ACTUALIZACIONES
+--------------------
+- Actualizar dependencias periodicamente:
+  cd server && npm update
+  cd ../client && npm update
+- Revisar cambios en las dependencias antes de actualizar
+- Probar la aplicacion despues de actualizar
+
+14.4 LOGS
+---------
+- Los logs del servidor se muestran en la terminal
+- Revisar logs para detectar errores
+- Los errores importantes se muestran en la consola
+
+14.5 MANTENIMIENTO DE SERVIDORES (NUEVO)
+-----------------------------------------
+- Los servidores se detienen automaticamente al iniciar nuevos
+- No es necesario detener servidores manualmente antes de iniciar
+- Usar npm run stop:servers solo si necesitas detener sin iniciar
+- El sistema gestiona los puertos automaticamente
+
+
+========================================
+15. SEGURIDAD
+========================================
+
+15.1 AUTENTICACION
+------------------
+- Usar contraseñas seguras (minimo 6 caracteres, recomendado 8+)
+- Cambiar la contraseña del usuario admin por defecto
+- No compartir credenciales
+
+15.2 TOKENS JWT
+---------------
+- Los tokens expiran despues de 24 horas
+- Los tokens se almacenan en localStorage del navegador
+- Cerrar sesion cuando se termine de usar
+
+15.3 ROLES Y PERMISOS
+---------------------
+- Asignar roles apropiados a cada usuario
+- Usar el rol "viewer" para usuarios que solo necesitan ver
+- Usar el rol "editor" para usuarios que necesitan editar
+- Solo administradores deben tener rol "admin"
+
+15.4 BASE DE DATOS
+------------------
+- La base de datos SQLite esta en el servidor
+- No exponer la base de datos directamente
+- Hacer respaldos regulares
+- Proteger el acceso al servidor
+
+15.5 PRODUCCION
+---------------
+- Cambiar JWT_SECRET en produccion
+- Cambiar credenciales por defecto
+- Usar HTTPS en produccion
+- Configurar firewall apropiado
+- Hacer respaldos automaticos
+
+
+========================================
+16. CAMBIOS RECIENTES (NUEVO)
+========================================
+
+16.1 DETENCION AUTOMATICA DE SERVIDORES
+---------------------------------------
+- El sistema detiene automaticamente servidores anteriores antes de iniciar
+- Evita conflictos de puertos
+- No requiere intervencion manual
+- Compatible con Windows, Linux y macOS
+
+16.2 NAVEGADOR AUTOMATICO
+-------------------------
+- El navegador se abre automaticamente cuando la aplicacion esta lista
+- Espera a que ambos servidores esten funcionando
+- Compatible con Windows, Linux y macOS
+
+16.3 INSTALACION AUTOMATICA DE DEPENDENCIAS
+--------------------------------------------
+- Las dependencias se instalan automaticamente si faltan
+- Verifica dependencias criticas
+- Muestra mensajes informativos
+
+16.4 COSTOS DE INSTALACION
+--------------------------
+- Nuevo campo: costo de instalacion
+- Nuevo campo: estado de pago (pagado/no pagado)
+- Solo las instalaciones pagadas se suman a los ingresos
+- Visualizacion en la lista de instalaciones
+
+16.5 GESTION DE INGRESOS
+------------------------
+- Nueva ruta API: /api/revenues
+- Vista consolidada de ingresos (pagos + instalaciones)
+- Resumen de ingresos totales
+- Filtrado por fecha
+- Exportacion a PDF
+
+16.6 SCRIPTS MEJORADOS
+----------------------
+- Nuevos scripts para gestion de servidores
+- Scripts de diagnostico
+- Scripts de instalacion automatica
+- Scripts BAT para Windows
+- Modo silencioso para ejecucion automatica
+
+16.7 MEJORAS EN LA INTERFAZ
+---------------------------
+- Indicadores visuales de estado de pago
+- Visualizacion de costos de instalacion
+- Resumen de ingresos en el dashboard
+- Mejoras en la visualizacion de pagos
+
+
+========================================
+17. CONTACTO Y SOPORTE
+========================================
+
+Para problemas o preguntas:
+1. Revisar esta documentacion
+2. Revisar README.md
+3. Revisar los logs del servidor
+4. Verificar la consola del navegador (F12)
+5. Ejecutar el script de diagnostico: bat-scripts\DIAGNOSTICO.bat
+
+
+========================================
+FIN DE LA DOCUMENTACION
+========================================
+
+Ultima actualizacion: Diciembre 2024
+Version: 2.0
+

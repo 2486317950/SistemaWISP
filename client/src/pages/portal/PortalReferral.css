@@ -1,0 +1,124 @@
+.portal-referral h2 {
+  margin: 0 0 8px 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.portal-referral-desc {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+.referral-code-card {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.referral-code-card h3 {
+  margin: 0 0 16px 0;
+  color: #334155;
+  font-size: 1.1rem;
+}
+
+.code-display {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.code-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f766e;
+  font-family: monospace;
+  letter-spacing: 1px;
+}
+
+.copy-btn {
+  padding: 10px 20px;
+  background: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.copy-btn:hover:not(:disabled) {
+  background: #0f766e;
+}
+
+.copy-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.code-hint {
+  margin: 16px 0 0 0;
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.referrals-list {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.referrals-list h3 {
+  margin: 0 0 16px 0;
+  color: #334155;
+  font-size: 1.1rem;
+}
+
+.referral-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f1f5f9;
+  flex-wrap: wrap;
+}
+
+.referral-item:last-child {
+  border-bottom: none;
+}
+
+.ref-name {
+  font-weight: 500;
+  color: #334155;
+}
+
+.ref-date {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.ref-status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.ref-status.status-aplicado {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.ref-status.status-pendiente {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+@media (max-width: 640px) {
+  .portal-referral h2 { font-size: 1.25rem; }
+  .code-display { flex-direction: column; align-items: flex-start; }
+  .code-value { font-size: 1.25rem; }
+}

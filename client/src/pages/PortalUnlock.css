@@ -1,0 +1,130 @@
+.portal-unlock-page {
+  padding: 24px;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.portal-unlock-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 28px;
+}
+
+.portal-unlock-card h1 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin-bottom: 12px;
+}
+
+.portal-unlock-desc {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.portal-unlock-form .form-group {
+  margin-bottom: 20px;
+}
+
+.portal-unlock-form label {
+  display: block;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.code-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.5rem;
+  letter-spacing: 0.2em;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.code-input:focus {
+  outline: none;
+  border-color: #0d9488;
+}
+
+.action-radio label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-weight: 400;
+  cursor: pointer;
+  margin-bottom: 12px;
+  padding: 12px;
+  background: #f8fafc;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+}
+
+.action-radio label:hover {
+  background: #f1f5f9;
+}
+
+.client-info-box {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.client-info-box.success {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.client-info-box.error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #dc2626;
+}
+
+.action-radio input[type="radio"] {
+  margin-top: 3px;
+}
+
+.action-radio span {
+  font-weight: 600;
+  color: #334155;
+}
+
+.portal-unlock-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.portal-unlock-success {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-unlock {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-unlock:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

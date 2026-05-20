@@ -1,0 +1,97 @@
+.predictive-analysis-page {
+  padding: 20px;
+}
+
+.analysis-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.analysis-section {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.risk-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.risk-card {
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.risk-card.high {
+  background: #fee;
+  border-top: 4px solid #e74c3c;
+}
+
+.risk-card.medium {
+  background: #fff8e1;
+  border-top: 4px solid #f39c12;
+}
+
+.risk-card.low {
+  background: #e8f5e9;
+  border-top: 4px solid #2ecc71;
+}
+
+.risk-card h3 {
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+
+.risk-card p {
+  margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.risk-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.risk-badge.alto {
+  background: #e74c3c;
+  color: white;
+}
+
+.risk-badge.medio {
+  background: #f39c12;
+  color: white;
+}
+
+.risk-badge.bajo {
+  background: #2ecc71;
+  color: white;
+}
+
+.chart-container {
+  margin-top: 20px;
+}
+
+.risk-list {
+  margin-top: 20px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+
+
+
+
+
+
+
+
+
+

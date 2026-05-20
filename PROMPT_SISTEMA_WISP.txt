@@ -1,0 +1,155 @@
+================================================================================
+SECCIÓN 1 — PROMPT PARA PEDIR A OTRA IA “HAZ ALGO PARECIDO” (copiar desde aquí)
+================================================================================
+
+Instrucciones: copia el bloque entre las líneas --- y pégalas en ChatGPT, Claude, Gemini, etc., adaptando tecnología o país si lo necesitas.
+
+---
+
+Eres desarrollador de software senior. Necesito diseñar (y en fases siguientes implementar) un sistema de gestión para un proveedor de internet inalambrico (WISP): operación interna, portal del cliente e informes financieros. Quiero algo conceptualmente parecido a un ERP liviano enfocado en ISP, no un CRM genérico.
+
+Alcance funcional esperado:
+
+A) Panel del personal (web)
+- Autenticación con roles diferenciados: administrador total, rol operativo con edición pero sin algunas eliminaciones críticas, rol de sólo lectura o lectura+accesos puntuales, rol de técnico de campo muy limitado (p. ej. sólo instalaciones, visitas/folios y tareas relacionadas sin ver finanzas completas ni datos sensibles globales).
+- Clientes: datos de contacto, domicilio, número de cliente, tipo de red, paquete asignado desde catálogo; opción de mensualidad y nombre de plan personalizados por cliente (precio efectivo único fuera del catálogo cuando el operador así lo configure).
+- Catálogo de paquetes: nombre, velocidad, precio, red/zona opcional.
+- Pagos recurrentes (“mensualidad”) y otros tipos de pago; historial por cliente.
+- “Cobros adicionales” o adeudos línea a línea: monto original, pendiente tras pagos aplicados por orden cronológico, concepto opcional; crear, editar y borrar con permisos coherentes (típicamente quien puede crear puede corregir o quitar; al editar monto no puede quedar por debajo de lo ya pagado sobre esa línea).
+- Portal del cliente debe calcular saldo combinando mensualidad efectiva del cliente (catálogo o personalizado), descuentos o promos si existen, créditos/saldo a favor y suma de cobros adicionales pendientes de ese cliente.
+- Instalaciones, folios o visitas técnicas, cotizaciones, tickets de soporte.
+- Créditos a clientes (instalación, mensualidad, etc.), solicitudes desde portal opcionales con aprobación del personal.
+- Gastos categorizados, pagos a proveedores, transferencias entre cuentas internas donde aplique.
+- Inventario/stock simple con alertas básicas si el stock baja de un umbral.
+- Inventario-red: redes, IPs o credenciales asociadas a clientes donde tenga sentido; mapas opcionales.
+- Consumo/tráfico por cliente opcional mediante reporte desde agente LAN.
+- Facturación electrónica sólo como módulo pluggable donde el país lo requiera (México: CFDI, etc.).
+- Integración opcional Stripe u otro PSP: cobro desde portal Webhook firma válida registrar pago y aplicar contra adeudos antes que mensualidad según política FIFO de cobros adicionales.
+- Recordatorios de pago automatizados o manuales, notificaciones push opcionales.
+- Configuración: FAQ y avisos del portal; estado del servicio público (operativo/mantenimiento); datos de contacto y métodos de pago visible al cliente.
+- Backup export/import de datos y modo mantenimiento que sólo admins superen.
+- Auditoría de acciones críticas (logins admin, usuarios borrados, pagos financieros sensibles, etc.) visible al admin.
+
+B) Portal del cliente (web)
+- Login por identificador de cliente + contraseña; bloqueo tras intentos con flujo seguro para desbloqueo por código que genere el personal.
+- Pantalla inicial con saldo a pagar y desglose entendible; historial pagos/recibos; subida comprobantes; créditos; tickets; perfil cambio datos básicos y contraseña; consulta opcional CFDI/contratos; pago online si existe PSP.
+
+C) Área inversionistas separada login
+- Sólo ve datos económicos y operativos resumidos ligados a su participación sin acceso al panel ERP completo.
+
+Requisitos no funcionales:
+- API REST detrás del backend; mismo origen sirve SPA y rutas públicas limitadas estado + healthcheck.
+- Autenticación JWT separada portal vs panel; en producción exigir secretos fuertes; opcional 2FA TOTP o WebAuthn para personal.
+- Rate limiting entrada sanitizada cabeceras seguras HTTPS recomendación despliegue.
+
+Entrega que quiero AHORA por tu parte (sin escribir aún todo el código):
+1) Arquitectura en capas y stack sugerido (puedes proponer alternativas si no es Node/React/SQLite).
+2) Esquema de datos mínimo (tablas/enlaces) para clientes paquetes pagos instalaciones cobros línea instalación créditos y usuario/papel.
+3) Lista prioritizada backlog MVP primero mejoras segunda fase.
+
+Responde en español latinoamericano claro y estructura con títulos y listas numeradas donde ayude.
+
+---
+
+(Fin bloque para otra IA.)
+
+
+================================================================================
+SECCIÓN 2 — CONTEXTO FIJO DEL PROYECTO REAL “SistemaWISP” (para quien trabaja EN este repo)
+================================================================================
+Usa la descripción de abajo cuando trabajes sobre el proyecto SistemaWISP existente (código soporte integraciones).
+
+================================================================================
+QUÉ ES
+================================================================================
+SistemaWISP es un software de gestión integral para proveedores de internet inalambrico (WISP): administración de clientes, paquetes, cobros recurrentes y adicionales, instalaciones, finanzas operativas, inventario/red, soporte al cliente y facturación donde aplique.
+
+Objetivos del producto:
+- Centralizar operación diaria del ISP (personal en panel web).
+- Permitir autoservicio limitado del abonado (portal del cliente).
+- Dar visibilidad a inversionistas externos sin exponer todo el sistema.
+- Registrar pagos, morosidad, comprobantes, créditos y reportes financieros.
+
+================================================================================
+STACK TÉCNICO
+================================================================================
+- Backend: Node.js + Express (API REST bajo prefijo habitual /api).
+- Base de datos: SQLite (archivo persistente); migraciones por ALTER en arranque + guards opcionales (p. ej. columnas nuevas si faltan).
+- Frontend del personal y portal: React con Vite; build estático en client/dist servido por Express o nginx como proxy al puerto Node.
+- Autenticación: JWT para personal y para sesión del portal del cliente (tokens separados).
+- Tiempo real / Socket.IO según módulos configurados.
+- Opcional/producción: 2FA para personal (TOTP y/o WebAuthn), Stripe para cobros en línea, Firebase para push, integraciones CFDI donde esté configurado.
+
+Hosting: no es un proyecto para hosting compartido “solo PHP”; requiere proceso Node persistente (VPS, PaaS con Node, etc.).
+
+================================================================================
+TRES FRENTES DE USUARIO
+================================================================================
+1) PANEL DEL PERSONAL (/sistema tras login)
+   Usuarios internos según rol: admin, editor, viewer, technician.
+   Inventario típico de módulos:
+   - Dashboard: KPIs del mes, finanzas, morosidad, tickets, auditoría (admin).
+   - Clientes: alta/edición/listado/historial/segmentación; paquete de catálogo + opción “mensualidad personalizada” (custom_package_name / custom_package_price en DB); la “mensualidad efectiva” y nombre de plan se calculan en SQL reutilizable (server/utils/clientPackageSql.js: effMonthly, effPkgName, effPkgDesc) en clientes, portal, mora, facturas, tráfico, instalaciones listadas, etc.
+   - Cobros “adicionales” (tabla client_charges): montos fuera del plan que se suman al saldo del cliente en portal; API REST GET lista, POST alta, PUT edición, DELETE baja (permiso “create” del panel para CRUD de cobros, para alinear con viewers que pueden cargar cobros); pantallas Cobros y ficha cliente (#cobros).
+   - Finanzas: pagos, recibos, créditos, promociones, gastos, transferencias, comprobantes, solicitudes de crédito desde portal, proveedores, facturas de insumos, Stripe (admin), morosidad, reportes mensuales/crecimientos/proyecciones, facturación electrónica.
+   - Operaciones: instalaciones, folios de visita, cotizaciones, tickets de soporte.
+   - Inventario: stock/insumos.
+   - RRHH: empleados.
+   - Red y mapas: redes, IPs/credenciales, mapas de clientes/instalaciones, tráfico si hay agente.
+   - Comunicación: WhatsApp/templates, chats del portal, notificaciones, formularios de contacto público, desbloqueo portal.
+   - Sistema: configuración portal (FAQ, avisos, estado del servicio, contacto), modo mantenimiento (solo admin), usuarios (admin), backup/restauración, salud servidor.
+
+2) PORTAL DEL CLIENTE (/portal)
+   Login por número de cliente + contraseña; bloqueos por intentos con flujo de desbloqueo con código desde el panel.
+   El cliente suele ver: inicio con saldo y desglose (mensualidad neta según promo/crédito/saldo a favor más cobros adicionales pendientes), pagos, recibos, comprobantes, créditos y solicitudes, consumo/tráfico si existe, facturas CFDI si aplica, datos de instalación (nombre de plan alineado al cliente efectivo + velocidad del paquete de obra), catálogo de paquetes públicos para solicitar cambio, cambio de domicilio por ticket, contrato, perfil, tickets soporte, FAQ, referidos, pago Stripe si está configurado.
+   Las tarifas y nombres de plan en balance, /me, service-info y chat usan la misma lógica de paquete efectivo (personalizado o catálogo).
+
+3) ÁREA DE INVERSIONISTAS (/investor)
+   Credenciales de rol inversionista separadas del panel principal; vistas de gastos/pagos/redes/clientes asociadas a ese inversionista, sin cruzarse con otros inversionistas ni con el ERP completo del personal.
+
+================================================================================
+DATOS FINANCIEROS RESALTADOS
+================================================================================
+- Pagos recurrentes típicamente por “mensualidad” asociados al cliente y al paquete (catálogo o tarifa especial).
+- “Cobros adicionales”: adeudos línea a línea (amount / amount_remaining) que los pagos del cliente pueden ir liquidando en orden (FIFO de pendientes según allocateCharges).
+- Créditos a clientes, promos, diferidos/referidos, balance_credit y comprobantes de pago desde portal entran en el cálculo de “qué debe” el cliente.
+- Stripe: webhook y flujos de checkout; registrar neto/recargos según configuración sin confundir comisión Stripe con cobro del abonado.
+
+================================================================================
+SEGURIDAD Y ROLES (RESUMEN)
+================================================================================
+- admin: casi todo; Stripe, usuarios, backup, reinicio, auditoría sensible, modo mantenimiento.
+- editor: crear/leer/editar datos operativos; no borrar registros destructivos donde la app lo restrinja globalmente al rol.
+- viewer: crear y leer en muchas zonas pero sin update genérico en datos maestros del cliente; excepción operativa: cobros adicionales se pueden crear y también editar/eliminar con el mismo permiso “create” que el alta.
+- technician: muy acotado: instalaciones, folios y desbloquear portal desde APIs/rutas pensadas para ellos; el middleware blockTechnicians aisla clientes/finanzas globales para este rol.
+
+Producción debe cumplir validación de entorno (p. ej. JWT_SECRET suficientemente fuerte).
+
+================================================================================
+PÁGINAS/API PÚBLICAS MINIMAS (SIN LOGIN)
+================================================================================
+- Estado del servicio para la web (/estado o equivalente consumiendo estado público configurado desde el panel).
+- /api/health y endpoints públicos livianos para estado mantenimiento y estado del servicio.
+
+================================================================================
+ARCHIVOS Y DESPLIEGUE (RECORDATORIOS PARA CAMBIOS EN CÓDIGO)
+================================================================================
+- Paquete efectivo por cliente: server/utils/clientPackageSql.js — al subir rutas nuevas que lo usen, desplegar SIEMPRE ese archivo al servidor.
+- Validación de cliente/paquete personalizado: server/lib/validateInput.js (parseCustomPackageFields, validateClientCreate) — mantener en sync con producción si cambias clients.js.
+- Arranque DB: server/database.js + server/migrations/schemaGuards.js (asegura columnas custom_package_* en clients si faltan en SQLite antiguos).
+- Backup JSON: import de clients incluye custom_package_name y custom_package_price (server/routes/backup.js).
+- Despliegue habitual: npm run build en client/; subir client/dist; subir server/routes/*.js y cualquier server/lib o server/utils tocado; pm2 restart del proceso Node.
+
+================================================================================
+CÓMO DEBE RESPONDER UN ASISTENTE SOBRE ESTE PROYECTO
+================================================================================
+- Asume SQLite y una sola instancia típica; migraciones ALTER + guards en arranque.
+- Respeta límites de rol (técnicos bloqueados en clientes; inversionistas aislados).
+- Al tocar cliente + facturación: portal, mora, PDF/contratos y cobros adicionales deben usar la misma “mensualidad efectiva” y helpers SQL compartidos donde aplique.
+- Sanitización de entrada: conceptos de texto libre pueden chocar con filtros anti-inyección si incluyen palabras reservadas tipo SQL en inglés; revisar security.js si hay falsos positivos.
+- Preferir español latinoamericano en textos UI y mensajes de error del negocio.
+- Deploy: build frontend + archivos backend relevantes + PM2; nginx proxy a Node.
+
+Última revisión de este documento: alineado con SistemaWISP (paquete personalizado, cobros CRUD, guards DB, despliegue multi-archivo).
+
+(Fin sección 2 — contexto proyecto SistemaWISP.)

@@ -1,0 +1,268 @@
+.app-versions-page {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.app-versions-header {
+  margin-bottom: 24px;
+}
+
+.app-versions-header h1 {
+  font-size: 1.75rem;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.app-versions-header p {
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.app-versions-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.app-versions-form-card,
+.app-versions-list-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
+
+.app-versions-form-card h2,
+.app-versions-list-card h2 {
+  font-size: 1.25rem;
+  color: #334155;
+  margin-bottom: 20px;
+}
+
+.app-version-form .form-group {
+  margin-bottom: 18px;
+}
+
+.app-version-form .form-group label {
+  display: block;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.app-version-form input,
+.app-version-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.app-version-form input[type="file"] {
+  padding: 8px;
+}
+
+.app-version-form small {
+  display: block;
+  color: #64748b;
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.app-version-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.app-version-success {
+  background: #f0fdf4;
+  color: #16a34a;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.btn-upload {
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-upload:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.progress-bar-container {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0d9488, #0f766e);
+  transition: width 0.2s ease;
+}
+
+.progress-text {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.versions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.version-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+}
+
+.version-item.version-draft {
+  border-left: 4px solid #f59e0b;
+}
+
+.version-item.version-published {
+  border-left: 4px solid #10b981;
+}
+
+.version-header-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.version-badge {
+  font-size: 0.75rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.badge-draft {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-published {
+  background: #d1fae5;
+  color: #047857;
+}
+
+.version-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.btn-publish-version {
+  padding: 6px 12px;
+  background: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.btn-publish-version:hover {
+  background: #0f766e;
+}
+
+.version-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.version-info strong {
+  font-size: 1rem;
+  color: #334155;
+}
+
+.version-code {
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+.version-notes {
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.version-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.btn-delete-version {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  opacity: 0.6;
+}
+
+.btn-delete-version:hover {
+  opacity: 1;
+}
+
+.empty-msg {
+  color: #64748b;
+  font-style: italic;
+}
+
+.app-versions-info {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 20px;
+  border: 1px solid #e2e8f0;
+}
+
+.app-versions-info h3 {
+  font-size: 1.1rem;
+  color: #334155;
+  margin-bottom: 12px;
+}
+
+.app-versions-info ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #64748b;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}

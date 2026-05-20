@@ -1,0 +1,209 @@
+/* CDCom landings — motion compartido */
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .motion-reveal,
+  .motion-reveal-left,
+  .motion-reveal-right,
+  .motion-reveal-scale,
+  .motion-stagger > *,
+  .motion-hero > *,
+  .motion-float,
+  .motion-orb {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Scroll reveal */
+.motion-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-reveal-left {
+  opacity: 0;
+  transform: translateX(-32px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-reveal-right {
+  opacity: 0;
+  transform: translateX(32px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-reveal-scale {
+  opacity: 0;
+  transform: scale(0.94);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-reveal.is-visible,
+.motion-reveal-left.is-visible,
+.motion-reveal-right.is-visible,
+.motion-reveal-scale.is-visible,
+.fade-in.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Compatibilidad con clase fade-in existente */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.fade-in.is-visible,
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Stagger hijos */
+.motion-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.motion-stagger.is-visible > *:nth-child(1) { transition-delay: 0.05s; }
+.motion-stagger.is-visible > *:nth-child(2) { transition-delay: 0.1s; }
+.motion-stagger.is-visible > *:nth-child(3) { transition-delay: 0.15s; }
+.motion-stagger.is-visible > *:nth-child(4) { transition-delay: 0.2s; }
+.motion-stagger.is-visible > *:nth-child(5) { transition-delay: 0.25s; }
+.motion-stagger.is-visible > *:nth-child(6) { transition-delay: 0.3s; }
+.motion-stagger.is-visible > *:nth-child(7) { transition-delay: 0.35s; }
+.motion-stagger.is-visible > *:nth-child(8) { transition-delay: 0.4s; }
+.motion-stagger.is-visible > * {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero entrada */
+.motion-hero > * {
+  opacity: 0;
+  transform: translateY(18px);
+  animation: cdcomHeroIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+.motion-hero > *:nth-child(1) { animation-delay: 0.08s; }
+.motion-hero > *:nth-child(2) { animation-delay: 0.18s; }
+.motion-hero > *:nth-child(3) { animation-delay: 0.28s; }
+.motion-hero > *:nth-child(4) { animation-delay: 0.38s; }
+.motion-hero > *:nth-child(5) { animation-delay: 0.48s; }
+.motion-hero > *:nth-child(6) { animation-delay: 0.58s; }
+
+@keyframes cdcomHeroIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Flotación suave */
+.motion-float {
+  animation: cdcomFloat 6s ease-in-out infinite;
+}
+@keyframes cdcomFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Orbes de fondo */
+.motion-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(100px);
+  opacity: 0.32;
+  animation: cdcomOrbDrift 22s ease-in-out infinite;
+}
+.motion-orb--2 {
+  animation-duration: 18s;
+  animation-direction: reverse;
+}
+@keyframes cdcomOrbDrift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(24px, -18px) scale(1.06); }
+  66% { transform: translate(-16px, 12px) scale(0.96); }
+}
+
+/* Gradiente en títulos (estático por defecto; .cdcom-site lo desactiva) */
+.motion-gradient-text {
+  background-size: 100% auto;
+}
+
+/* Nav al scroll */
+.cdcom-nav-scrolled {
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+}
+.dark .cdcom-nav-scrolled {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+/* Tarjetas con brillo al hover */
+.motion-card-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Paquetes / tarjetas con badge superior: no recortar */
+.motion-card-shine.cdcom-pack-card,
+.cdcom-pack-card {
+  overflow: visible;
+}
+.motion-card-shine.cdcom-pack-card::after {
+  border-radius: inherit;
+}
+.motion-card-shine::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 40%,
+    rgba(255, 255, 255, 0.12) 50%,
+    transparent 60%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.65s ease;
+  pointer-events: none;
+}
+.motion-card-shine:hover::after {
+  transform: translateX(120%);
+}
+
+/* Línea decorativa */
+.motion-line-grow {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.is-visible .motion-line-grow,
+.motion-line-grow.is-visible {
+  transform: scaleX(1);
+}
+
+/* Badge sin pulso llamativo */
+.motion-badge-pulse {
+  animation: none;
+}
+
+/* Contador */
+[data-count] {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Botón flotante WhatsApp */
+.motion-wa-float {
+  animation: cdcomWaFloat 3s ease-in-out infinite;
+}
+@keyframes cdcomWaFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-6px) scale(1.04); }
+}

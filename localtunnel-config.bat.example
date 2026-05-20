@@ -1,0 +1,41 @@
+@echo off
+REM Ejemplo de archivo de configuracion para Localtunnel
+REM Copia este archivo como "localtunnel-config.bat" y configura tu subdominio
+
+REM Subdominio personalizado para Localtunnel
+REM Si lo dejas vacio, usara un subdominio aleatorio
+REM Ejemplo: si configuras "mi-sistema", la URL sera: https://mi-sistema.loca.lt
+REM NOTA: El subdominio debe estar disponible. Si no lo esta, usara uno aleatorio
+set SUBDOMAIN=
+
+REM Ejemplo:
+REM set SUBDOMAIN=mi-sistema-isp
+REM 
+REM IMPORTANTE: Localtunnel solo permite subdominios disponibles
+REM Si el subdominio que eliges ya esta en uso, generara uno aleatorio
+REM No puedes usar tu propio dominio personalizado completo
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grupo CDCom | Infraestructura Digital de Próxima Generación</title>
+  <meta name="description" content="Grupo CDCom: internet WISP, software, branding y energía en La Huerta y sur de Jalisco. Cuatro divisiones, un solo estándar de servicio." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: { extend: { fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] } } }
+    }
+  </script>
+  <link rel="stylesheet" href="/landing-assets/cdcom-motion.css" />
+  <link rel="stylesheet" href="/landing-assets/cdcom-pro.css" />
+  <script>
+    if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark');
+    }
+  </script>
+</head>
+<body class="cdcom-site bg-white dark:bg-[#0a0e1a] text-gray-900 dark:text-white antialiased transition-colors duration-300">
+
+  <!-- NAV -->
+  <nav class="sticky top-0 z-50 bg-white/80 dark:bg-[#0a0e1a]/85 backdrop-blur-2xl border-b border-gray-200 dark:border-white/8 transition-colors">
+    <div class="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-lg overflow-hidden relative">
+          <img src="img/logos-cdcom.png" alt="CDCom" class="absolute w-[200%] h-[200%] top-0 left-0" />
+        </div>
+        <div>
+          <div class="font-extrabold text-lg leading-tight">CDCom</div>
+          <div class="text-[10px] text-gray-400 tracking-wide">Conectando e Innovando</div>
+        </div>
+      </a>
+      <div class="hidden md:flex items-center gap-6 text-sm text-gray-500 dark:text-zinc-400">
+        <a href="#empresas" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Empresas</a>
+        <a href="#soluciones" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Soluciones</a>
+        <a href="#nosotros" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Nosotros</a>
+        <a href="#infraestructura" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Infraestructura</a>
+        <a href="#contacto" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Contacto</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="theme-toggle" class="w-9 h-9 rounded-lg border border-gray-200 dark:border-white/10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 transition" title="Cambiar tema">
+          <svg class="w-4 h-4 hidden dark:block text-yellow-400" fill="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="w-4 h-4 block dark:hidden text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+        </button>
+        <a href="/portal/login" class="text-sm font-semibold px-5 py-2.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">
+          Área Clientes
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="relative pt-24 pb-16 md:pt-36 md:pb-24 overflow-hidden">
+    <div class="motion-orb w-[420px] h-[420px] top-[-80px] left-[10%] bg-blue-400/30 dark:bg-blue-500/20"></div>
+    <div class="motion-orb motion-orb--2 w-[360px] h-[360px] top-[20%] right-[5%] bg-cyan-400/25 dark:bg-cyan-500/15"></div>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-gradient-to-b from-blue-100/60 dark:from-blue-500/5 to-transparent rounded-full blur-3xl pointer-events-none" data-parallax="0.08"></div>
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-center relative z-10">
+      <div class="motion-hero">
+        <p class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-blue-200 dark:border-blue-500/25 bg-blue-50 dark:bg-blue-500/10 text-xs font-semibold text-blue-700 dark:text-blue-300 mb-5 cdcom-hero-badge">
+          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+          Grupo CDCom · La Huerta, Jalisco
+        </p>
+        <h1 class="text-4xl md:text-5xl font-black tracking-tight leading-[1.08] mb-5">
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 dark:from-blue-400 dark:to-cyan-400 motion-gradient-text">Infraestructura Digital</span><br/>
+          de Próxima Generación
+        </h1>
+        <p class="text-lg text-gray-500 dark:text-zinc-400 max-w-xl mb-8 leading-relaxed">
+          Cuatro divisiones especializadas bajo un mismo estándar: conectividad, software, marca y energía. Soluciones para hogares, negocios e infraestructura crítica en el sur de Jalisco.
+        </p>
+        <div class="flex flex-wrap gap-3 mb-10">
+          <a href="https://wa.me/523151259871" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">Cotizar servicio</a>
+          <a href="#empresas" class="px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-medium hover:border-blue-500 hover:text-blue-600 dark:hover:text-blue-400 transition">Explorar ecosistema</a>
+        </div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-blue-600 dark:text-blue-400">4</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Divisiones</div></div>
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-cyan-600 dark:text-cyan-400">500+</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Clientes activos</div></div>
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-emerald-600 dark:text-emerald-400">24/7</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">Soporte</div></div>
+          <div class="cdcom-stat rounded-xl bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-bold text-amber-600 dark:text-amber-400">99.9%</div><div class="text-[11px] text-gray-500 dark:text-zinc-500 mt-0.5">SLA red</div></div>
+        </div>
+      </div>
+      <div class="relative hidden md:block motion-reveal-right cdcom-hero-visual">
+        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&q=80" alt="Infraestructura digital" class="motion-float rounded-2xl shadow-2xl shadow-blue-500/10 w-full object-cover h-[360px]" />
+        <div class="absolute -bottom-4 -left-4 w-24 h-24 rounded-xl overflow-hidden shadow-lg border-4 border-white dark:border-[#0a0e1a]">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=200&q=80" alt="Dashboard" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIVISIONES -->
+  <section id="empresas" class="py-16 md:py-24 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-12 motion-reveal">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-2">Nuestras empresas</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight mb-3">Ecosistema CDCom</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto">Cada división atiende una necesidad con equipos y procesos propios. Puedes contratar una sola línea o combinar varias con un solo interlocutor.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5 motion-stagger">
+        <a href="/internet" class="motion-card-shine group flex flex-col rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 overflow-hidden hover:border-blue-400 dark:hover:border-blue-500/30 hover:-translate-y-1 transition-all duration-300 h-full">
+          <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&q=80" alt="Internet WISP" class="w-full h-32 object-cover" loading="lazy" />
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold mb-1">CDCom <span class="text-blue-600 dark:text-blue-400">Internet</span></h3>
+            <p class="text-xs text-gray-500 dark:text-zinc-500 mb-3 leading-relaxed">Internet por radio en La Huerta y zona sur de Jalisco. Instalación, soporte local y portal del cliente.</p>
+            <ul class="space-y-1 mb-3 flex-1"><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-blue-600 dark:text-blue-400">•</span>Planes residenciales y negocio</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-blue-600 dark:text-blue-400">•</span>Monitoreo de red 24/7</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-blue-600 dark:text-blue-400">•</span>Área de clientes en línea</li></ul>
+            <span class="text-xs font-semibold text-blue-600 dark:text-blue-400 group-hover:underline mt-auto">Explorar división →</span>
+          </div>
+        </a>
+        <a href="/systems" class="motion-card-shine group flex flex-col rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 overflow-hidden hover:border-cyan-400 dark:hover:border-cyan-500/30 hover:-translate-y-1 transition-all duration-300 h-full">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&q=80" alt="Software" class="w-full h-32 object-cover" loading="lazy" />
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold mb-1">CDCom <span class="text-cyan-600 dark:text-cyan-400">Systems</span></h3>
+            <p class="text-xs text-gray-500 dark:text-zinc-500 mb-3 leading-relaxed">Software a medida, sistemas administrativos y automatización para operar sin procesos manuales.</p>
+            <ul class="space-y-1 mb-3 flex-1"><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-cyan-600 dark:text-cyan-400">•</span>ERP / panel de gestión</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-cyan-600 dark:text-cyan-400">•</span>Portales de clientes</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-cyan-600 dark:text-cyan-400">•</span>Integraciones y APIs</li></ul>
+            <span class="text-xs font-semibold text-cyan-600 dark:text-cyan-400 group-hover:underline mt-auto">Explorar división →</span>
+          </div>
+        </a>
+        <a href="/creative" class="motion-card-shine group flex flex-col rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 overflow-hidden hover:border-purple-400 dark:hover:border-purple-500/30 hover:-translate-y-1 transition-all duration-300 h-full">
+          <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=400&q=80" alt="Creative" class="w-full h-32 object-cover" loading="lazy" />
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold mb-1">CDCom <span class="text-purple-600 dark:text-purple-400">Creative</span></h3>
+            <p class="text-xs text-gray-500 dark:text-zinc-500 mb-3 leading-relaxed">Branding, redes, video y campañas para que tu negocio se vea profesional y venda más.</p>
+            <ul class="space-y-1 mb-3 flex-1"><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-purple-600 dark:text-purple-400">•</span>Identidad visual</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-purple-600 dark:text-purple-400">•</span>Social media y ads</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-purple-600 dark:text-purple-400">•</span>Web y producción</li></ul>
+            <span class="text-xs font-semibold text-purple-600 dark:text-purple-400 group-hover:underline mt-auto">Explorar división →</span>
+          </div>
+        </a>
+        <a href="/energy" class="motion-card-shine group flex flex-col rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 overflow-hidden hover:border-amber-400 dark:hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300 h-full">
+          <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=400&q=80" alt="Energy" class="w-full h-32 object-cover" loading="lazy" />
+          <div class="p-5 flex flex-col flex-1">
+            <h3 class="font-bold mb-1">CDCom <span class="text-amber-600 dark:text-amber-400">Energy</span></h3>
+            <p class="text-xs text-gray-500 dark:text-zinc-500 mb-3 leading-relaxed">Respaldo energético para hogares, negocios y torres. UPS, solar y continuidad operativa.</p>
+            <ul class="space-y-1 mb-3 flex-1"><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-amber-600 dark:text-amber-400">•</span>UPS y respaldo</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-amber-600 dark:text-amber-400">•</span>Paneles solares</li><li class="text-[11px] text-gray-500 dark:text-zinc-400 flex gap-1.5"><span class="text-amber-600 dark:text-amber-400">•</span>Monitoreo energético</li></ul>
+            <span class="text-xs font-semibold text-amber-600 dark:text-amber-400 group-hover:underline mt-auto">Explorar división →</span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOLUCIONES INTEGRADAS -->
+  <section id="soluciones" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.02]">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Soluciones integradas</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">Un proveedor, varias capas de valor</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-2xl text-[15px]">Combinamos conectividad, sistemas, marca y energía para proyectos que necesitan más que un solo servicio aislado.</p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 motion-stagger">
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl mb-3">📡</div>
+          <h3 class="font-semibold text-[15px] mb-2">Proveedor de internet (WISP)</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-3">Red propia, instalaciones, cobranza, tickets y portal del cliente integrado.</p>
+          <p class="text-[11px] font-medium text-blue-600 dark:text-blue-400">Internet + Systems</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl mb-3">🏪</div>
+          <h3 class="font-semibold text-[15px] mb-2">Negocio en crecimiento</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-3">Internet en el local, página web, redes sociales y respaldo eléctrico para tu operación.</p>
+          <p class="text-[11px] font-medium text-blue-600 dark:text-blue-400">Internet + Creative + Energy</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl mb-3">🏢</div>
+          <h3 class="font-semibold text-[15px] mb-2">Empresa con operación digital</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-3">Sistema administrativo, marca corporativa y campañas para captar clientes.</p>
+          <p class="text-[11px] font-medium text-blue-600 dark:text-blue-400">Systems + Creative</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl mb-3">🗼</div>
+          <h3 class="font-semibold text-[15px] mb-2">Infraestructura crítica</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-3">Torres con energía de respaldo, monitoreo y conectividad redundante.</p>
+          <p class="text-[11px] font-medium text-blue-600 dark:text-blue-400">Energy + Internet + Systems</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl mb-3">🎓</div>
+          <h3 class="font-semibold text-[15px] mb-2">Instituciones y oficinas</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-3">Red estable, videovigilancia, web institucional y soporte técnico local.</p>
+          <p class="text-[11px] font-medium text-blue-600 dark:text-blue-400">Internet + Creative</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl mb-3">🔧</div>
+          <h3 class="font-semibold text-[15px] mb-2">Integración a medida</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed mb-3">APIs, automatizaciones y desarrollos especiales según tu flujo de trabajo.</p>
+          <p class="text-[11px] font-medium text-blue-600 dark:text-blue-400">Systems</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Quiénes somos</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-4">Tecnología con raíz local</h2>
+        <p class="text-[15px] text-gray-600 dark:text-zinc-300 leading-relaxed mb-4">Grupo CDCom nació en La Huerta, Jalisco, para llevar conectividad y servicios digitales a comunidades que antes tenían pocas opciones. Hoy somos un ecosistema de cuatro marcas que comparten la misma exigencia de calidad y soporte cercano.</p>
+        <p class="text-[15px] text-gray-600 dark:text-zinc-300 leading-relaxed mb-6">No somos un revendedor genérico: diseñamos, instalamos, desarrollamos y damos seguimiento con equipos propios. Eso nos permite responder rápido y adaptar cada proyecto a la realidad de la región.</p>
+        <ul class="space-y-3 text-sm text-gray-600 dark:text-zinc-300">
+          <li class="flex gap-2"><span class="text-blue-500 font-bold">✓</span> Atención directa por WhatsApp y visitas cuando se requiere</li>
+          <li class="flex gap-2"><span class="text-blue-500 font-bold">✓</span> Proyectos para hogares, comercios e infraestructura WISP</li>
+          <li class="flex gap-2"><span class="text-blue-500 font-bold">✓</span> Desarrollo de software usado en producción por nuestros propios clientes</li>
+        </ul>
+      </div>
+      <div class="cdcom-panel rounded-2xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-500/10 dark:to-cyan-500/5 border border-blue-100 dark:border-blue-500/20 p-8">
+        <h3 class="font-bold text-lg mb-4">Misión</h3>
+        <p class="text-sm text-gray-600 dark:text-zinc-300 leading-relaxed mb-6">Conectar personas y negocios con infraestructura confiable, herramientas digitales útiles y una imagen profesional, para que la tecnología impulse —y no frene— su día a día.</p>
+        <h3 class="font-bold text-lg mb-4">Visión</h3>
+        <p class="text-sm text-gray-600 dark:text-zinc-300 leading-relaxed">Ser el grupo tecnológico de referencia en el sur de Jalisco, reconocido por la calidad de servicio, la innovación práctica y la confianza de nuestra comunidad.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESO -->
+  <section id="proceso" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-14">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Cómo empezar</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight mb-3">De la idea al servicio en marcha</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-xl mx-auto">Un flujo simple, sin burocracia innecesaria, con un asesor que te guía según la división que necesites.</p>
+      </div>
+      <div class="grid md:grid-cols-4 gap-4 motion-stagger">
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-3">01</div>
+          <h3 class="font-semibold text-[15px] mb-2">Contacto</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Nos escribes por WhatsApp o formulario. Cuéntanos qué necesitas y en qué zona estás.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-3">02</div>
+          <h3 class="font-semibold text-[15px] mb-2">Diagnóstico</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Revisamos cobertura, alcance técnico o creativo y te proponemos opciones claras.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-3">03</div>
+          <h3 class="font-semibold text-[15px] mb-2">Propuesta</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Recibes cotización con tiempos, entregables y siguientes pasos — sin letra chica.</p>
+        </div>
+        <div class="motion-card-shine rounded-xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-6">
+          <div class="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500 mb-3">04</div>
+          <h3 class="font-semibold text-[15px] mb-2">Implementación</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Instalamos, desarrollamos o producimos, y te acompañamos en la puesta en marcha.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFRAESTRUCTURA + HERRAMIENTAS -->
+  <section id="infraestructura" class="py-16 md:py-24 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="text-center mb-12 motion-reveal">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-2">Plataforma y confianza</p>
+        <h2 class="cdcom-section-title text-3xl md:text-4xl font-bold tracking-tight mb-3">Infraestructura que respalda el servicio</h2>
+        <p class="cdcom-section-desc text-gray-500 dark:text-zinc-400 max-w-2xl mx-auto">Red, sistemas en la nube, portal del cliente y herramientas digitales incluidas para quienes ya son parte de CDCom.</p>
+      </div>
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="cdcom-panel rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+        <h3 class="font-bold text-lg mb-2">Portal del cliente</h3>
+        <p class="text-sm text-gray-500 dark:text-zinc-400 mb-5 leading-relaxed">Clientes de Internet y servicios vinculados consultan saldo, pagan, abren tickets y descargan comprobantes desde cualquier dispositivo.</p>
+        <a href="/portal/login" class="inline-flex text-sm font-semibold text-blue-600 dark:text-blue-400 hover:underline mb-5">Acceder al portal →</a>
+        <h3 class="font-bold text-lg mb-5">Herramientas digitales</h3>
+        <div class="grid grid-cols-3 gap-3 motion-stagger">
+          <div class="rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-green-100 dark:bg-green-500/10 flex items-center justify-center text-lg mb-2">💬</div>
+            <div class="text-xs font-semibold">WhatsApp</div><div class="text-[10px] text-gray-400">Enlaces y mensajes</div>
+          </div>
+          <div class="rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-blue-100 dark:bg-blue-500/10 flex items-center justify-center text-lg mb-2">📱</div>
+            <div class="text-xs font-semibold">QR Gen</div><div class="text-[10px] text-gray-400">Códigos al instante</div>
+          </div>
+          <div class="rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center">
+            <div class="w-10 h-10 mx-auto rounded-lg bg-purple-100 dark:bg-purple-500/10 flex items-center justify-center text-lg mb-2">✍️</div>
+            <div class="text-xs font-semibold">Text Refiner</div><div class="text-[10px] text-gray-400">Mejora de textos</div>
+          </div>
+        </div>
+        <div class="mt-4 text-xs text-gray-500 dark:text-zinc-500 bg-white dark:bg-white/[0.02] border border-gray-100 dark:border-white/5 rounded-lg p-3 text-center">
+          <strong class="text-cyan-600 dark:text-cyan-400">Beneficio exclusivo:</strong> acceso al portal de herramientas para clientes activos de CDCom Internet.
+        </div>
+      </div>
+      <div class="cdcom-panel rounded-2xl bg-gray-50 dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-7">
+        <h3 class="font-bold text-lg mb-5">Cobertura y confianza</h3>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="col-span-2 rounded-xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-500/5 dark:to-cyan-500/5 border border-blue-100 dark:border-blue-500/10 p-5 text-center">
+            <div class="text-2xl mb-1">📍</div>
+            <div class="text-[10px] uppercase tracking-widest text-gray-400 mb-1">Operación principal</div>
+            <div class="font-bold">La Huerta, Jalisco</div>
+            <div class="text-xs text-gray-500 dark:text-zinc-400">Red WISP · Zona sur y costa · Expansión bajo demanda</div>
+          </div>
+          <div class="cdcom-stat rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-black text-blue-600 dark:text-blue-400">500+</div><div class="text-[10px] text-gray-400">Hogares y negocios</div></div>
+          <div class="cdcom-stat rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-black text-cyan-600 dark:text-cyan-400">24/7</div><div class="text-[10px] text-gray-400">Monitoreo de red</div></div>
+          <div class="cdcom-stat rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-black text-emerald-600 dark:text-emerald-400">Local</div><div class="text-[10px] text-gray-400">Soporte en español</div></div>
+          <div class="cdcom-stat rounded-xl bg-white dark:bg-white/[0.03] border border-gray-100 dark:border-white/5 p-4 text-center"><div class="text-xl font-black text-amber-600 dark:text-amber-400">99.9%</div><div class="text-[10px] text-gray-400">Objetivo SLA red</div></div>
+        </div>
+        <p class="text-xs text-gray-500 dark:text-zinc-400 mt-4 leading-relaxed">Instalaciones con técnicos propios, inventario de equipos y seguimiento post-venta. Consulta cobertura antes de contratar en <a href="/internet" class="text-blue-600 dark:text-blue-400 hover:underline">CDCom Internet</a>.</p>
+      </div>
+    </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="py-20 md:py-28 motion-reveal border-t border-gray-100 dark:border-white/5 bg-gray-50/50 dark:bg-white/[0.02]">
+    <div class="max-w-3xl mx-auto px-5">
+      <div class="text-center mb-12">
+        <p class="cdcom-section-label text-xs font-semibold tracking-widest uppercase text-blue-600 dark:text-blue-400 mb-3">Preguntas frecuentes</p>
+        <h2 class="cdcom-section-title text-2xl md:text-3xl font-bold tracking-tight">Antes de contratar</h2>
+      </div>
+      <div class="space-y-4">
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-white dark:bg-white/[0.02] p-5">
+          <h3 class="font-semibold text-[15px] mb-2">¿Puedo contratar solo una división del grupo?</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Sí. Cada marca tiene su sitio y equipo: Internet, Systems, Creative o Energy. Si más adelante necesitas otro servicio, lo integramos bajo el mismo grupo.</p>
+        </div>
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-white dark:bg-white/[0.02] p-5">
+          <h3 class="font-semibold text-[15px] mb-2">¿Atienden fuera de La Huerta?</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Internet WISP depende de cobertura en la zona sur de Jalisco. Systems, Creative y Energy atienden proyectos remotos en todo México.</p>
+        </div>
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-white dark:bg-white/[0.02] p-5">
+          <h3 class="font-semibold text-[15px] mb-2">¿Cómo sé si hay señal en mi domicilio?</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Escríbenos por WhatsApp con tu ubicación o visita la página de <a href="/internet" class="text-blue-600 dark:text-blue-400 hover:underline">CDCom Internet</a> para revisar planes y cobertura.</p>
+        </div>
+        <div class="rounded-xl border border-gray-100 dark:border-white/5 bg-white dark:bg-white/[0.02] p-5">
+          <h3 class="font-semibold text-[15px] mb-2">¿Ofrecen facturación y soporte formal?</h3>
+          <p class="text-sm text-gray-500 dark:text-zinc-400 leading-relaxed">Sí. Emitimos comprobantes, llevamos registro de pagos en sistema y damos soporte por tickets, WhatsApp y portal del cliente según el servicio contratado.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="py-20 md:py-28 border-t border-gray-100 dark:border-white/5">
+    <div class="max-w-3xl mx-auto px-5 text-center">
+      <div class="cdcom-cta-box rounded-3xl bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-500/10 dark:to-cyan-500/5 border border-blue-200 dark:border-blue-500/20 p-12 md:p-16 motion-reveal">
+        <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">¿Listo para impulsar tu proyecto?</h2>
+        <p class="text-gray-500 dark:text-zinc-400 mb-8 max-w-md mx-auto leading-relaxed">Cuéntanos qué necesitas — internet, software, marca o energía — y te orientamos con la división correcta del Grupo CDCom.</p>
+        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="https://wa.me/523151259871" target="_blank" rel="noopener" class="px-7 py-3.5 rounded-xl bg-blue-600 text-white font-bold text-sm hover:bg-blue-700 transition shadow-lg shadow-blue-600/20">WhatsApp</a>
+          <a href="mailto:cdcomcomunicaciones@gmail.com?subject=Consulta%20Grupo%20CDCom" class="px-7 py-3.5 rounded-xl border border-gray-300 dark:border-white/10 text-sm font-semibold hover:border-blue-500 transition">cdcomcomunicaciones@gmail.com</a>
+        </div>
+        <p class="text-xs text-gray-400 mt-6">La Huerta, Jalisco · Respuesta habitual en menos de 24 h hábiles</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="border-t border-gray-100 dark:border-white/5 py-10">
+    <div class="max-w-6xl mx-auto px-5 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="font-bold text-sm">Grupo CDCom</div>
+      <div class="flex flex-wrap gap-4 text-xs text-gray-400">
+        <a href="/privacidad" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Privacidad</a>
+        <a href="/internet" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Internet</a>
+        <a href="/systems" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Systems</a>
+        <a href="/creative" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Creative</a>
+        <a href="/energy" class="hover:text-blue-600 dark:hover:text-blue-400 transition">Energy</a>
+      </div>
+      <div class="text-xs text-gray-400">© <span id="yr"></span> La Huerta, Jalisco</div>
+    </div>
+  </footer>
+
+  <script src="/landing-assets/cdcom-motion.js"></script>
+
+
+  <script>
+    document.getElementById('yr').textContent = new Date().getFullYear();
+    document.getElementById('theme-toggle').addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', document.documentElement.classList.contains('dark') ? 'dark' : 'light');
+    });
+</script>
+</body>
+</html>

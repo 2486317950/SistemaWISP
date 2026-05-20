@@ -1,0 +1,69 @@
+.automation-rules-page {
+  padding: 20px;
+}
+
+.rules-list {
+  margin-top: 20px;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.rule-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.rule-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.rule-header h3 {
+  margin: 0;
+}
+
+.rule-description {
+  color: #7f8c8d;
+  margin-bottom: 15px;
+}
+
+.rule-details {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.rule-details p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.rule-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.modal-content.large {
+  max-width: 600px;
+}
+
+
+
+
+
+
+
+
+
+
+

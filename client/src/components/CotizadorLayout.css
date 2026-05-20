@@ -1,0 +1,90 @@
+.cotizador-layout-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f1f5f9;
+}
+
+.cotizador-layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #0f766e 0%, #134e4a 100%);
+  color: #ecfdf5;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.cotizador-layout-back {
+  color: #a7f3d0;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.cotizador-layout-back:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.cotizador-layout-brand {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.02em;
+}
+
+.cotizador-layout-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cotizador-layout-username {
+  font-size: 0.9rem;
+  opacity: 0.95;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.cotizador-layout-logout {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cotizador-layout-logout:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.cotizador-layout-main {
+  flex: 1;
+  padding: 20px;
+  max-width: min(1540px, 100%);
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media print {
+  .cotizador-layout-root {
+    background: #fff;
+  }
+
+  .cotizador-layout-header {
+    display: none !important;
+  }
+
+  .cotizador-layout-main {
+    padding: 0;
+    max-width: none;
+  }
+}

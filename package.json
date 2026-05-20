@@ -1,0 +1,45 @@
+{
+  "name": "sistema-gestion-clientes",
+  "version": "1.0.0",
+  "description": "Sistema de gestión de clientes, pagos e instalaciones",
+  "main": "server/index.js",
+  "scripts": {
+    "check-deps": "node scripts/check-dependencies.js",
+    "ensure-deps": "node scripts/ensure-dependencies.js",
+    "create-shortcut": "node scripts/create-shortcut.js",
+    "open-browser": "node scripts/open-browser.js",
+    "dev": "node scripts/stop-servers.js --summary && npm run ensure-deps && concurrently -n \"server,client,browser\" -c \"blue,green,yellow\" \"npm run server:watch\" \"npm run client\" \"npm run open-browser\"",
+    "dev:force": "concurrently -n \"server,client,browser\" -c \"blue,green,yellow\" \"npm run server:watch\" \"npm run client\" \"npm run open-browser\"",
+    "dev:no-browser": "npm run ensure-deps && concurrently \"npm run server:watch\" \"npm run client\"",
+    "server": "cd server && node index.js",
+    "server:watch": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && node index.js",
+    "install-all": "npm install --no-audit --no-fund && cd server && npm install --no-audit --no-fund && cd ../client && npm install --no-audit --no-fund",
+    "crear-carpeta-sin-dependencias": "node scripts/crear-carpeta-sin-dependencias.js",
+    "postinstall": "echo Instalación completada. Si hay errores, ejecuta 'npm run install-all' manualmente.",
+    "restart": "node scripts/restart.js",
+    "stop": "node scripts/stop-servers.js",
+    "stop:servers": "node scripts/stop-servers.js",
+    "ngrok": "ngrok http 5000",
+    "ngrok:domain": "ngrok http 5000 --domain",
+    "start:ngrok": "npm run build && set NODE_ENV=production && concurrently -n \"server,ngrok\" -c \"blue,yellow\" \"npm run start\" \"npm run ngrok\"",
+    "start:ngrok:script": "node scripts/start-with-ngrok.js",
+    "start:ngrok:simple": "node scripts/start-with-ngrok-simple.js",
+    "cloudflare": "cloudflared tunnel --url http://localhost:5000",
+    "start:cloudflare": "npm run build && set NODE_ENV=production && concurrently -n \"server,cloudflare\" -c \"blue,cyan\" \"npm run start\" \"npm run cloudflare\"",
+    "localtunnel": "lt --port 5000",
+    "start:localtunnel": "npm run build && set NODE_ENV=production && concurrently -n \"server,localtunnel\" -c \"blue,green\" \"npm run start\" \"npm run localtunnel\"",
+    "serveo": "ssh -R 80:localhost:5000 serveo.net"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "dependencies": {
+    "adm-zip": "^0.5.16"
+  }
+}

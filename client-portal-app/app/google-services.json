@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "838598096582",
+    "project_id": "sistemawisp-b4931",
+    "storage_bucket": "sistemawisp-b4931.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838598096582:android:e7f20a9ff468b6b28009c7",
+        "android_client_info": {
+          "package_name": "com.sistemawisp.clientportal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqx4B2LlGThhLQRTXe1CoVJ-eEt9lPGao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

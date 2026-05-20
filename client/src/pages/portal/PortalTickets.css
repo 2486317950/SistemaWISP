@@ -1,0 +1,285 @@
+.portal-tickets h2 {
+  margin: 0;
+  color: #334155;
+  font-size: 1.5rem;
+}
+
+.portal-tickets-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.portal-new-ticket-btn {
+  padding: 10px 20px;
+  background: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+.portal-new-ticket-btn:hover {
+  background: #0f766e;
+}
+
+.portal-ticket-form {
+  background: white;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+}
+
+.portal-ticket-form .portal-form-group {
+  margin-bottom: 16px;
+}
+
+.portal-ticket-form label {
+  display: block;
+  margin-bottom: 6px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.portal-ticket-form input,
+.portal-ticket-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.portal-ticket-form textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.portal-submit-btn {
+  padding: 12px 24px;
+  background: #0d9488;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.portal-submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.portal-ticket-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portal-ticket-item {
+  background: white;
+  padding: 16px 20px;
+  border-radius: 10px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.portal-ticket-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.portal-ticket-main .ticket-num {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 0.9rem;
+}
+
+.portal-ticket-main .ticket-title {
+  flex: 1;
+  font-weight: 500;
+  color: #334155;
+}
+
+.ticket-status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.ticket-status.status-abierto {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.ticket-status.status-en_proceso {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.ticket-status.status-rechazado {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.ticket-status.status-resuelto,
+.ticket-status.status-cerrado {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.portal-ticket-meta {
+  margin-top: 8px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.portal-ticket-item {
+  cursor: pointer;
+}
+
+.back-tickets-btn {
+  background: none;
+  border: none;
+  color: #0d9488;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+.back-tickets-btn:hover {
+  text-decoration: underline;
+}
+
+.ticket-detail {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ticket-detail-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.ticket-desc {
+  color: #64748b;
+  margin: 12px 0 20px 0;
+  line-height: 1.5;
+}
+
+.ticket-comments {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.ticket-comments h4 {
+  margin: 0 0 16px 0;
+  font-size: 1rem;
+  color: #334155;
+}
+
+.comment-item {
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.comment-item.from-client {
+  background: #f0fdfa;
+  border-left: 4px solid #0d9488;
+}
+
+.comment-item.from-staff {
+  background: #f8fafc;
+  border-left: 4px solid #94a3b8;
+}
+
+.comment-author {
+  font-weight: 600;
+  color: #334155;
+  margin-right: 8px;
+}
+
+.comment-date {
+  font-size: 0.8rem;
+  color: #94a3b8;
+}
+
+.comment-text {
+  margin: 8px 0 0 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.comment-form {
+  margin-top: 20px;
+}
+
+.comment-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  resize: vertical;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .portal-tickets h2 {
+    font-size: 1.25rem;
+  }
+
+  .portal-tickets-header {
+    flex-direction: column;
+    align-items: stretch;
+    margin-bottom: 16px;
+  }
+
+  .portal-new-ticket-btn {
+    width: 100%;
+    padding: 14px;
+    min-height: 48px;
+  }
+
+  .portal-ticket-form {
+    padding: 16px;
+  }
+
+  .portal-submit-btn {
+    width: 100%;
+    padding: 14px;
+    min-height: 48px;
+  }
+
+  .portal-ticket-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .portal-ticket-main .ticket-title {
+    flex: none;
+  }
+}

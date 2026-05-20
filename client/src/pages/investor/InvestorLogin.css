@@ -1,0 +1,189 @@
+.investor-login {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.investor-login-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 50%, #134e4a 100%);
+}
+
+.investor-login-pattern {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.06) 0%, transparent 50%);
+}
+
+.investor-login-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 20px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 420px;
+  backdrop-filter: blur(10px);
+}
+
+.investor-login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.investor-login-logo {
+  font-size: 4rem;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 4px 6px rgba(13, 148, 136, 0.3));
+}
+
+.investor-login-header h1 {
+  font-size: 1.75rem;
+  color: #134e4a;
+  margin: 0 0 8px 0;
+  font-weight: 700;
+}
+
+.investor-login-header p {
+  color: #64748b;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.investor-login-form {
+  margin-bottom: 24px;
+}
+
+.investor-login-field {
+  margin-bottom: 20px;
+}
+
+.investor-login-field label {
+  display: block;
+  margin-bottom: 8px;
+  color: #134e4a;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.investor-login-field input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s;
+  box-sizing: border-box;
+}
+
+.investor-login-field input:focus {
+  outline: none;
+  border-color: #0d9488;
+  box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.2);
+}
+
+.investor-login-field input::placeholder {
+  color: #94a3b8;
+}
+
+.investor-login-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #fecaca;
+  font-size: 0.9rem;
+}
+
+.investor-login-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.investor-login-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(13, 148, 136, 0.4);
+}
+
+.investor-login-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.investor-login-remember {
+  margin-bottom: 12px;
+}
+
+.investor-login-remember-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: normal;
+  color: #475569;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.investor-login-remember-label input {
+  width: auto;
+}
+
+.investor-login-forget {
+  background: none;
+  border: none;
+  color: #0d9488;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.investor-login-forget:hover:not(:disabled) {
+  color: #0f766e;
+}
+
+.investor-login-footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #64748b;
+  margin: 0;
+}
+
+.investor-login-footer a {
+  color: #0d9488;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.investor-login-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .investor-login-card {
+    padding: 32px 24px;
+  }
+
+  .investor-login-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .investor-login-field input {
+    font-size: 16px;
+  }
+}

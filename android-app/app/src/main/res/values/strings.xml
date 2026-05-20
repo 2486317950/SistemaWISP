@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Sistema WISP - Técnico</string>
+    
+    <!-- Login -->
+    <string name="login_title">Iniciar Sesión</string>
+    <string name="username">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="login_button">Iniciar Sesión</string>
+    <string name="login_error">Error al iniciar sesión</string>
+    <string name="invalid_credentials">Usuario o contraseña incorrectos</string>
+    <string name="network_error">Error de conexión. Verifica tu conexión a internet.</string>
+    
+    <!-- Installations -->
+    <string name="installations_title">Instalaciones</string>
+    <string name="new_installation">Nueva Instalación</string>
+    <string name="installation_details">Detalles de Instalación</string>
+    <string name="mark_completed">Marcar como Completada</string>
+    <string name="add_note">Agregar Nota</string>
+    <string name="save">Guardar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="delete">Eliminar</string>
+    <string name="edit">Editar</string>
+    
+    <!-- Installation Fields -->
+    <string name="client_name">Cliente</string>
+    <string name="custom_name">Nombre Personalizado</string>
+    <string name="address">Dirección</string>
+    <string name="installation_date">Fecha de Instalación</string>
+    <string name="installation_type">Tipo de Instalación</string>
+    <string name="status">Estado</string>
+    <string name="notes">Notas</string>
+    <string name="technician_name">Nombre del Técnico</string>
+    <string name="equipment_used">Equipo Usado</string>
+    <string name="completion_date">Fecha de Completado</string>
+    <string name="installation_time">Tiempo de Instalación (minutos)</string>
+    
+    <!-- Status -->
+    <string name="status_pending">Pendiente</string>
+    <string name="status_in_progress">En Proceso</string>
+    <string name="status_completed">Completada</string>
+    <string name="status_cancelled">Cancelada</string>
+    
+    <!-- Installation Types -->
+    <string name="type_new">Nueva</string>
+    <string name="type_relocation">Reubicación</string>
+    <string name="type_maintenance">Mantenimiento</string>
+    <string name="type_repair">Reparación</string>
+    
+    <!-- Messages -->
+    <string name="loading">Cargando...</string>
+    <string name="error_loading">Error al cargar datos</string>
+    <string name="success_saved">Guardado exitosamente</string>
+    <string name="error_saving">Error al guardar</string>
+    <string name="confirm_delete">¿Estás seguro de eliminar esta instalación?</string>
+    <string name="no_installations">No hay instalaciones</string>
+    
+    <!-- Navigation -->
+    <string name="logout">Cerrar Sesión</string>
+    <string name="refresh">Actualizar</string>
+</resources>
+
+
+
+
+
+
+
+
+
+
+
+
+
